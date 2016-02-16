@@ -76,7 +76,6 @@ public class MainActivity extends Activity {
         View view = new CardBuilder(this, CardBuilder.Layout.EMBED_INSIDE)
                 .setEmbeddedLayout(R.layout.main)
                 .getView();
-
         ImageView imageView = (ImageView) findViewById(R.id.BoxView);
         return view;
     }
