@@ -7,6 +7,9 @@ import com.google.android.glass.widget.CardScrollView;
 
 import android.app.Activity;
 import android.content.Context;
+import android.location.Criteria;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +21,7 @@ import android.widget.TextView;
 public class MainActivity extends Activity {
     private CardScrollView mCardScroller;
     private View mView;
+
 
     @Override
     protected void onCreate(Bundle bundle) {
@@ -77,6 +81,11 @@ public class MainActivity extends Activity {
                 .setEmbeddedLayout(R.layout.main)
                 .getView();
         ImageView imageView = (ImageView) findViewById(R.id.BoxView);
+        GPSTracker gps = new GPSTracker(this);
+        TextView textView1 = (TextView) view.findViewById(R.id.footer);
+        if(gps.canGetLocation()) {
+            textView1.setText(gps.getLatitude()+ ", " + gps.getLongitude() );
+        }
         return view;
     }
 
