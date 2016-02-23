@@ -26,9 +26,14 @@ import java.util.TimerTask;
 public class MainActivity extends Activity {
     private CardScrollView mCardScroller;
     private View mView;
+<<<<<<< HEAD
     private final Handler handler = new Handler();
     GPSTracker gps = new GPSTracker(this);
     private Timer autoUpdate;
+=======
+
+
+>>>>>>> origin/master
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
@@ -87,10 +92,15 @@ public class MainActivity extends Activity {
                 .setEmbeddedLayout(R.layout.main)
                 .getView();
         ImageView imageView = (ImageView) findViewById(R.id.BoxView);
+<<<<<<< HEAD
+=======
+        GPSTracker gps = new GPSTracker(this);
+>>>>>>> origin/master
         TextView textView1 = (TextView) view.findViewById(R.id.footer);
         if(gps.canGetLocation()) {
             textView1.setText(gps.getLatitude()+ ", " + gps.getLongitude() );
         }
+<<<<<<< HEAD
         /*Thread t = new Thread() {
             @Override
             public void run() {
@@ -112,6 +122,9 @@ public class MainActivity extends Activity {
         t.start();*/
 
     return view;
+=======
+        return view;
+>>>>>>> origin/master
     }
 
 }
