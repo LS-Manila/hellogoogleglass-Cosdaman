@@ -7,18 +7,28 @@ import com.google.android.glass.widget.CardScrollView;
 
 import android.app.Activity;
 import android.content.Context;
+import android.location.Criteria;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.media.AudioManager;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class MainActivity extends Activity {
     private CardScrollView mCardScroller;
     private View mView;
-
+    private final Handler handler = new Handler();
+    GPSTracker gps = new GPSTracker(this);
+    private Timer autoUpdate;
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
@@ -77,7 +87,31 @@ public class MainActivity extends Activity {
                 .setEmbeddedLayout(R.layout.main)
                 .getView();
         ImageView imageView = (ImageView) findViewById(R.id.BoxView);
-        return view;
+        TextView textView1 = (TextView) view.findViewById(R.id.footer);
+        if(gps.canGetLocation()) {
+            textView1.setText(gps.getLatitude()+ ", " + gps.getLongitude() );
+        }
+        /*Thread t = new Thread() {
+            @Override
+            public void run() {
+                try {
+                    while (!isInterrupted()) {
+                        Thread.sleep(1000);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                if(gps.canGetLocation()) {
+                                textView1.setText(gps.getLatitude()+ ", " + gps.getLongitude() );
+                                }
+                            }
+                        });
+                    }
+                } catch (InterruptedException e) {}
+            }
+        };
+        t.start();*/
+
+    return view;
     }
 
 }
