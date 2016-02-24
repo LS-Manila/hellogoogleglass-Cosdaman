@@ -11,6 +11,7 @@ import android.location.Criteria;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.media.AudioManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -26,14 +27,7 @@ import java.util.TimerTask;
 public class MainActivity extends Activity {
     private CardScrollView mCardScroller;
     private View mView;
-<<<<<<< HEAD
-    private final Handler handler = new Handler();
-    GPSTracker gps = new GPSTracker(this);
-    private Timer autoUpdate;
-=======
-
-
->>>>>>> origin/master
+    Handler hand = new Handler();
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
@@ -92,39 +86,48 @@ public class MainActivity extends Activity {
                 .setEmbeddedLayout(R.layout.main)
                 .getView();
         ImageView imageView = (ImageView) findViewById(R.id.BoxView);
-<<<<<<< HEAD
-=======
-        GPSTracker gps = new GPSTracker(this);
->>>>>>> origin/master
-        TextView textView1 = (TextView) view.findViewById(R.id.footer);
-        if(gps.canGetLocation()) {
-            textView1.setText(gps.getLatitude()+ ", " + gps.getLongitude() );
-        }
-<<<<<<< HEAD
-        /*Thread t = new Thread() {
-            @Override
-            public void run() {
-                try {
-                    while (!isInterrupted()) {
-                        Thread.sleep(1000);
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                if(gps.canGetLocation()) {
-                                textView1.setText(gps.getLatitude()+ ", " + gps.getLongitude() );
-                                }
-                            }
-                        });
-                    }
-                } catch (InterruptedException e) {}
-            }
-        };
-        t.start();*/
-
-    return view;
-=======
+        hand.postDelayed(run, 1000);
         return view;
->>>>>>> origin/master
     }
 
+    public String getLocation() {
+        GPSTracker gps = new GPSTracker(this);
+        String Location;
+        double Longitude;
+        double Latitude;
+        Latitude = gps.getLatitude();
+        Longitude = gps.getLongitude();
+        Location = Latitude + ", " + Longitude;
+        return Location;
+    }
+
+    Runnable run = new Runnable()
+    {
+        @Override
+        public void run() {
+            AsyncTaskRunner runner = new AsyncTaskRunner();
+            runner.execute();
+        }
+    };
+
+    private class AsyncTaskRunner extends AsyncTask<String, String, String> {
+        @Override
+        protected String doInBackground(String... params) {
+            for (int i = 0; i < 4; i++) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    Thread.interrupted();
+                }
+            }
+            return "Executed";
+        }
+        @Override
+        protected void onPostExecute(String result) {
+            TextView txt = (TextView) findViewById(R.id.footer);
+            txt.setText(getLocation());
+            Log.d("update", "update");
+            hand.postDelayed(run, 1000);
+        }
+    }
 }
