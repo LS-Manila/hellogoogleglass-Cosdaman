@@ -7,6 +7,11 @@ import com.google.android.glass.widget.CardScrollView;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.drawable.BitmapDrawable;
 import android.location.Criteria;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -19,6 +24,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.Timer;
@@ -28,6 +34,7 @@ public class MainActivity extends Activity {
     private CardScrollView mCardScroller;
     private View mView;
     Handler hand = new Handler();
+    private MapDisplay customCanvas;
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
@@ -85,7 +92,8 @@ public class MainActivity extends Activity {
         View view = new CardBuilder(this, CardBuilder.Layout.EMBED_INSIDE)
                 .setEmbeddedLayout(R.layout.main)
                 .getView();
-        ImageView imageView = (ImageView) findViewById(R.id.BoxView);
+        //ImageView imageView = (ImageView) findViewById(R.id.BoxView);
+        customCanvas = (MapDisplay) findViewById(R.id.signature_canvas);
         hand.postDelayed(run, 1000);
         return view;
     }
