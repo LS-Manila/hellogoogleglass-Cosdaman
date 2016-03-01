@@ -11,3 +11,10 @@ gps acquisition is based on cell network signal and gps of companion phone.
 multithreading used to refresh gps coordinates approximately every 5 seconds
 notes for the future:
 change imageview into canvasview; image view is not ideal, or unable to produce maps
+
+v0.4
+changed imageview to canvas to allow drawing on canvas
+
+v0.5
+attempt to fix layout (WIP)
+added screenshots
