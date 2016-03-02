@@ -13,8 +13,8 @@ package com.example.cosda.glassmaps;
 
 public class MapDisplay extends View {
 
-    public int width;
-    public int height;
+    public int w=560;
+    public int h=280;
     private Bitmap mBitmap;
     private Canvas mCanvas;
     private Path mPath;
@@ -35,12 +35,9 @@ public class MapDisplay extends View {
         mPaint.setStrokeWidth(4f);
     }
 
-    @Override
-    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        super.onSizeChanged(w, h, oldw, oldh);
+    protected void createBitmap() {
         mBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
         mCanvas = new Canvas(mBitmap);
-
     }
     // override onDraw
     @Override
@@ -48,7 +45,10 @@ public class MapDisplay extends View {
         super.onDraw(canvas);
         Paint p=new Paint();
         Bitmap b= BitmapFactory.decodeResource(getResources(), R.drawable.box);
-        p.setColor(Color.RED);
+        canvas.drawColor(Color.DKGRAY);
         canvas.drawBitmap(b, 0, 0, p);
+        p.setColor(Color.RED);
+        p.setStyle(Paint.Style.FILL);
+        canvas.drawCircle(w/2, h/2, 10, p);
     }
 }

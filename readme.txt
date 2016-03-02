@@ -18,3 +18,7 @@ changed imageview to canvas to allow drawing on canvas
 v0.5
 attempt to fix layout (WIP)
 added screenshots
+
+v0.6
+attempted to fix layout for long amount of time only to find out cardbuilder was messing with me
+main page layout fixed
