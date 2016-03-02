@@ -22,3 +22,4 @@ added screenshots
 v0.6
 attempted to fix layout for long amount of time only to find out cardbuilder was messing with me
 main page layout fixed
+fix
