@@ -92,8 +92,7 @@ public class MainActivity extends Activity {
         View view = new CardBuilder(this, CardBuilder.Layout.EMBED_INSIDE)
                 .setEmbeddedLayout(R.layout.main)
                 .getView();
-        //ImageView imageView = (ImageView) findViewById(R.id.BoxView);
-        customCanvas = (MapDisplay) findViewById(R.id.signature_canvas);
+    //    customCanvas = (MapDisplay) findViewById(R.id.signature_canvas);
         hand.postDelayed(run, 1000);
         return view;
     }

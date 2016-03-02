@@ -11,9 +11,6 @@
         android:id="@+id/image_holder"
         android:layout_width="match_parent"
         android:layout_height="@dimen/glass_card_body_height"
-        android:layout_marginLeft="@dimen/glass_card_margin"
-        android:layout_marginTop="@dimen/glass_card_margin"
-        android:layout_marginRight="@dimen/glass_card_margin"
         tools:ignore="UselessLeaf" >
         <com.example.cosda.glassmaps.MapDisplay
             android:id="@+id/signature_canvas"
@@ -27,9 +24,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|left"
-        android:layout_marginLeft="@dimen/glass_card_margin"
-        android:layout_marginBottom="@dimen/glass_card_footer_margin"
-        android:layout_marginRight="@dimen/glass_card_margin"
         android:orientation="horizontal"
         >
         <TextView
