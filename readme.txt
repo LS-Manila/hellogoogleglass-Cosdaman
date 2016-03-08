@@ -22,9 +22,13 @@ added screenshots
 v0.6
 attempted to fix layout for long amount of time only to find out cardbuilder was messing with me
 main page layout fixed
+<<<<<<< HEAD
 fix
 
 v0.7
 having trouble finding out right resolution for bitmap conversion, bitmaps have a max resolution of 2048x2048 to display on glass
 experimenting with different resolutions of jpg to bmp conversions.
 1.6k by something that is jpg = rescale to 5/6
+=======
+fix
+>>>>>>> origin/master
