@@ -89,11 +89,8 @@ public class MainActivity extends Activity {
     }
 
     private View buildView() {
-        View view = new CardBuilder(this, CardBuilder.Layout.EMBED_INSIDE)
-                .setEmbeddedLayout(R.layout.main)
-                .getView();
-        //ImageView imageView = (ImageView) findViewById(R.id.BoxView);
-        customCanvas = (MapDisplay) findViewById(R.id.signature_canvas);
+        View view = View.inflate(this, R.layout.main, null);
+    //    customCanvas = (MapDisplay) findViewById(R.id.signature_canvas);
         hand.postDelayed(run, 1000);
         return view;
     }
@@ -134,6 +131,7 @@ public class MainActivity extends Activity {
         protected void onPostExecute(String result) {
             TextView txt = (TextView) findViewById(R.id.footer);
             txt.setText(getLocation());
+
             Log.d("update", "update");
             hand.postDelayed(run, 1000);
         }
