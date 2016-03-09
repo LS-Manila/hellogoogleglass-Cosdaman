@@ -7,14 +7,13 @@ package com.example.cosda.glassmaps;
         import android.graphics.Color;
         import android.graphics.Paint;
         import android.graphics.Path;
-        import android.graphics.drawable.Drawable;
         import android.util.AttributeSet;
         import android.view.View;
 
 public class MapDisplay extends View {
 
-    public int width;
-    public int height;
+    public int w=560;
+    public int h=240;
     private Bitmap mBitmap;
     private Canvas mCanvas;
     private Path mPath;
@@ -22,6 +21,8 @@ public class MapDisplay extends View {
     private Paint mPaint;
     private float mX, mY;
     private static final float TOLERANCE = 5;
+    public int mapX;
+    public int mapY;
 
     public MapDisplay(Context c, AttributeSet attrs) {
         super(c, attrs);
@@ -35,20 +36,27 @@ public class MapDisplay extends View {
         mPaint.setStrokeWidth(4f);
     }
 
-    @Override
-    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        super.onSizeChanged(w, h, oldw, oldh);
-        mBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+    protected void createBitmap() {
+        mBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.RGB_565);
         mCanvas = new Canvas(mBitmap);
-
     }
     // override onDraw
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         Paint p=new Paint();
-        Bitmap b= BitmapFactory.decodeResource(getResources(), R.drawable.box);
+        Bitmap b= BitmapFactory.decodeResource(getResources(), R.drawable.wholedlsu);
+        canvas.drawColor(Color.WHITE);
+        mapPosition(-30,-40);
+        canvas.drawBitmap(b, mapX, mapY, p); //navigate x and y axis, positive x moves to the left, positive y moves upwards
         p.setColor(Color.RED);
-        canvas.drawBitmap(b, 0, 0, p);
+        p.setStyle(Paint.Style.FILL);
+        canvas.drawCircle(w/2, h/2, 3, p);
+    }
+
+    public void mapPosition(int x, int y){
+        //function to move the map position around, need to work on equation to get what i want.
+        mapX=-x+280;
+        mapY=-y+120;
     }
 }
