@@ -22,18 +22,34 @@ added screenshots
 v0.6
 attempted to fix layout for long amount of time only to find out cardbuilder was messing with me
 main page layout fixed
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/master
+>>>>>>> origin/master
 fix
 
 v0.7
 having trouble finding out right resolution for bitmap conversion, bitmaps have a max resolution of 2048x2048 to display on glass
 experimenting with different resolutions of jpg to bmp conversions.
 1.6k by something that is jpg = rescale to 5/6
+<<<<<<< HEAD
 v0.7a
 temporary fix for map, used a downscaled map for displaying, will probably turn into tiled bitmap in the future
 
 v0.7b
 when coordinates are input into the position finder, area is accurate but not accurate enough, 
 either increase resolution of map or calibrate coordinates more.
+=======
+<<<<<<< HEAD
+
+v0.7a
+temporary fix for map, used a downscaled map for displaying, will probably turn into tiled bitmap in the future
+
+
+>>>>>>> origin/master
 
 
 OPTIONAL PENDING:
@@ -49,6 +65,7 @@ C(Lower Right) @ -1468, -673
 D(Upper Right) @ -1468, 120 
 
 when i input 0,0; i will go to 280, 120
+<<<<<<< HEAD
 
 A
 14.563079, 120.992789
@@ -96,3 +113,11 @@ y current - y min = y delta
 y delta / y between = percentage?
 
 0.001875 / 0.003519 = 0.5328218
+=======
+1168 + x = -1468
+=======
+=======
+fix
+>>>>>>> origin/master
+>>>>>>> origin/master
+>>>>>>> origin/master
