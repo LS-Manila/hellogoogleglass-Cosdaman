@@ -46,17 +46,30 @@ public class MapDisplay extends View {
         super.onDraw(canvas);
         Paint p=new Paint();
         Bitmap b= BitmapFactory.decodeResource(getResources(), R.drawable.wholedlsu);
-        canvas.drawColor(Color.WHITE);
-        mapPosition(-30,-40);
+        canvas.drawColor(Color.BLACK);
+        mapPosition(14.564045, 120.993678);
         canvas.drawBitmap(b, mapX, mapY, p); //navigate x and y axis, positive x moves to the left, positive y moves upwards
         p.setColor(Color.RED);
         p.setStyle(Paint.Style.FILL);
         canvas.drawCircle(w/2, h/2, 3, p);
     }
 
-    public void mapPosition(int x, int y){
+    public void mapPosition(double x, double y){
         //function to move the map position around, need to work on equation to get what i want.
-        mapX=-x+280;
-        mapY=-y+120;
+        double xmin = 14.563079;
+        double ymin = 120.990966;
+        double xratio = 0.004537;
+        double yratio = 0.003519;
+        double tempx;
+        double tempy;
+        double xperc;
+        double yperc;
+        tempx = x - xmin;
+        tempy = y - ymin;
+        xperc = tempx / xratio;
+        yperc = tempy / yratio;
+
+        mapX=(int)(280-(1749*xperc));
+        mapY=(int)(120-(794*yperc));
     }
 }

@@ -1,6 +1,0 @@
-TODO:
-
-Prevent Sleeping
-Pointer on Map
-Tap Menu
-Voice Command Menu
