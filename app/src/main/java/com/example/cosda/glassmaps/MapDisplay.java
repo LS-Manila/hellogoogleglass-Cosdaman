@@ -1,6 +1,7 @@
 package com.example.cosda.glassmaps;
 
         import android.content.Context;
+        import android.content.SharedPreferences;
         import android.graphics.Bitmap;
         import android.graphics.BitmapFactory;
         import android.graphics.Canvas;
@@ -19,10 +20,16 @@ public class MapDisplay extends View {
     private Path mPath;
     Context context;
     private Paint mPaint;
-    private float mX, mY;
+    private static final String StoredLatitude= "com.cosda.glassmaps.latitude";
+    private static final String StoredLongitude= "com.cosda.glassmaps.longitude";
+    private static final String PreferencesLocation = "com.cosda.glassmaps";
     private static final float TOLERANCE = 5;
     public int mapX;
     public int mapY;
+ //   public static final String PREFS_NAME = "AOP_PREFS";
+ //   public static final String PREFS_KEY_1 = "AOP_PREFS_LAT";
+ //   public static final String PREFS_KEY_2 = "AOP_PREFS_LONG";
+    double curLatitude, curLongitude;
     //resolution of map in glass
     public final int mapResX = 1947;
     public final int mapResY = 911;
@@ -50,7 +57,8 @@ public class MapDisplay extends View {
         Paint p=new Paint();
         Bitmap b= BitmapFactory.decodeResource(getResources(), R.drawable.wholedlsu);
         canvas.drawColor(Color.GREEN);
-        mapPosition(14.565307, 120.992999);
+       // mapPosition(curLatitude, curLongitude);
+        mapPosition(14.563425, 120.991574);
         canvas.drawBitmap(b, mapX, mapY, p);
         p.setColor(Color.RED);
         p.setStyle(Paint.Style.FILL);
@@ -64,14 +72,22 @@ public class MapDisplay extends View {
        final double latitudemax = 14.567229;
        final double longitudemin = 120.991574;
        final double longitudemax = 120.994401;
-        final double latitudebetween = latitudemax-latitudemin;
-        final double longitudebetween = longitudemax-longitudemin;
-        double latdelta = latitude - latitudemin;
-        double longdelta = longitude - longitudemin;
-        double latperc = latdelta  / latitudebetween;
-        double longperc = longdelta / longitudebetween;
+       double latitudebetween = latitudemax-latitudemin;
+       double longitudebetween = longitudemax-longitudemin;
+       double latdelta = latitude - latitudemin;
+       double longdelta = longitude - longitudemin;
+       double latperc = latdelta  / latitudebetween;
+       double longperc = longdelta / longitudebetween;
 
         mapX=(int)(280-(mapResX*.5));
         mapY=(int)(120-(mapResY*.5));
+    }
+
+    public void getValue(Context context) {
+        SharedPreferences preferences = context.getSharedPreferences(PreferencesLocation, Context.MODE_PRIVATE);
+        //load shared preferences variables use website https://www.raywenderlich.com/92840/google-glass-app-tutorial
+
+
+
     }
 }

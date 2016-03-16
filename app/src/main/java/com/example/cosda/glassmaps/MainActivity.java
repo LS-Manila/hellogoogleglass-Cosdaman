@@ -1,20 +1,11 @@
 package com.example.cosda.glassmaps;
 
 import com.google.android.glass.media.Sounds;
-import com.google.android.glass.widget.CardBuilder;
 import com.google.android.glass.widget.CardScrollAdapter;
 import com.google.android.glass.widget.CardScrollView;
-
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.drawable.BitmapDrawable;
-import android.location.Criteria;
-import android.location.LocationListener;
-import android.location.LocationManager;
+import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -23,17 +14,20 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.util.Timer;
-import java.util.TimerTask;
+
+
 
 public class MainActivity extends Activity {
     private CardScrollView mCardScroller;
     private View mView;
     Handler hand = new Handler();
+    double Longitude;
+    double Latitude;
+    private static final String StoredLatitude= "com.cosda.glassmaps.latitude";
+    private static final String StoredLongitude= "com.cosda.glassmaps.longitude";
+    private static final String PreferencesLocation = "com.cosda.glassmaps";
     private MapDisplay customCanvas;
     @Override
     protected void onCreate(Bundle bundle) {
@@ -98,8 +92,6 @@ public class MainActivity extends Activity {
     public String getLocation() {
         GPSTracker gps = new GPSTracker(this);
         String Location;
-        double Longitude;
-        double Latitude;
         Latitude = gps.getLatitude();
         Longitude = gps.getLongitude();
         Location = Latitude + ", " + Longitude;
@@ -118,7 +110,7 @@ public class MainActivity extends Activity {
     private class AsyncTaskRunner extends AsyncTask<String, String, String> {
         @Override
         protected String doInBackground(String... params) {
-            for (int i = 0; i < 4; i++) {
+            for (int i = 0; i < 9; i++) {
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
@@ -136,4 +128,16 @@ public class MainActivity extends Activity {
             hand.postDelayed(run, 1000);
         }
     }
+
+
+    public void save(Context context, String text) {
+        SharedPreferences preferences = context.getSharedPreferences(PreferencesLocation, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor = preferences.edit();
+        editor.putLong(StoredLatitude, Double.doubleToRawLongBits(Latitude));
+        editor.apply();
+        editor.putLong(StoredLongitude, Double.doubleToRawLongBits(Longitude));
+        editor.apply();
+    }
+
 }
