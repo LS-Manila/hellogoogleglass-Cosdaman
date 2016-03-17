@@ -25,9 +25,6 @@ public class MainActivity extends Activity {
     Handler hand = new Handler();
     double Longitude;
     double Latitude;
-    private static final String StoredLatitude= "com.cosda.glassmaps.latitude";
-    private static final String StoredLongitude= "com.cosda.glassmaps.longitude";
-    private static final String PreferencesLocation = "com.cosda.glassmaps";
     private MapDisplay customCanvas;
     @Override
     protected void onCreate(Bundle bundle) {
@@ -123,21 +120,10 @@ public class MainActivity extends Activity {
         protected void onPostExecute(String result) {
             TextView txt = (TextView) findViewById(R.id.footer);
             txt.setText(getLocation());
-
             Log.d("update", "update");
+
             hand.postDelayed(run, 1000);
         }
-    }
-
-
-    public void save(Context context, String text) {
-        SharedPreferences preferences = context.getSharedPreferences(PreferencesLocation, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor = preferences.edit();
-        editor.putLong(StoredLatitude, Double.doubleToRawLongBits(Latitude));
-        editor.apply();
-        editor.putLong(StoredLongitude, Double.doubleToRawLongBits(Longitude));
-        editor.apply();
     }
 
 }

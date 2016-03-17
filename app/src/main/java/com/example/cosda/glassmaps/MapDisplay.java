@@ -9,6 +9,7 @@ package com.example.cosda.glassmaps;
         import android.graphics.Paint;
         import android.graphics.Path;
         import android.util.AttributeSet;
+        import android.util.Log;
         import android.view.View;
 
 public class MapDisplay extends View {
@@ -20,16 +21,10 @@ public class MapDisplay extends View {
     private Path mPath;
     Context context;
     private Paint mPaint;
-    private static final String StoredLatitude= "com.cosda.glassmaps.latitude";
-    private static final String StoredLongitude= "com.cosda.glassmaps.longitude";
-    private static final String PreferencesLocation = "com.cosda.glassmaps";
     private static final float TOLERANCE = 5;
     public int mapX;
     public int mapY;
- //   public static final String PREFS_NAME = "AOP_PREFS";
- //   public static final String PREFS_KEY_1 = "AOP_PREFS_LAT";
- //   public static final String PREFS_KEY_2 = "AOP_PREFS_LONG";
-    double curLatitude, curLongitude;
+    GPSTracker location = new GPSTracker(getContext());
     //resolution of map in glass
     public final int mapResX = 1947;
     public final int mapResY = 911;
@@ -57,8 +52,9 @@ public class MapDisplay extends View {
         Paint p=new Paint();
         Bitmap b= BitmapFactory.decodeResource(getResources(), R.drawable.wholedlsu);
         canvas.drawColor(Color.GREEN);
-       // mapPosition(curLatitude, curLongitude);
-        mapPosition(14.563425, 120.991574);
+        mapPosition(location.latitude,location.longitude);
+        Log.d("lat", "lat" +location.latitude);
+        Log.d("long","long" +location.longitude);
         canvas.drawBitmap(b, mapX, mapY, p);
         p.setColor(Color.RED);
         p.setStyle(Paint.Style.FILL);
@@ -78,16 +74,9 @@ public class MapDisplay extends View {
        double longdelta = longitude - longitudemin;
        double latperc = latdelta  / latitudebetween;
        double longperc = longdelta / longitudebetween;
-
-        mapX=(int)(280-(mapResX*.5));
-        mapY=(int)(120-(mapResY*.5));
+        mapX=(int)(280-(mapResX*latperc));
+        mapY=(int)(120-(mapResY*longperc));
     }
 
-    public void getValue(Context context) {
-        SharedPreferences preferences = context.getSharedPreferences(PreferencesLocation, Context.MODE_PRIVATE);
-        //load shared preferences variables use website https://www.raywenderlich.com/92840/google-glass-app-tutorial
 
-
-
-    }
 }
