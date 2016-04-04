@@ -1,0 +1,2 @@
+Realized that I have to implement the location listener of android better.
+Will research into new location getting techniques. I believe assisted GPS is enabled on phones by default.
