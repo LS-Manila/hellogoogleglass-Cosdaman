@@ -28,8 +28,8 @@ public class MapDisplay extends View {
     public int mapY;
     GPSTracker location = new GPSTracker(getContext());
     //resolution of map in glass
-    public final int mapResX = 1996;
-    public final int mapResY = 815;
+    public final int mapResX = 2010;
+    public final int mapResY = 1005;
 
     public MapDisplay(Context c, AttributeSet attrs) {
         super(c, attrs);
@@ -56,11 +56,11 @@ public class MapDisplay extends View {
         Bitmap b= BitmapFactory.decodeResource(getResources(), R.drawable.wholedlsuv3);
         canvas.drawColor(Color.DKGRAY);
         //mapPosition(location.latitude,location.longitude);
-        //mapPosition(14.565025, 120.993217);
-        Log.d("lat", "lat" +location.latitude);
+        mapPosition(14.565614, 120.992569);
+        Log.d("lat", "lat" + location.latitude);
         Log.d("long", "long" + location.longitude);
-        //canvas.drawBitmap(b, mapX,mapY, p);
-        canvas.drawBitmap(b, w/2-mapResX,h/2-mapResY, p);
+        canvas.drawBitmap(b, mapX, mapY, p);
+        //canvas.drawBitmap(b, 280-2010,120-1005, p);
         p.setColor(Color.RED);
         p.setStyle(Paint.Style.FILL);
         canvas.drawCircle(w/2, h/2, 3, p);
@@ -79,8 +79,8 @@ public class MapDisplay extends View {
        double longdelta = longitude - longitudemin;
        double latperc = latdelta  / latitudebetween;
        double longperc = longdelta / longitudebetween;
-       mapX=(int)(280-(mapResX*.58));
-       mapY=(int)(120-(mapResY*.41));
+       mapX=(int)(280-(mapResX*longperc));
+       mapY=(int)(120-(mapResY*latperc));
     }
 
 
