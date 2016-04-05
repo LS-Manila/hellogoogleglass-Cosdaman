@@ -28,8 +28,8 @@ public class MapDisplay extends View {
     public int mapY;
     GPSTracker location = new GPSTracker(getContext());
     //resolution of map in glass
-    public final int mapResX = 2010;
-    public final int mapResY = 1005;
+    public final int mapResX = 1997;
+    public final int mapResY = 846;
 
     public MapDisplay(Context c, AttributeSet attrs) {
         super(c, attrs);
@@ -53,10 +53,10 @@ public class MapDisplay extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         Paint p=new Paint();
-        Bitmap b= BitmapFactory.decodeResource(getResources(), R.drawable.wholedlsuv3);
+        Bitmap b= BitmapFactory.decodeResource(getResources(), R.drawable.wholedlsuv4);
         canvas.drawColor(Color.DKGRAY);
         //mapPosition(location.latitude,location.longitude);
-        mapPosition(14.565614, 120.992569);
+        mapPosition(14.563444, 120.993681);
         Log.d("lat", "lat" + location.latitude);
         Log.d("long", "long" + location.longitude);
         canvas.drawBitmap(b, mapX, mapY, p);
@@ -69,18 +69,14 @@ public class MapDisplay extends View {
    public void mapPosition(double latitude, double longitude){
         //function to move the map position around, need to work on equation to get what i want.
        // latitude is y axis on world, longitude is x axis on world
-       final double latitudemin = 14.563446;
-       final double latitudemax = 14.567240;
-       final double longitudemin = 120.991874;
-       final double longitudemax = 120.994489;
-       double latitudebetween = latitudemax-latitudemin;
-       double longitudebetween = longitudemax-longitudemin;
-       double latdelta = latitude - latitudemin;
-       double longdelta = longitude - longitudemin;
-       double latperc = latdelta  / latitudebetween;
-       double longperc = longdelta / longitudebetween;
-       mapX=(int)(280-(mapResX*longperc));
-       mapY=(int)(120-(mapResY*latperc));
+       final double latitudemin = 14.563444;
+       final double latitudemax = 14.567222;
+       final double longitudemin = 120.991844;
+       final double longitudemax = 120.994539;
+       double latperc = (latitude -latitudemin)/ (latitudemax-latitudemin);
+       double longperc = (longitude - longitudemin) / (longitudemax - longitudemin);
+       mapX=(int)(280-(mapResX*latperc));
+       mapY=(int)(120-(mapResY*longperc));
     }
 
 
