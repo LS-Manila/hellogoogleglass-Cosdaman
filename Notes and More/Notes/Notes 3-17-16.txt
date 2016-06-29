@@ -1,0 +1,10 @@
+Realized I was over complicating things with sharedpreferences. 
+
+Just instanciated the gps tracker to the custommapview class.
+
+next step is for the map to update itself, when gps changes.
+
+Looking at asynctask and/or runnable.
+
+
+also, yay i finally (hopefully) learned how to use github correctly! 

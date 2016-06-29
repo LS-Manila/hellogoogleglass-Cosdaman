@@ -1,0 +1,11 @@
+Realized that I have to implement the location listener of android better.
+Will research into new location getting techniques. I believe assisted GPS is enabled on phones by default.
+
+Thought of something.
+Data doesnt scan until QR check point has been scanned.
+When QR checkpoint is scanned, locator on the map will snap to the location of the scanned QR code.
+It is then that GPS data and magnetometer data are read.
+
+Recent Revelations; why do i force myself to make dlsu straight when clearly its not straight on the map.
+
+Will do a revision based on non edited version pulled from google maps.

@@ -1,0 +1,65 @@
+Map Resolution Conversion
+PNG  		BMP
+1854x867	2781x1301
+Roughly 1.5x bigger.
+Current PNG World Map resolution:
+1298 x 607
+
+BMP Map Resolution
+1947, 911
+
+Origin @ 280, 120 px
+
+Format is Lat, Long
+Latitude - Y axis on world
+Longitude - X axis
+
+Something is wrong with my concept.
+
+DLSU is not north facing.
+Long - max 
+(Corner of south gate street)
+14.563967, 120.994401
+
+Long - min 
+(DLSU Backdoor)
+14.564967, 120.991574
+
+Lat - max
+(Razon Corner)	
+14.567229, 120.992038
+
+Lat - min
+(Corner wall near Bro Connon)	
+14.563425, 120.993653
+
+X Min of DLSU 
+120.991375
+X Max of DLSU
+120.994430
+X Between
+0.003055
+
+Y Min of DLSU
+14.563401
+
+14.563383
+Y Max of DLSU
+14.567237
+
+14.567239
+Y Between
+0.003836
+
+current location is somewhere in between the points
+Marian Quad
+14.564062, 120.993658
+
+y - ymin = 0.000661
+0.000661/0.003836 = 0.17231
+
+x - xmin = 0.002283/0.003836 = 0.59515
+
+
+
+

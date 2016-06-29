@@ -1,0 +1,5 @@
+Realized I've been using wrong map.
+
+Sent next (hopefully more) synchronized map to Cartographer (Dan) for conversion into color scheme and cleaning up.
+
+Pending map is taken directly from google maps for more accurate GPS coordinate with respect to map accuracy.

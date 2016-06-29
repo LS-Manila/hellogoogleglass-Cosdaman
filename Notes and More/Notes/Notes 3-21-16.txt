@@ -1,0 +1,8 @@
+Im stuck on getting precise map location.
+
+Ratio of map may be wrong.
+Calculations regarding map position may be wrong.
+Something is wrong.
+Gonna look into how the map is drawn.
+
+Session ended after 4 hours.
