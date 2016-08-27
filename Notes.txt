@@ -1,3 +1,9 @@
 7/19/2016
 Have all answers I need, no idea how to use.
 Will try to break down steps further to make tasks more simpler to do rather than doing everything in bulk.
+
+8/27/2016
+Forgot to update notes
+
+for now, only map display works, will add menus 
+routing being done by dan, while lunasco is still not communicating much.
