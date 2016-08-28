@@ -4,6 +4,10 @@
         android:title="Home Page"
     android:icon="@drawable/ic_glass_logo" />
     <item
+        android:id="@+id/navigate_menu_item"
+        android:title="Navigate"
+        android:icon="@drawable/ic_glass_logo" />
+    <item
         android:id="@+id/display_map_menu_item"
         android:title="Display Map"
         android:icon="@drawable/ic_glass_logo" />

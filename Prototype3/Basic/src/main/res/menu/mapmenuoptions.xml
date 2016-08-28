@@ -1,0 +1,38 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/Navigate"
+        android:title="Navigate"
+        android:icon="@drawable/ic_glass_logo">
+        <menu>
+            <item android:id="@+id/Velasco"
+                android:title="Velasco"
+                android:icon="@drawable/ic_glass_logo">
+                >
+                <menu>
+                    <item android:id="@+id/Floor_1"
+                        android:title="Floor 1"
+                        android:icon="@drawable/ic_glass_logo">
+                        >
+                        <menu>
+                            <item android:id="@+id/V101"
+                                android:title="V101"
+                                android:icon="@drawable/ic_glass_logo">
+                                >
+                            </item>
+                            <item android:id="@+id/V102"
+                                android:title="V102"
+                                android:icon="@drawable/ic_glass_logo">
+                                >
+                            </item>
+                        </menu>
+                    </item>
+                    <item android:id="@+id/Floor_2"
+                        android:title="Floor 2"
+                        android:icon="@drawable/ic_glass_logo">
+                        >
+                    </item>
+                </menu>
+            </item>
+        </menu>
+    </item>
+</menu>

@@ -67,20 +67,25 @@
                 android:name="com.google.android.glass.VoiceTrigger"
                 android:resource="@xml/voice_trigger" />
         </activity>
+        <activity
+            android:name=".NavigateDisplay"
+            android:icon="@drawable/ic_glass_logo"
+            android:label="Navi" >
+        </activity>
+        <activity
+            android:name=".ScanCode"
+            android:icon="@drawable/ic_glass_logo"
+            android:label="Scan" >
+        </activity>
+
 
         <activity
             android:name="com.indooratlas.android.sdk.indoornavigation.imageview.ImageViewActivity"
             android:label="@string/example_imageview_title"
             android:screenOrientation="landscape" >
-
-                <!--<meta-data
-                android:name="com.google.android.glass.VoiceTrigger"
-                android:resource="@xml/voice_trigger" /> -->
-
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
                 <action android:name="android.intent.action.MAIN" />
-            <!--    <action android:name="com.google.android.glass.action.VOICE_TRIGGER" /> -->
             </intent-filter>
         </activity>
         <activity android:name="com.indooratlas.android.sdk.indoornavigation.sharelocation.ShareLocationActivity" >

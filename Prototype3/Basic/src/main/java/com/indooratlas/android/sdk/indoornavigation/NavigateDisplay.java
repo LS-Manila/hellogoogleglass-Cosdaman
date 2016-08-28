@@ -3,7 +3,6 @@ package com.indooratlas.android.sdk.indoornavigation;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,9 +15,8 @@ import com.google.android.glass.view.WindowUtils;
 import com.google.android.glass.widget.CardBuilder;
 import com.google.android.glass.widget.CardScrollAdapter;
 import com.google.android.glass.widget.CardScrollView;
-import com.indooratlas.android.sdk.indoornavigation.imageview.ImageViewActivity;
 
-public class GlassMain extends Activity {
+public class NavigateDisplay extends Activity{
 
     private CardScrollView mCardScroller;
     private View mView;
@@ -77,17 +75,15 @@ public class GlassMain extends Activity {
     }
 
     private View buildView() {
-        CardBuilder card = new CardBuilder(this, CardBuilder.Layout.COLUMNS);
-        card.setText("Welcome to the Main Menu");
-        card.setIcon(R.drawable.ic_glass_logo);
+        CardBuilder card = new CardBuilder(this, CardBuilder.Layout.TEXT);
+        card.setText("Tap to Navigate");
         return card.getView();
 
     }
-
     @Override
     public boolean onCreatePanelMenu(int featureId, Menu menu){
         if (featureId == WindowUtils.FEATURE_VOICE_COMMANDS || featureId ==  Window.FEATURE_OPTIONS_PANEL) {
-            getMenuInflater().inflate(R.menu.mainmenuoptions, menu);
+            getMenuInflater().inflate(R.menu.mapmenuoptions, menu);
             return true;
         }
         return super.onCreatePanelMenu(featureId, menu);
@@ -97,15 +93,12 @@ public class GlassMain extends Activity {
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
         if (featureId == WindowUtils.FEATURE_VOICE_COMMANDS || featureId ==  Window.FEATURE_OPTIONS_PANEL) {
             switch (item.getItemId()) {
-                case R.id.home_page_menu_item:
-
+                case R.id.V101:
+                    Intent intent1 = new Intent(NavigateDisplay.this, ScanCode.class);
+                    startActivity(intent1);
                     break;
-                case R.id.display_map_menu_item:
-                    Intent intent = new Intent(GlassMain.this, ImageViewActivity.class);
-                    startActivity(intent);
-
-                case R.id.navigate_menu_item:
-                    Intent intent2 = new Intent(GlassMain.this, NavigateDisplay.class);
+                case R.id.V102:
+                    Intent intent2 = new Intent(NavigateDisplay.this, ScanCode.class);
                     startActivity(intent2);
             }
             return true;
@@ -114,7 +107,5 @@ public class GlassMain extends Activity {
     }
 
 
+
 }
-
-
-
