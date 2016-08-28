@@ -59,8 +59,6 @@
             android:name=".GlassMain"
             android:icon="@drawable/ic_glass_logo"
             android:label="@string/title_activity_main_page" >
-
-            <!--
             <intent-filter>
                 <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
             </intent-filter>
@@ -68,7 +66,6 @@
             <meta-data
                 android:name="com.google.android.glass.VoiceTrigger"
                 android:resource="@xml/voice_trigger" />
-                -->
         </activity>
 
         <activity
@@ -76,13 +73,14 @@
             android:label="@string/example_imageview_title"
             android:screenOrientation="landscape" >
 
-                <meta-data
+                <!--<meta-data
                 android:name="com.google.android.glass.VoiceTrigger"
-                android:resource="@xml/voice_trigger" />
+                android:resource="@xml/voice_trigger" /> -->
+
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
                 <action android:name="android.intent.action.MAIN" />
-                <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
+            <!--    <action android:name="com.google.android.glass.action.VOICE_TRIGGER" /> -->
             </intent-filter>
         </activity>
         <activity android:name="com.indooratlas.android.sdk.indoornavigation.sharelocation.ShareLocationActivity" >

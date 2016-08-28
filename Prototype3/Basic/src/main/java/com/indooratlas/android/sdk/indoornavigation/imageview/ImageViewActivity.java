@@ -35,7 +35,6 @@ import com.indooratlas.android.sdk.IALocationManager;
 import com.indooratlas.android.sdk.IALocationRequest;
 import com.indooratlas.android.sdk.IARegion;
 import com.indooratlas.android.sdk.indoornavigation.R;
-import com.indooratlas.android.sdk.indoornavigation.SdkExample;
 import com.indooratlas.android.sdk.resources.IAFloorPlan;
 import com.indooratlas.android.sdk.resources.IALatLng;
 import com.indooratlas.android.sdk.resources.IALocationListenerSupport;
@@ -48,7 +47,6 @@ import java.io.File;
 import java.util.Timer;
 import java.util.TimerTask;
 
-@SdkExample(description = R.string.example_imageview_description)
 public class ImageViewActivity extends FragmentActivity {
 
     private static final String TAG = "Main Program";

@@ -1,32 +1,35 @@
 package com.indooratlas.android.sdk.indoornavigation;
 
 import android.app.Activity;
-import android.content.Context;
-import android.media.AudioManager;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.GestureDetector;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 
-import com.google.android.glass.media.Sounds;
+import com.google.android.glass.view.WindowUtils;
 import com.google.android.glass.widget.CardBuilder;
 import com.google.android.glass.widget.CardScrollAdapter;
 import com.google.android.glass.widget.CardScrollView;
+import com.indooratlas.android.sdk.indoornavigation.imageview.ImageViewActivity;
 
-/**
- * Created by Cosda on 8/27/2016.
- */
 public class GlassMain extends Activity {
 
     private CardScrollView mCardScroller;
-
- private View mView;
+    private View mView;
+    private GestureDetector mGestureDetector;
 
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-
         mView = buildView();
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        getWindow().requestFeature(WindowUtils.FEATURE_VOICE_COMMANDS);
 
         mCardScroller = new CardScrollView(this);
         mCardScroller.setAdapter(new CardScrollAdapter() {
@@ -53,13 +56,10 @@ public class GlassMain extends Activity {
                 return AdapterView.INVALID_POSITION;
             }
         });
-        // Handle the TAP event.
         mCardScroller.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // Plays disallowed sound to indicate that TAP actions are not supported.
-                AudioManager am = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-                am.playSoundEffect(Sounds.DISALLOWED);
+                openOptionsMenu();
             }
         });
         setContentView(mCardScroller);
@@ -78,10 +78,40 @@ public class GlassMain extends Activity {
     }
 
     private View buildView() {
-        CardBuilder card = new CardBuilder(this, CardBuilder.Layout.TEXT);
-
-        card.setText(R.string.hello_world);
+        CardBuilder card = new CardBuilder(this, CardBuilder.Layout.COLUMNS);
+        card.setText("Welcome to the Main Menu");
+        card.setIcon(R.drawable.ic_glass_logo);
         return card.getView();
+
     }
 
+    @Override
+    public boolean onCreatePanelMenu(int featureId, Menu menu){
+        if (featureId == WindowUtils.FEATURE_VOICE_COMMANDS || featureId ==  Window.FEATURE_OPTIONS_PANEL) {
+            getMenuInflater().inflate(R.menu.mainmenuoptions, menu);
+            return true;
+        }
+        return super.onCreatePanelMenu(featureId, menu);
+    }
+
+    @Override
+    public boolean onMenuItemSelected(int featureId, MenuItem item) {
+        if (featureId == WindowUtils.FEATURE_VOICE_COMMANDS || featureId ==  Window.FEATURE_OPTIONS_PANEL) {
+            switch (item.getItemId()) {
+                case R.id.home_page_menu_item:
+
+                    break;
+                case R.id.display_map_menu_item:
+                    Intent intent = new Intent(GlassMain.this, ImageViewActivity.class);
+                    startActivity(intent);
+            }
+            return true;
+        }
+        return super.onMenuItemSelected(featureId, item);
+    }
+
+
 }
+
+
+

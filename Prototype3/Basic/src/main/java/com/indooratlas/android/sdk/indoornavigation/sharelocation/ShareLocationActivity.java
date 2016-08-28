@@ -20,7 +20,6 @@ import com.indooratlas.android.sdk.IALocationManager;
 import com.indooratlas.android.sdk.IALocationRequest;
 import com.indooratlas.android.sdk.IARegion;
 import com.indooratlas.android.sdk.indoornavigation.R;
-import com.indooratlas.android.sdk.indoornavigation.SdkExample;
 import com.indooratlas.android.sdk.indoornavigation.sharelocation.channel.LocationChannel;
 import com.indooratlas.android.sdk.indoornavigation.sharelocation.channel.LocationChannelException;
 import com.indooratlas.android.sdk.indoornavigation.sharelocation.channel.LocationChannelListener;
@@ -42,8 +41,6 @@ import com.indooratlas.android.sdk.resources.IATask;
  * When ever region change is detected, this client will start listening events for that region and
  * to publish it's own locations for others on the same region.
  */
-@SdkExample(description = R.string.example_sharelocation_description,
-        title = R.string.example_sharelocation_title)
 public class ShareLocationActivity extends AppCompatActivity {
 
     private static final String KEY_SOURCE = "source";
