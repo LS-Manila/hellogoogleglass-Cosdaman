@@ -58,4 +58,5 @@ dependencies {
     compile 'com.pubnub:pubnub-android:3.7.5'
     compile 'com.android.support:design:23.0.1'
     compile files('libs/gdk.jar')
+    compile 'com.google.zxing:core:3.0.1'
 }

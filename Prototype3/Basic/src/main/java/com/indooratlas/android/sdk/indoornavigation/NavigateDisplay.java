@@ -11,6 +11,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 
+import com.google.android.glass.app.Card;
 import com.google.android.glass.view.WindowUtils;
 import com.google.android.glass.widget.CardBuilder;
 import com.google.android.glass.widget.CardScrollAdapter;
@@ -94,8 +95,10 @@ public class NavigateDisplay extends Activity{
         if (featureId == WindowUtils.FEATURE_VOICE_COMMANDS || featureId ==  Window.FEATURE_OPTIONS_PANEL) {
             switch (item.getItemId()) {
                 case R.id.V101:
-                    Intent intent1 = new Intent(NavigateDisplay.this, ScanCode.class);
-                    startActivity(intent1);
+                    Intent intent = new Intent("com.google.zxing.client.android.SCAN");
+                    intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
+                    startActivityForResult(intent, 0);
+
                     break;
                 case R.id.V102:
                     Intent intent2 = new Intent(NavigateDisplay.this, ScanCode.class);
@@ -106,6 +109,19 @@ public class NavigateDisplay extends Activity{
         return super.onMenuItemSelected(featureId, item);
     }
 
-
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        if (requestCode == 0) {
+            if (resultCode == RESULT_OK) {
+                String contents = intent.getStringExtra("SCAN_RESULT");
+                String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
+                Card card = new Card(this);
+                card.setText(contents);
+                View cardView = card.getView();
+                setContentView(cardView);
+            } else if (resultCode == RESULT_CANCELED) {
+                // Handle cancel
+            }
+        }
+    }
 
 }

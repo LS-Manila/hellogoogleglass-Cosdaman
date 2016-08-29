@@ -7,3 +7,6 @@ Forgot to update notes
 
 for now, only map display works, will add menus 
 routing being done by dan, while lunasco is still not communicating much.
+
+8/29/2016
+Have to install the ZXING barcode scanner prior to app use in order to be able to scan QR codes successfully
