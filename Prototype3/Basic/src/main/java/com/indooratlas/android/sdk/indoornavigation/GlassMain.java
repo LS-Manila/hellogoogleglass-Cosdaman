@@ -104,9 +104,12 @@ public class GlassMain extends Activity {
                     Intent intent = new Intent(GlassMain.this, ImageViewActivity.class);
                     startActivity(intent);
 
+                    break;
                 case R.id.navigate_menu_item:
                     Intent intent2 = new Intent(GlassMain.this, NavigateDisplay.class);
                     startActivity(intent2);
+
+                    break;
             }
             return true;
         }
