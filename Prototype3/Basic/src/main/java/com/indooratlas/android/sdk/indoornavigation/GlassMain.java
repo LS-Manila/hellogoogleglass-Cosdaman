@@ -97,19 +97,20 @@ public class GlassMain extends Activity {
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
         if (featureId == WindowUtils.FEATURE_VOICE_COMMANDS || featureId ==  Window.FEATURE_OPTIONS_PANEL) {
             switch (item.getItemId()) {
-                case R.id.home_page_menu_item:
 
+                case R.id.home_page_menu_item:
                     break;
+
                 case R.id.display_map_menu_item:
                     Intent intent = new Intent(GlassMain.this, ImageViewActivity.class);
                     startActivity(intent);
-
                     break;
+
                 case R.id.navigate_menu_item:
                     Intent intent2 = new Intent(GlassMain.this, NavigateDisplay.class);
                     startActivity(intent2);
-
                     break;
+
             }
             return true;
         }

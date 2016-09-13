@@ -94,15 +94,18 @@ public class NavigateDisplay extends Activity{
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
         if (featureId == WindowUtils.FEATURE_VOICE_COMMANDS || featureId ==  Window.FEATURE_OPTIONS_PANEL) {
             switch (item.getItemId()) {
-                case R.id.V101:
-                    Intent intent = new Intent("com.google.zxing.client.android.SCAN");
-                    intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                    startActivityForResult(intent, 0);
-
+                case R.id.L101:
+                    Intent intent101 = new Intent("com.google.zxing.client.android.SCAN");
+                    intent101.putExtra("SCAN_MODE", "QR_CODE_MODE");
+                    startActivityForResult(intent101, 0);
                     break;
-                case R.id.V102:
-                    Intent intent2 = new Intent(NavigateDisplay.this, ScanCode.class);
-                    startActivity(intent2);
+
+                case R.id.L101D:
+                    Intent intent102 = new Intent("com.google.zxing.client.android.SCAN");
+                    intent102.putExtra("SCAN_MODE", "QR_CODE_MODE");
+                    startActivityForResult(intent102, 0);
+                    break;
+
             }
             return true;
         }
