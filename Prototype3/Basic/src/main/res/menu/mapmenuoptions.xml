@@ -1,10 +1,5 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/Navigate"
-        android:title="Navigate"
-        android:icon="@drawable/ic_glass_logo">
-        <menu>
-            <item android:id="@+id/Lambda"
+    <item android:id="@+id/Lambda"
                 android:title="Lamda"
                 android:icon="@drawable/ic_glass_logo">
                 <menu>
@@ -256,7 +251,7 @@
                     </item>
                 </menu>
             </item>
-            <item android:id="@+id/Xi"
+    <item android:id="@+id/Xi"
                 android:title="Xi"
                 android:icon="@drawable/ic_glass_logo">
                 <menu>
@@ -432,6 +427,4 @@
                     </item>
                 </menu>
             </item>
-        </menu>
-    </item>
 </menu>

@@ -115,12 +115,12 @@ public class NavigateDisplay extends Activity{
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         if (requestCode == 0) {
             if (resultCode == RESULT_OK) {
+                Intent scanResult = new Intent(getBaseContext(), ScanCode.class);
                 String contents = intent.getStringExtra("SCAN_RESULT");
                 String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
-                Card card = new Card(this);
-                card.setText(contents);
-                View cardView = card.getView();
-                setContentView(cardView);
+                scanResult.putExtra("QR_SCAN", contents);
+                startActivity(scanResult);
+
             } else if (resultCode == RESULT_CANCELED) {
                 // Handle cancel
             }
