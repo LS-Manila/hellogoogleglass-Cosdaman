@@ -20,7 +20,6 @@
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
     <uses-permission android:name="android.permission.CAMERA"/>
 
-
     <uses-feature
         android:name="android.hardware.sensor.accelerometer"
         android:required="false" />
@@ -55,41 +54,21 @@
             android:name="com.indooratlas.android.sdk.API_SECRET"
             android:value= "@string/indooratlas_api_secret" />
 
-
-        <activity
-            android:name=".GlassMain"
-            android:icon="@drawable/ic_glass_logo"
-            android:label="@string/title_activity_main_page" >
-            <intent-filter>
-                <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
-            </intent-filter>
-
-            <meta-data
-                android:name="com.google.android.glass.VoiceTrigger"
-                android:resource="@xml/voice_trigger" />
-        </activity>
-        <activity
-            android:name=".NavigateDisplay"
-            android:icon="@drawable/ic_glass_logo"
-            android:label="Navi" >
-        </activity>
-        <activity
-            android:name=".ScanCode"
-            android:icon="@drawable/ic_glass_logo"
-            android:label="Scan" >
-        </activity>
-
-
         <activity
             android:name="com.indooratlas.android.sdk.indoornavigation.imageview.ImageViewActivity"
             android:label="@string/example_imageview_title"
             android:screenOrientation="landscape" >
+        </activity>
+
+        <activity android:name="com.indooratlas.android.sdk.indoornavigation.sharelocation.ShareLocationActivity" >
+        </activity>
+
+        <activity android:name="com.indooratlas.android.sdk.indoornavigation.imageview.RoomSelection" >
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
+
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
-        </activity>
-        <activity android:name="com.indooratlas.android.sdk.indoornavigation.sharelocation.ShareLocationActivity" >
         </activity>
 
         <service
@@ -122,5 +101,30 @@
             android:enabled="true"
             android:exported="false" />
     </application>
+
+    <activity
+        android:name=".GlassMain"
+        android:icon="@drawable/ic_glass_logo"
+        android:label="@string/title_activity_main_page" >
+        <intent-filter>
+            <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
+        </intent-filter>
+
+        <meta-data
+            android:name="com.google.android.glass.VoiceTrigger"
+            android:resource="@xml/voice_trigger" />
+    </activity>
+
+    <activity
+        android:name=".NavigateDisplay"
+        android:icon="@drawable/ic_glass_logo"
+        android:label="Navi" >
+    </activity>
+
+    <activity
+        android:name=".ScanCode"
+        android:icon="@drawable/ic_glass_logo"
+        android:label="Scan" >
+    </activity>
 
 </manifest>
