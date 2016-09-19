@@ -60,15 +60,11 @@
             android:screenOrientation="landscape" >
         </activity>
 
-        <activity android:name="com.indooratlas.android.sdk.indoornavigation.sharelocation.ShareLocationActivity" >
+        <activity
+            android:name="com.indooratlas.android.sdk.indoornavigation.sharelocation.ShareLocationActivity" >
         </activity>
 
         <activity android:name="com.indooratlas.android.sdk.indoornavigation.imageview.RoomSelection" >
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
         </activity>
 
         <service
@@ -108,6 +104,8 @@
         android:label="@string/title_activity_main_page" >
         <intent-filter>
             <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
+            <category android:name="android.intent.category.LAUNCHER" />
+            <action android:name="android.intent.action.MAIN" />
         </intent-filter>
 
         <meta-data
