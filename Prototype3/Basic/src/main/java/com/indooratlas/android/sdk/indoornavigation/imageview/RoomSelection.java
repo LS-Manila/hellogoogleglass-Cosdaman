@@ -29,13 +29,11 @@ public class RoomSelection extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_room_selection);
-GraphicsManager.initalizeGraphics(getApplicationContext());
+        GraphicsManager.initalizeGraphics(getApplicationContext());
         // get the listview
         expListView = (ExpandableListView) findViewById(R.id.lvExp);
-
         // preparing list data
         prepareListData();
-
         listAdapter = new ExpandableListAdapter(this, listDataHeader, listDataChild);
         // setting list adapter
         expListView.setAdapter(listAdapter);

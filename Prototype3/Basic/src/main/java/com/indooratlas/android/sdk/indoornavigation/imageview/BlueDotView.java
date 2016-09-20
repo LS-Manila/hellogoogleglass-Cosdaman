@@ -4,11 +4,16 @@ package com.indooratlas.android.sdk.indoornavigation.imageview;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Point;
 import android.graphics.PointF;
 import android.util.AttributeSet;
+import android.util.Log;
 
 import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
 import com.indooratlas.android.sdk.indoornavigation.R;
+
+import java.util.ArrayList;
 
 /**
  * Extends great ImageView library by Dave Morrissey. See more:
@@ -19,6 +24,10 @@ public class BlueDotView extends SubsamplingScaleImageView {
     private int offset;
     private float radius = 1.0f;
     private PointF dotCenter = null;
+    private Path routingPath = new Path();
+    private ArrayList<Vertex> routingNodes = new ArrayList<Vertex>(){{add(new Vertex("def", new Point(0,0)));}};
+    private int areaCode;
+    private static final float ratio= GraphicsManager.XRATIO, ratio2= GraphicsManager.YRATIO;
 
     public void setRadius(float radius) {
         this.radius = radius;
@@ -39,7 +48,7 @@ public class BlueDotView extends SubsamplingScaleImageView {
 
     private void initialise() {
         setWillNotDraw(false);
-        setPanLimit(SubsamplingScaleImageView.PAN_LIMIT_CENTER);
+       // setPanLimit(SubsamplingScaleImageView.PAN_LIMIT_INSIDE);
     }
 
     @Override
@@ -49,7 +58,7 @@ public class BlueDotView extends SubsamplingScaleImageView {
         if (!isReady()) {
             return;
         }
-
+Log.d("CANVAS", Integer.toString(canvas.getWidth()) + Integer.toString(canvas.getHeight()));
         if (dotCenter != null) {
             PointF vPoint = sourceToViewCoord(dotCenter);
             float scaledRadius = getScale() * radius;
@@ -73,6 +82,47 @@ public class BlueDotView extends SubsamplingScaleImageView {
             canvas.drawCircle(vPoint.x, vPoint.y, scaledRadius, paint);
             canvas.drawCircle(vPoint.x, vPoint.y, subx1, paint1);
             canvas.drawCircle(vPoint.x, vPoint.y, subx2, paint2);
+        }
+
+
+
+        if(!routingPath.isEmpty()) {
+            areaCode = 1;
+            canvas.drawPath(routingPath, GraphicsManager.linePaint);
+            try {
+                PointF asd =  sourceToViewCoord(routingNodes.get(0).coordinate.x,routingNodes.get(0).coordinate.y);
+                canvas.drawBitmap(GraphicsManager.arrowhead, asd.x,asd.y, new Paint());
+
+                canvas.drawBitmap(GraphicsManager.arrowhead, (float) Math.floor(routingNodes.get(0).coordinate.x * ratio) - (float) Math.floor(GraphicsManager.XOFFSET * ratio), (float) Math.floor(routingNodes.get(0).coordinate.y * ratio2) - (float) Math.floor(GraphicsManager.YOFFSET * ratio), new Paint());
+                if (areaCode != DemoRoutingManager.getArea())
+                    canvas.drawBitmap(GraphicsManager.exit, (float) Math.floor(routingNodes.get(routingNodes.size() - 1).coordinate.x * ratio) - (float) Math.floor(16 * ratio), (float) Math.floor(routingNodes.get(routingNodes.size() - 1).coordinate.y * ratio2) - (float) Math.floor(23 * ratio), new Paint());
+                else
+                    canvas.drawBitmap(GraphicsManager.parkHere, (float) Math.floor(routingNodes.get(routingNodes.size() - 1).coordinate.x * ratio) - (float) Math.floor(16 * ratio), (float) Math.floor(routingNodes.get(routingNodes.size() - 1).coordinate.y * ratio2) - (float) Math.floor(23 * ratio), new Paint());
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    public void setRoute(int currentArea){
+
+        Log.d("ROUTE", "Drawing route to " + Integer.toString(currentArea));
+        routingNodes =DemoRoutingManager.getPath(currentArea);
+        Log.d("ROUTE", routingNodes.toString());
+        routingPath.reset();
+        if(routingNodes!=null) {
+            routingPath.moveTo((int) Math.floor(routingNodes.get(0).coordinate.x * ratio), (int) Math.floor(routingNodes.get(0).coordinate.y * ratio2));
+            for (Vertex g : routingNodes) {
+                int c2 = (int) Math.floor(g.coordinate.x * ratio);
+                int b2 = (int) Math.floor(g.coordinate.y * ratio2);
+
+                routingPath.lineTo(c2, b2);
+            }
+            routingPath.lineTo((int) Math.floor(routingNodes.get(routingNodes.size() - 1).coordinate.x * ratio), (int) Math.floor(routingNodes.get(routingNodes.size() - 1).coordinate.y * ratio2));
+
+            invalidate();
         }
     }
 }

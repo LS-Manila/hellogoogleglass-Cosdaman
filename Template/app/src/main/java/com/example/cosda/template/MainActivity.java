@@ -9,9 +9,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.media.AudioManager;
 import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+
+import java.io.File;
 
 /**
  * An {@link Activity} showing a tuggable "Hello World!" card.
@@ -95,8 +99,21 @@ public class MainActivity extends Activity {
      */
     private View buildView() {
         CardBuilder card = new CardBuilder(this, CardBuilder.Layout.TEXT);
+        String filepath = Environment.getExternalStorageDirectory() + "/"
+                + Environment.DIRECTORY_DOWNLOADS + "/Maps/";
+        card.setText(filepath);
 
-        card.setText(R.string.hello_world);
+
+        String path = Environment.getExternalStorageDirectory() + "/"
+                + Environment.DIRECTORY_DOWNLOADS;
+        Log.d("Files", "Path: " + path);
+        File f = new File(path);
+        File file[] = f.listFiles();
+        Log.d("Files", "Size: " + file.length);
+        for (int i=0; i < file.length; i++)
+        {
+            Log.d("Files", "FileName:" + file[i].getName());
+        }
         return card.getView();
     }
 

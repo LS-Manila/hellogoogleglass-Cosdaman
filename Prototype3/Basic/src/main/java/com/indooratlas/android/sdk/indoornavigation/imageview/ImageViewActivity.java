@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.Point;
 import android.graphics.PointF;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -24,25 +25,18 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.davemorrissey.labs.subscaleview.ImageSource;
-import com.google.android.glass.view.WindowUtils;
-import com.google.android.glass.widget.CardScrollView;
 import com.indooratlas.android.sdk.IALocation;
 import com.indooratlas.android.sdk.IALocationListener;
 import com.indooratlas.android.sdk.IALocationManager;
 import com.indooratlas.android.sdk.IALocationRequest;
 import com.indooratlas.android.sdk.IARegion;
 import com.indooratlas.android.sdk.indoornavigation.R;
-import com.indooratlas.android.sdk.indoornavigation.ScanCode;
 import com.indooratlas.android.sdk.resources.IAFloorPlan;
 import com.indooratlas.android.sdk.resources.IALatLng;
 import com.indooratlas.android.sdk.resources.IALocationListenerSupport;
@@ -52,6 +46,7 @@ import com.indooratlas.android.sdk.resources.IAResultCallback;
 import com.indooratlas.android.sdk.resources.IATask;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -77,7 +72,11 @@ public class ImageViewActivity extends FragmentActivity {
     private Handler mTimerHandler = new Handler();
     private ConnectivityManager cm;
     public ImageView badconnection;
+    private static final float ratio= GraphicsManager.XRATIO, ratio2= GraphicsManager.YRATIO;
+    private ArrayList<Vertex> routingNodes = new ArrayList<Vertex>(){{add(new Vertex("def", new Point(0,0)));}};
+    private DemoRoutingManager demoRoutingManager;
 
+private ParkingLotView parkinglotview;
 
     private IALocationListener mLocationListener = new IALocationListenerSupport() {
         @Override
@@ -88,6 +87,7 @@ public class ImageViewActivity extends FragmentActivity {
                 PointF point = mFloorPlan.coordinateToPoint(latLng);
                 mImageView.setDotCenter(point);
                 mImageView.postInvalidate(); //redraw map
+
             }
         }
     };
@@ -113,17 +113,23 @@ public class ImageViewActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_view);
         // prevent the screen going to sleep while app is on foreground
         findViewById(android.R.id.content).setKeepScreenOn(true);
+
         mImageView = (BlueDotView) findViewById(R.id.imageView);
+
         mDownloadManager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
         mIALocationManager = IALocationManager.create(this);
         mFloorPlanManager = IAResourceManager.create(this);
         badconnection = (ImageView)findViewById(R.id.badconnection);
-
+       // parkinglotview = (ParkingLotView) findViewById(R.id.pview);
         cm = (ConnectivityManager)getBaseContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+
         if (!isSdkConfigured()) {
             new AlertDialog.Builder(this)
                     .setTitle(R.string.configuration_incomplete_title)
@@ -136,6 +142,10 @@ public class ImageViewActivity extends FragmentActivity {
                     }).show();
             return;
         }
+        demoRoutingManager = new DemoRoutingManager();
+
+        routingNodes.add(new Vertex("DEFAULT", new Point(0, 0)));
+        routingNodes.clear();
 
         ensurePermissions();
         /* optional setup of floor plan id
@@ -149,10 +159,13 @@ public class ImageViewActivity extends FragmentActivity {
 
     }
 
+
+
     private boolean isSdkConfigured() {
         return !"api-key-not-set".equals(getString(R.string.indooratlas_api_key))
                 && !"api-secret-not-set".equals(getString(R.string.indooratlas_api_secret));
     }
+
 
     @Override
     protected void onStart(){
@@ -186,7 +199,7 @@ public class ImageViewActivity extends FragmentActivity {
             };
 
             mTimer1.schedule(mTt1, 1, 1000);
-        }
+    }
 
 
     @Override
@@ -201,11 +214,22 @@ public class ImageViewActivity extends FragmentActivity {
         super.onResume();
         ensurePermissions();
         // starts receiving location updates
+        //TODO remove/comment this on final integration - this calls a local map from the downloads folder from memory
+        //runOnUiThread(new Runnable() {
+            //public void run() {
+              //  String filePath = Environment.getExternalStorageDirectory() + "/"
+                //        + Environment.DIRECTORY_DOWNLOADS + "/Maps/" + "vlsc1.png";
+                //showFloorPlanImage(filePath);
+           // }
+        //});
+
+    //TODO uncomment this if project is to be used by glass
         mIALocationManager.requestLocationUpdates(IALocationRequest.create(), mLocationListener);
         mIALocationManager.registerRegionListener(mRegionListener);
         registerReceiver(onComplete, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
     }
 
+    //TODO comment this if project is to be used by glass
     @Override
     protected void onPause() {
         super.onPause();
@@ -249,9 +273,13 @@ public class ImageViewActivity extends FragmentActivity {
 
     private void showFloorPlanImage(String filePath) {
         Log.w(TAG, "showFloorPlanImage: " + filePath);
+        //TODO uncomment
         mImageView.setRadius(mFloorPlan.getMetersToPixels() * dotRadius);
         mImageView.setImage(ImageSource.uri(filePath));
+        mImageView.setRoute(DemoRoutingManager.getArea());
     }
+
+
 
     /**
      * Fetches floor plan data from IndoorAtlas server.
@@ -267,28 +295,19 @@ public class ImageViewActivity extends FragmentActivity {
                     Log.d(TAG, "fetch floor plan result:" + result);
                     if (result.isSuccess() && result.getResult() != null) {
                         mFloorPlan = result.getResult();
-                        String fileName = mFloorPlan.getId() + ".img";
+                        String fileName = mFloorPlan.getId().substring(0, 4) + ".png";
                         String filePath = Environment.getExternalStorageDirectory() + "/"
-                                + Environment.DIRECTORY_DOWNLOADS + "/" + fileName;
-                        File file = new File(filePath);
-                        if (!file.exists()) {
-                            DownloadManager.Request request =
-                                    new DownloadManager.Request(Uri.parse(mFloorPlan.getUrl()));
-                            request.setDescription("IndoorAtlas floor plan");
-                            request.setTitle("Floor plan");
-                            // requires android 3.2 or later to compile
-                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-                                request.allowScanningByMediaScanner();
-                                request.setNotificationVisibility(DownloadManager.
-                                        Request.VISIBILITY_HIDDEN);
-                            }
-                            request.setDestinationInExternalPublicDir(Environment.
-                                    DIRECTORY_DOWNLOADS, fileName);
+                                + Environment.DIRECTORY_DOWNLOADS + "/Maps/" + fileName;
 
-                            mDownloadId = mDownloadManager.enqueue(request);
-                        } else {
+
+                        try {
                             showFloorPlanImage(filePath);
-                        }
+                        } catch(Exception e){
+                            Toast.makeText(ImageViewActivity.this, "No Map Present", Toast.LENGTH_SHORT)
+                                .show();
+                    }
+
+
                     } else {
                         // do something with error
                         if (!asyncResult.isCancelled()) {
@@ -348,17 +367,15 @@ public class ImageViewActivity extends FragmentActivity {
                             }
                         })
                         .show();
-
             } else {
-
                 // ask user for permission
                 ActivityCompat.requestPermissions(this,
                         new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
                         REQUEST_CODE_ACCESS_COARSE_LOCATION);
-
             }
         }
     }
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
@@ -374,13 +391,6 @@ public class ImageViewActivity extends FragmentActivity {
         }
 
     }
-
-
-
-
-
-
-
 
 }
 

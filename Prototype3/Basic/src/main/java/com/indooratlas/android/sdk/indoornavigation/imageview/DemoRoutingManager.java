@@ -7,14 +7,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.PriorityQueue;
 
-/**
- * Created by Jian Lastino on 5/13/2016.
- */
-
-
-
-
-
 public class DemoRoutingManager {
 
     private static int targetAreaNumber;

@@ -16,11 +16,16 @@ import com.google.android.glass.view.WindowUtils;
 import com.google.android.glass.widget.CardBuilder;
 import com.google.android.glass.widget.CardScrollAdapter;
 import com.google.android.glass.widget.CardScrollView;
+import com.indooratlas.android.sdk.indoornavigation.imageview.DemoRoutingManager;
 
 public class NavigateDisplay extends Activity{
 
     private CardScrollView mCardScroller;
     private View mView;
+    Intent intentQR = new Intent("com.google.zxing.client.android.SCAN");
+    private static int floorNumber;
+    private static int roomNumber;
+
 
     @Override
     protected void onCreate(Bundle bundle) {
@@ -92,18 +97,19 @@ public class NavigateDisplay extends Activity{
 
     @Override
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
+
         if (featureId == WindowUtils.FEATURE_VOICE_COMMANDS || featureId ==  Window.FEATURE_OPTIONS_PANEL) {
             switch (item.getItemId()) {
                 case R.id.L101:
-                    Intent intent101 = new Intent("com.google.zxing.client.android.SCAN");
-                    intent101.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                    startActivityForResult(intent101, 0);
+                    intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
+                    startActivityForResult(intentQR, 0);
+                    floorNumber = 1;
+                    roomNumber = 1;
                     break;
 
                 case R.id.L101D:
-                    Intent intent102 = new Intent("com.google.zxing.client.android.SCAN");
-                    intent102.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                    startActivityForResult(intent102, 0);
+                    intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
+                    startActivityForResult(intentQR, 0);
                     break;
 
             }
@@ -117,7 +123,10 @@ public class NavigateDisplay extends Activity{
             if (resultCode == RESULT_OK) {
                 Intent scanResult = new Intent(getBaseContext(), ScanCode.class);
                 String contents = intent.getStringExtra("SCAN_RESULT");
-                String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
+                //maybe unnecessary
+                //String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
+                scanResult.putExtra("FLOOR_NUMBER", floorNumber);
+                scanResult.putExtra("ROOM_NUMBER", roomNumber);
                 scanResult.putExtra("QR_SCAN", contents);
                 startActivity(scanResult);
 

@@ -96,33 +96,33 @@
             android:name="com.google.android.gms.measurement.AppMeasurementService"
             android:enabled="true"
             android:exported="false" />
+
+        <activity
+            android:name="com.indooratlas.android.sdk.indoornavigation.GlassMain"
+            android:icon="@drawable/ic_glass_logo"
+            android:label="@string/title_activity_main_page" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="com.google.android.glass.VoiceTrigger"
+                android:resource="@xml/voice_trigger" />
+        </activity>
+
+        <activity
+            android:name="NavigateDisplay"
+            android:icon="@drawable/ic_glass_logo"
+            android:label="Navi" >
+        </activity>
+
+        <activity
+            android:name=".ScanCode"
+            android:icon="@drawable/ic_glass_logo"
+            android:label="Scan" >
+        </activity>
+
     </application>
-
-    <activity
-        android:name=".GlassMain"
-        android:icon="@drawable/ic_glass_logo"
-        android:label="@string/title_activity_main_page" >
-        <intent-filter>
-            <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
-            <category android:name="android.intent.category.LAUNCHER" />
-            <action android:name="android.intent.action.MAIN" />
-        </intent-filter>
-
-        <meta-data
-            android:name="com.google.android.glass.VoiceTrigger"
-            android:resource="@xml/voice_trigger" />
-    </activity>
-
-    <activity
-        android:name=".NavigateDisplay"
-        android:icon="@drawable/ic_glass_logo"
-        android:label="Navi" >
-    </activity>
-
-    <activity
-        android:name=".ScanCode"
-        android:icon="@drawable/ic_glass_logo"
-        android:label="Scan" >
-    </activity>
-
 </manifest>

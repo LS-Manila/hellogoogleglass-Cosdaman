@@ -84,13 +84,15 @@ public class ScanCode extends Activity {
 
         Bundle extras = getIntent().getExtras();
         String QR_Data = extras.getString("QR_SCAN");
-
+        int floor_Number = extras.getInt("FLOOR_NUMBER");
+        int room_Number = extras.getInt("FLOOR_NUMBER");
         CardBuilder card = new CardBuilder(this, CardBuilder.Layout.COLUMNS);
-        card.setText("Insert picture of " + QR_Data + " here ");
+        card.setText("Insert picture of " + QR_Data + " (start location) here ");
         card.setIcon(R.drawable.ic_glass_logo);
         return card.getView();
 
     }
 
+    //TODO create on tap listener to input floor number and room number into demoroutingmanager
 
 }
