@@ -15,6 +15,34 @@
                                 android:title="L101D"
                                 android:icon="@drawable/ic_glass_logo">
                             </item>
+                            <item android:id="@+id/L103"
+                                android:title="L103"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L104"
+                                android:title="L104"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L105"
+                                android:title="L105"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L106"
+                                android:title="L106"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L107"
+                                android:title="L107"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L108"
+                                android:title="L108"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L109"
+                                android:title="L109"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
                         </menu>
                     </item>
                     <item android:id="@+id/Lambda_Floor_2"

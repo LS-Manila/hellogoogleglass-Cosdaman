@@ -110,7 +110,18 @@ public class NavigateDisplay extends Activity{
                 case R.id.L101D:
                     intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
                     startActivityForResult(intentQR, 0);
+                    floorNumber = 1;
+                    roomNumber = 2;
                     break;
+
+                case R.id.L103:
+                    intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
+                    startActivityForResult(intentQR, 0);
+                    floorNumber = 1;
+                    roomNumber = 3;
+                    break;
+
+                //TODO add more cases, explore nested switch statements to remove need of floor number in every case
 
             }
             return true;
