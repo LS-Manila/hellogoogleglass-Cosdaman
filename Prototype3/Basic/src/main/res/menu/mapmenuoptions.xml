@@ -49,6 +49,10 @@
                         android:title="2nd Floor"
                         android:icon="@drawable/ic_glass_logo">
                         <menu>
+                            <item android:id="@+id/L201"
+                                android:title="L201"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
                             <item android:id="@+id/L202"
                                 android:title="L202"
                                 android:icon="@drawable/ic_glass_logo">

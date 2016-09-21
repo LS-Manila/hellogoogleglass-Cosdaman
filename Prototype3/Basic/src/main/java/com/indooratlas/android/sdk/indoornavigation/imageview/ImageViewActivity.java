@@ -114,7 +114,7 @@ private ParkingLotView parkinglotview;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-
+        Log.d(TAG, "IMAGE VIEW STARTED");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_view);
         // prevent the screen going to sleep while app is on foreground
@@ -213,15 +213,6 @@ private ParkingLotView parkinglotview;
     protected void onResume() {
         super.onResume();
         ensurePermissions();
-        // starts receiving location updates
-        //TODO remove/comment this on final integration - this calls a local map from the downloads folder from memory
-        //runOnUiThread(new Runnable() {
-            //public void run() {
-              //  String filePath = Environment.getExternalStorageDirectory() + "/"
-                //        + Environment.DIRECTORY_DOWNLOADS + "/Maps/" + "vlsc1.png";
-                //showFloorPlanImage(filePath);
-           // }
-        //});
 
     //TODO uncomment this if project is to be used by glass
         mIALocationManager.requestLocationUpdates(IALocationRequest.create(), mLocationListener);

@@ -11,9 +11,11 @@ import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Toast;
 
 import java.io.File;
 
@@ -70,15 +72,7 @@ public class MainActivity extends Activity {
                 return AdapterView.INVALID_POSITION;
             }
         });
-        // Handle the TAP event.
-        mCardScroller.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // Plays disallowed sound to indicate that TAP actions are not supported.
-                AudioManager am = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-                am.playSoundEffect(Sounds.DISALLOWED);
-            }
-        });
+
         setContentView(mCardScroller);
     }
 
@@ -103,18 +97,18 @@ public class MainActivity extends Activity {
                 + Environment.DIRECTORY_DOWNLOADS + "/Maps/";
         card.setText(filepath);
 
-
-        String path = Environment.getExternalStorageDirectory() + "/"
-                + Environment.DIRECTORY_DOWNLOADS;
-        Log.d("Files", "Path: " + path);
-        File f = new File(path);
-        File file[] = f.listFiles();
-        Log.d("Files", "Size: " + file.length);
-        for (int i=0; i < file.length; i++)
-        {
-            Log.d("Files", "FileName:" + file[i].getName());
-        }
         return card.getView();
     }
 
+    @Override
+    public boolean onKeyDown(int keycode, KeyEvent event) {
+        if (keycode == KeyEvent.KEYCODE_DPAD_CENTER) {
+
+            Toast.makeText(getApplicationContext(), " TAPPY ", Toast.LENGTH_SHORT).show();
+            Log.d("Tap Listener", "TAPPY");
+            return true;
+        }
+
+        return super.onKeyDown(keycode, event);
+    }
 }

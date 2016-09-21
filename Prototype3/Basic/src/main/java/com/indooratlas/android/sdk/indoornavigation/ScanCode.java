@@ -3,6 +3,8 @@ package com.indooratlas.android.sdk.indoornavigation;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,11 +12,13 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
+import android.widget.Toast;
 
 import com.google.android.glass.view.WindowUtils;
 import com.google.android.glass.widget.CardBuilder;
 import com.google.android.glass.widget.CardScrollAdapter;
 import com.google.android.glass.widget.CardScrollView;
+import com.indooratlas.android.sdk.indoornavigation.imageview.DemoRoutingManager;
 import com.indooratlas.android.sdk.indoornavigation.imageview.ImageViewActivity;
 
 /**
@@ -24,6 +28,9 @@ public class ScanCode extends Activity {
 
     private CardScrollView mCardScroller;
     private View mView;
+    private int floor_Number;
+    private int room_Number;
+
 
     @Override
     protected void onCreate(Bundle bundle) {
@@ -58,12 +65,6 @@ public class ScanCode extends Activity {
                 return AdapterView.INVALID_POSITION;
             }
         });
-        mCardScroller.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                openOptionsMenu();
-            }
-        });
         setContentView(mCardScroller);
     }
 
@@ -84,15 +85,32 @@ public class ScanCode extends Activity {
 
         Bundle extras = getIntent().getExtras();
         String QR_Data = extras.getString("QR_SCAN");
-        int floor_Number = extras.getInt("FLOOR_NUMBER");
-        int room_Number = extras.getInt("FLOOR_NUMBER");
+        floor_Number = extras.getInt("FLOOR_NUMBER");
+        room_Number = extras.getInt("ROOM_NUMBER");
         CardBuilder card = new CardBuilder(this, CardBuilder.Layout.COLUMNS);
-        card.setText("Insert picture of " + QR_Data + " (start location) here ");
+        card.setText("Insert picture of " + QR_Data + " (start location) here. Floor Number: " + floor_Number +". Room Number: "+ room_Number +"\n");
         card.setIcon(R.drawable.ic_glass_logo);
-        return card.getView();
 
+        return card.getView();
     }
 
-    //TODO create on tap listener to input floor number and room number into demoroutingmanager
+    //create on tap listener to input floor number and room number into demoroutingmanager
+
+    @Override
+    public boolean onKeyDown(int keycode, KeyEvent event) {
+        if (keycode == KeyEvent.KEYCODE_DPAD_CENTER) {
+
+            Intent myIntent = new Intent(this, ImageViewActivity.class);
+            DemoRoutingManager.setArea(floor_Number);
+            DemoRoutingManager.setRoom(room_Number);
+            this.startActivity(myIntent);
+
+            //Toast.makeText(getApplicationContext(), " TAPPY ", Toast.LENGTH_SHORT).show();
+            Log.d("Tap Listener", "TAPPY");
+            return true;
+        }
+
+        return super.onKeyDown(keycode, event);
+    }
 
 }

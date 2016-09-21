@@ -10,3 +10,6 @@ routing being done by dan, while lunasco is still not communicating much.
 
 8/29/2016
 Have to install the ZXING barcode scanner prior to app use in order to be able to scan QR codes successfully
+
+9/21/2016
+RoomSelection.java is only phone friendly, was converted into switch statement to be more glass friendly, possible to optimize, but focus for now is on getting it to work

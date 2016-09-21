@@ -76,12 +76,11 @@ public class GlassMain extends Activity {
         super.onPause();
     }
 
-    private View buildView() {
+    private View buildView() { //contents of main menu
         CardBuilder card = new CardBuilder(this, CardBuilder.Layout.COLUMNS);
         card.setText("Welcome to the Main Menu");
         card.setIcon(R.drawable.ic_glass_logo);
         return card.getView();
-
     }
 
     @Override
@@ -99,11 +98,12 @@ public class GlassMain extends Activity {
             switch (item.getItemId()) {
 
                 case R.id.home_page_menu_item:
+
                     break;
 
                 case R.id.display_map_menu_item:
-                    Intent intent = new Intent(GlassMain.this, ImageViewActivity.class);
-                    startActivity(intent);
+                    //Intent intent = new Intent(GlassMain.this, ImageViewActivity.class);
+                    //startActivity(intent);
                     break;
 
                 case R.id.navigate_menu_item:
@@ -116,9 +116,4 @@ public class GlassMain extends Activity {
         }
         return super.onMenuItemSelected(featureId, item);
     }
-
-
 }
-
-
-
