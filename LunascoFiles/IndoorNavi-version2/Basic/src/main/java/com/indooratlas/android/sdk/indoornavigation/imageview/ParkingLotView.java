@@ -65,9 +65,10 @@ private boolean isTest = false;
 
     public void drawRoute(int currentArea)
     {
+        areaCode =
         Log.d("ROUTE","Drawing route to " + Integer.toString(currentArea));
         routingNodes =DemoRoutingManager.getPath(currentArea);
-        Log.d("ROUTE",routingNodes.toString());
+Log.d("ROUTE",routingNodes.toString());
         routingPath.reset();
         if(routingNodes!=null) {
             routingPath.moveTo((int) Math.floor(routingNodes.get(0).coordinate.x * ratio), (int) Math.floor(routingNodes.get(0).coordinate.y * ratio2));

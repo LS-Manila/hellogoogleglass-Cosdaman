@@ -1,0 +1,101 @@
+AGGREGATED OVER LAST 24 HOURS:
+Per-Package Stats:
+  * com.indooratlas.android.sdk.indoornavigation / u0a47:
+      * com.indooratlas.android.sdk.indoornavigation / u0a47:
+               TOTAL: 15% (22MB-27MB-38MB/19MB-23MB-32MB over 85)
+                 Top: 15% (22MB-27MB-38MB/19MB-23MB-32MB over 85)
+             Service: 0.02%
+          Service Rs: 0.00%
+          (Last Act): 1.0% (22MB-22MB-22MB/20MB-20MB-20MB over 1)
+            (Cached): 46% (21MB-25MB-33MB/19MB-22MB-30MB over 41)
+      * com.indooratlas.android.sdk.IALocationService:
+        Process: com.indooratlas.android.sdk.indoornavigation
+            Running count 25 / time 1.6%
+            Started count 22 / time 1.6%
+              Bound count 19 / time 1.6%
+          Executing count 37 / time 0.01%
+
+Summary:
+  * com.indooratlas.android.sdk.indoornavigation / u0a47:
+           TOTAL: 15% (22MB-27MB-38MB/19MB-23MB-32MB over 85)
+             Top: 15% (22MB-27MB-38MB/19MB-23MB-32MB over 85)
+         Service: 0.02%
+      Service Rs: 0.00%
+      (Last Act): 1.0% (22MB-22MB-22MB/20MB-20MB-20MB over 1)
+        (Cached): 46% (21MB-25MB-33MB/19MB-22MB-30MB over 41)
+
+Run time Stats:
+  SOff/Norm: +8h2m9s613ms
+  SOn /Norm: +4h23m4s978ms
+      TOTAL: +12h25m14s591ms
+
+          Start time: 2016-09-16 17:03:25
+  Total elapsed time: +18h23m36s57ms (partial) libdvm.so chromeview
+
+AGGREGATED OVER LAST 3 HOURS:
+Per-Package Stats:
+  * com.indooratlas.android.sdk.indoornavigation / u0a47:
+      * com.indooratlas.android.sdk.indoornavigation / u0a47:
+               TOTAL: 23% (23MB-30MB-38MB/19MB-25MB-32MB over 38)
+                 Top: 22% (23MB-30MB-38MB/19MB-25MB-32MB over 38)
+             Service: 0.08%
+          Service Rs: 0.01%
+          (Last Act): 1.4%
+            (Cached): 75% (21MB-27MB-33MB/19MB-25MB-30MB over 19)
+      * com.indooratlas.android.sdk.IALocationService:
+        Process: com.indooratlas.android.sdk.indoornavigation
+            Running count 25 / time 7.4%
+            Started count 22 / time 7.4%
+              Bound count 19 / time 7.4%
+          Executing count 37 / time 0.03%
+
+Summary:
+  * com.indooratlas.android.sdk.indoornavigation / u0a47:
+           TOTAL: 23% (23MB-30MB-38MB/19MB-25MB-32MB over 38)
+             Top: 22% (23MB-30MB-38MB/19MB-25MB-32MB over 38)
+         Service: 0.08%
+      Service Rs: 0.01%
+      (Last Act): 1.4%
+        (Cached): 75% (21MB-27MB-33MB/19MB-25MB-30MB over 19)
+
+Run time Stats:
+  SOff/Norm: +1h36m39s153ms
+  SOn /Norm: +1h2m59s120ms
+      TOTAL: +2h39m38s273ms
+
+          Start time: 2016-09-21 14:14:35
+  Total elapsed time: +3h20m54s642ms (partial) libdvm.so chromeview
+
+CURRENT STATS:
+Per-Package Stats:
+  * com.indooratlas.android.sdk.indoornavigation / u0a47:
+      * com.indooratlas.android.sdk.indoornavigation / u0a47:
+               TOTAL: 46% (23MB-31MB-38MB/19MB-27MB-32MB over 18)
+                 Top: 46% (23MB-31MB-38MB/19MB-27MB-32MB over 18)
+             Service: 0.36%
+          Service Rs: 0.03%
+          (Last Act): 2.8%
+            (Cached): 49% (23MB-29MB-33MB/20MB-27MB-30MB over 4)
+      * com.indooratlas.android.sdk.IALocationService:
+        Process: com.indooratlas.android.sdk.indoornavigation
+            Running count 19 / time 29%
+            Started count 16 / time 29%
+              Bound count 13 / time 29%
+          Executing count 25 / time 0.12%
+
+Summary:
+  * com.indooratlas.android.sdk.indoornavigation / u0a47:
+           TOTAL: 46% (23MB-31MB-38MB/19MB-27MB-32MB over 18)
+             Top: 46% (23MB-31MB-38MB/19MB-27MB-32MB over 18)
+         Service: 0.36%
+      Service Rs: 0.03%
+      (Last Act): 2.8%
+        (Cached): 49% (23MB-29MB-33MB/20MB-27MB-30MB over 4)
+
+Run time Stats:
+  SOff/Norm: +12m4s657ms
+  SOn /Norm: +21m15s342ms (running)
+      TOTAL: +33m19s999ms
+
+          Start time: 2016-09-24 09:56:28
+  Total elapsed time: +37m18s37ms (partial) libdvm.so chromeview

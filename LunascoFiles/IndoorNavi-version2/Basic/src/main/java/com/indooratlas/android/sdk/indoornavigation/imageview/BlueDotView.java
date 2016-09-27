@@ -88,14 +88,7 @@ Log.d("CANVAS", Integer.toString(canvas.getWidth()) + Integer.toString(canvas.ge
 
         if(!routingPath.isEmpty()) {
             areaCode = 1;
-            try {
-                canvas.drawPath(routingPath, GraphicsManager.linePaint);
-            }
-            catch (Exception e)
-            {
-                e.printStackTrace();
-            }
-
+            canvas.drawPath(routingPath, GraphicsManager.linePaint);
             try {
                 PointF asd =  sourceToViewCoord(routingNodes.get(0).coordinate.x,routingNodes.get(0).coordinate.y);
                 canvas.drawBitmap(GraphicsManager.arrowhead, asd.x,asd.y, new Paint());

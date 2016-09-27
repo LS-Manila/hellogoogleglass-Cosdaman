@@ -37,6 +37,7 @@ import com.indooratlas.android.sdk.IALocationManager;
 import com.indooratlas.android.sdk.IALocationRequest;
 import com.indooratlas.android.sdk.IARegion;
 import com.indooratlas.android.sdk.indoornavigation.R;
+import com.indooratlas.android.sdk.indoornavigation.SdkExample;
 import com.indooratlas.android.sdk.resources.IAFloorPlan;
 import com.indooratlas.android.sdk.resources.IALatLng;
 import com.indooratlas.android.sdk.resources.IALocationListenerSupport;
@@ -50,6 +51,7 @@ import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
+@SdkExample(description = R.string.example_imageview_description)
 public class ImageViewActivity extends FragmentActivity {
 
     private static final String TAG = "Main Program";
@@ -114,19 +116,19 @@ private ParkingLotView parkinglotview;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        Log.d(TAG, "IMAGE VIEW STARTED");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_view);
         // prevent the screen going to sleep while app is on foreground
         findViewById(android.R.id.content).setKeepScreenOn(true);
 
-         mImageView = (BlueDotView) findViewById(R.id.imageView);
+        mImageView = (BlueDotView) findViewById(R.id.imageView);
 
         mDownloadManager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
         mIALocationManager = IALocationManager.create(this);
         mFloorPlanManager = IAResourceManager.create(this);
         badconnection = (ImageView)findViewById(R.id.badconnection);
-        //parkinglotview = (ParkingLotView) findViewById(R.id.pview);
+       // parkinglotview = (ParkingLotView) findViewById(R.id.pview);
         cm = (ConnectivityManager)getBaseContext().getSystemService(Context.CONNECTIVITY_SERVICE);
 
 
@@ -213,6 +215,15 @@ private ParkingLotView parkinglotview;
     protected void onResume() {
         super.onResume();
         ensurePermissions();
+        // starts receiving location updates
+        //TODO remove/comment this on final integration - this calls a local map from the downloads folder from memory
+        //runOnUiThread(new Runnable() {
+            //public void run() {
+              //  String filePath = Environment.getExternalStorageDirectory() + "/"
+                //        + Environment.DIRECTORY_DOWNLOADS + "/Maps/" + "vlsc1.png";
+                //showFloorPlanImage(filePath);
+           // }
+        //});
 
     //TODO uncomment this if project is to be used by glass
         mIALocationManager.requestLocationUpdates(IALocationRequest.create(), mLocationListener);
@@ -265,9 +276,9 @@ private ParkingLotView parkinglotview;
     private void showFloorPlanImage(String filePath) {
         Log.w(TAG, "showFloorPlanImage: " + filePath);
         //TODO uncomment
-    //    mImageView.setRadius(mFloorPlan.getMetersToPixels() * dotRadius);
-    //    mImageView.setImage(ImageSource.uri(filePath));
-    //    mImageView.setRoute(DemoRoutingManager.getArea());
+        mImageView.setRadius(mFloorPlan.getMetersToPixels() * dotRadius);
+        mImageView.setImage(ImageSource.uri(filePath));
+        mImageView.setRoute(DemoRoutingManager.getArea());
     }
 
 
@@ -287,7 +298,8 @@ private ParkingLotView parkinglotview;
                     if (result.isSuccess() && result.getResult() != null) {
                         mFloorPlan = result.getResult();
                         String fileName = mFloorPlan.getId().substring(0, 4) + ".png";
-                        String filePath = "storage/emulated/legacy/Download/Maps/" + fileName;
+                        String filePath = Environment.getExternalStorageDirectory() + "/"
+                                + Environment.DIRECTORY_DOWNLOADS + "/Maps/" + fileName;
 
 
                         try {

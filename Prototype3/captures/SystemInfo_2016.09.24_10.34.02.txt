@@ -1,0 +1,32 @@
+Applications Memory Usage (kB):
+Uptime: 2021259 Realtime: 2255034
+
+** MEMINFO in pid 25227 [com.indooratlas.android.sdk.indoornavigation] **
+                   Pss  Private  Private  Swapped     Heap     Heap     Heap
+                 Total    Dirty    Clean    Dirty     Size    Alloc     Free
+                ------   ------   ------   ------   ------   ------   ------
+  Native Heap       32       32        0        4     3580     3293       26
+  Dalvik Heap     2268     1936        0        4     6580     6443      137
+ Dalvik Other     1324     1192        0       64                           
+        Stack       88       88        0        4                           
+    Other dev    13369    11276      436        0                           
+     .so mmap     1328      524       48      700                           
+    .apk mmap      170        0       40        0                           
+    .ttf mmap       31        0        8        0                           
+    .dex mmap     2563       24     2144        0                           
+   Other mmap      135        4        0        0                           
+      Unknown     1831     1820        0        8                           
+        TOTAL    23139    16896     2676      784    10160     9736      163
+ 
+ Objects
+               Views:       18         ViewRootImpl:        1
+         AppContexts:        4           Activities:        1
+              Assets:        3        AssetManagers:        3
+       Local Binders:        8        Proxy Binders:       18
+    Death Recipients:        0
+     OpenSSL Sockets:        0
+ 
+ SQL
+         MEMORY_USED:        0
+  PAGECACHE_OVERFLOW:        0          MALLOC_SIZE:        0
+ 
