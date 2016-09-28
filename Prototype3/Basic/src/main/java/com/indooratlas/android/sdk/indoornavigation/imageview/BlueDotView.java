@@ -48,7 +48,7 @@ public class BlueDotView extends SubsamplingScaleImageView {
 
     private void initialise() {
         setWillNotDraw(false);
-       // setPanLimit(SubsamplingScaleImageView.PAN_LIMIT_INSIDE);
+        //setPanLimit(SubsamplingScaleImageView.PAN_LIMIT_INSIDE);
     }
 
     @Override
@@ -58,7 +58,7 @@ public class BlueDotView extends SubsamplingScaleImageView {
         if (!isReady()) {
             return;
         }
-Log.d("CANVAS", Integer.toString(canvas.getWidth()) + Integer.toString(canvas.getHeight()));
+    Log.d("CANVAS", Integer.toString(canvas.getWidth()) + Integer.toString(canvas.getHeight()));
         if (dotCenter != null) {
             PointF vPoint = sourceToViewCoord(dotCenter);
             float scaledRadius = getScale() * radius;
@@ -77,6 +77,7 @@ Log.d("CANVAS", Integer.toString(canvas.getWidth()) + Integer.toString(canvas.ge
             paint2.setColor(0xFF0000FF);
             paint2.setStyle(Paint.Style.STROKE);
 
+            //blue circle around blue dot
             float subx1 = scaledRadius + 100;
             float subx2 = scaledRadius + 100;
             canvas.drawCircle(vPoint.x, vPoint.y, scaledRadius, paint);
@@ -85,17 +86,10 @@ Log.d("CANVAS", Integer.toString(canvas.getWidth()) + Integer.toString(canvas.ge
         }
 
 
-
+        //TODO: draws arrow head and destination images on map
         if(!routingPath.isEmpty()) {
             areaCode = 1;
-            try {
-                canvas.drawPath(routingPath, GraphicsManager.linePaint);
-            }
-            catch (Exception e)
-            {
-                e.printStackTrace();
-            }
-
+            canvas.drawPath(routingPath, GraphicsManager.linePaint);
             try {
                 PointF asd =  sourceToViewCoord(routingNodes.get(0).coordinate.x,routingNodes.get(0).coordinate.y);
                 canvas.drawBitmap(GraphicsManager.arrowhead, asd.x,asd.y, new Paint());
@@ -112,11 +106,11 @@ Log.d("CANVAS", Integer.toString(canvas.getWidth()) + Integer.toString(canvas.ge
         }
     }
 
-
-    public void setRoute(int currentArea){
+    //TODO : draws route on map - gets route/routing nodes from DemoRoutingManager
+    /**public void setRoute(int currentArea){
 
         Log.d("ROUTE", "Drawing route to " + Integer.toString(currentArea));
-        routingNodes =DemoRoutingManager.getPath(currentArea);
+        routingNodes = DemoRoutingManager.getPath(currentArea);
         Log.d("ROUTE", routingNodes.toString());
         routingPath.reset();
         if(routingNodes!=null) {
@@ -131,5 +125,5 @@ Log.d("CANVAS", Integer.toString(canvas.getWidth()) + Integer.toString(canvas.ge
 
             invalidate();
         }
-    }
+    }**/
 }

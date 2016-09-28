@@ -13,9 +13,6 @@ import android.database.Cursor;
 import android.graphics.Point;
 import android.graphics.PointF;
 import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -28,6 +25,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.davemorrissey.labs.subscaleview.ImageSource;
@@ -75,9 +73,9 @@ public class ImageViewActivity extends FragmentActivity {
     private static final float ratio= GraphicsManager.XRATIO, ratio2= GraphicsManager.YRATIO;
     private ArrayList<Vertex> routingNodes = new ArrayList<Vertex>(){{add(new Vertex("def", new Point(0,0)));}};
     private DemoRoutingManager demoRoutingManager;
-
-private ParkingLotView parkinglotview;
-
+    public TextView altitudeTextView;
+    private ParkingLotView parkinglotview;
+	
     private IALocationListener mLocationListener = new IALocationListenerSupport() {
         @Override
         public void onLocationChanged(IALocation location) {
@@ -213,6 +211,15 @@ private ParkingLotView parkinglotview;
     protected void onResume() {
         super.onResume();
         ensurePermissions();
+        // starts receiving location updates
+        //TODO remove/comment this on final integration - this calls a local map from the downloads folder from memory
+        //runOnUiThread(new Runnable() {
+            //public void run() {
+              //  String filePath = Environment.getExternalStorageDirectory() + "/"
+                //        + Environment.DIRECTORY_DOWNLOADS + "/Maps/" + "vlsc1.png";
+                //showFloorPlanImage(filePath);
+           // }
+        //});
 
     //TODO uncomment this if project is to be used by glass
         mIALocationManager.requestLocationUpdates(IALocationRequest.create(), mLocationListener);
@@ -264,10 +271,10 @@ private ParkingLotView parkinglotview;
 
     private void showFloorPlanImage(String filePath) {
         Log.w(TAG, "showFloorPlanImage: " + filePath);
-        //TODO uncomment
-    //    mImageView.setRadius(mFloorPlan.getMetersToPixels() * dotRadius);
-    //    mImageView.setImage(ImageSource.uri(filePath));
-    //    mImageView.setRoute(DemoRoutingManager.getArea());
+        mImageView.setRadius(mFloorPlan.getMetersToPixels() * dotRadius);
+        mImageView.setImage(ImageSource.uri(filePath));
+		//TODO uncomment line below to show routes on map
+		//mImageView.setRoute(DemoRoutingManager.getArea());
     }
 
 

@@ -2,9 +2,6 @@ package com.indooratlas.android.sdk.indoornavigation.imageview;
 
 import android.graphics.Point;
 
-/**
- * Created by Jian Lastino on 8/29/2016.
- */
 public class Vertex implements Comparable<Vertex>
 {
     public final String name;

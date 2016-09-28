@@ -6,19 +6,12 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Point;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.util.Pair;
 import android.widget.FrameLayout;
-import android.widget.TextView;
-
-import com.indooratlas.android.sdk.indoornavigation.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Jian Lastino on 3/10/2016.
- */
 public class ParkingLotView extends FrameLayout{
     private Path routingPath, vacantSlots, occupiedSlots,unmonitoredSlots = new Path();
     private static final float ratio= GraphicsManager.XRATIO, ratio2= GraphicsManager.YRATIO;
@@ -61,29 +54,6 @@ private boolean isTest = false;
         routingPath = new Path();
 
     }
-
-
-    public void drawRoute(int currentArea)
-    {
-        Log.d("ROUTE","Drawing route to " + Integer.toString(currentArea));
-        routingNodes =DemoRoutingManager.getPath(currentArea);
-        Log.d("ROUTE",routingNodes.toString());
-        routingPath.reset();
-        if(routingNodes!=null) {
-            routingPath.moveTo((int) Math.floor(routingNodes.get(0).coordinate.x * ratio), (int) Math.floor(routingNodes.get(0).coordinate.y * ratio2));
-            for (Vertex g : routingNodes) {
-                int c2 = (int) Math.floor(g.coordinate.x * ratio);
-                int b2 = (int) Math.floor(g.coordinate.y * ratio2);
-
-                routingPath.lineTo(c2, b2);
-            }
-            routingPath.lineTo((int) Math.floor(routingNodes.get(routingNodes.size() - 1).coordinate.x * ratio), (int) Math.floor(routingNodes.get(routingNodes.size() - 1).coordinate.y * ratio2));
-
-            invalidate();
-        }
-        }
-
-
 
             @Override
             protected void onDraw(Canvas canvas) {

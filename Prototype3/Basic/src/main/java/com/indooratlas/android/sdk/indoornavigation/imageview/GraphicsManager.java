@@ -16,15 +16,12 @@ import android.view.animation.DecelerateInterpolator;
 
 import com.indooratlas.android.sdk.indoornavigation.R;
 
-/**
- * Created by Jian Lastino on 4/18/2016.
- */
 public class GraphicsManager {
     public static Paint linePaint, endpointPaint,startpointPaint, vacantPaint,occupiedPaint,unmonitoredPaint;
     private static final float  borderRadius = 25.0f;
     public static Animation fadeIn,fadeOut;
     public static int DEVICE_WIDTH,DEVICE_HEIGHT;
-public  static final int XOFFSET=27,YOFFSET=24;
+    public static final int XOFFSET=27,YOFFSET=24;
     public static Bitmap firstFloor;
     public static Bitmap secondFloor;
     public static float XRATIO,YRATIO;
@@ -46,8 +43,8 @@ public  static final int XOFFSET=27,YOFFSET=24;
         exit = BitmapFactory.decodeResource(myContext.getResources(),R.drawable.stairs);
         float height = dimensions.outHeight;
         float width =  dimensions.outWidth;
-   DEVICE_WIDTH=     metrics.widthPixels;
-             DEVICE_HEIGHT =    metrics.heightPixels;
+        DEVICE_WIDTH = metrics.widthPixels;
+        DEVICE_HEIGHT = metrics.heightPixels;
         if(DEVICE_WIDTH>DEVICE_HEIGHT)
         {
             int temp = DEVICE_WIDTH;
@@ -55,7 +52,7 @@ public  static final int XOFFSET=27,YOFFSET=24;
             DEVICE_HEIGHT = temp;
         }
         if(DEVICE_WIDTH ==1440) {
-//JULES
+            //JULES - Galaxy S6
             XRATIO = 2.675f;//metrics.widthPixels / width;
             YRATIO = 2.8f;//metrics.heightPixels / height;
             parkHere=    getResizedBitmap(parkHere,125,73);
@@ -65,7 +62,7 @@ public  static final int XOFFSET=27,YOFFSET=24;
         }
         else if(DEVICE_WIDTH==720)
         {
-            //PHONE KO
+            //Galaxy Note 2
             XRATIO = 1.335f;//metrics.widthPixels / height;
             YRATIO = 1.41f;//metrics.heightPixels / width;
 
@@ -77,7 +74,7 @@ public  static final int XOFFSET=27,YOFFSET=24;
         }
         else if(DEVICE_WIDTH==768)
         {
-            //THEO
+            //Alcatel
             XRATIO = 1.25f;//metrics.widthPixels / height;
             YRATIO = 1.51f;//metrics.heightPixels / width;
         }
@@ -101,21 +98,21 @@ public  static final int XOFFSET=27,YOFFSET=24;
         }
         else if(DEVICE_WIDTH==480)
         {
-            //PHONE NI FRANK
+            //Samsung Galaxy Mini
             XRATIO = 0.835f;//metrics.widthPixels / height;
             YRATIO = 0.941f;//metrics.heightPixels / width;
           //  parkHere=    getResizedBitmap(parkHere,51,33);
         }
         else if(DEVICE_WIDTH==540 && DEVICE_HEIGHT==960)
         {
-            //AEGELLE
+            //Galaxy Alpha Mini
             XRATIO = 1.000f;
             YRATIO= 1.065f;
-            parkHere=    getResizedBitmap(parkHere,51,33);
+            parkHere = getResizedBitmap(parkHere,51,33);
         }
         else
         {
-            //AEGELLE
+            //Galaxy Alpha Mini
             XRATIO = 1.000f;
             YRATIO= 1.000f;
         }
@@ -188,27 +185,4 @@ public  static final int XOFFSET=27,YOFFSET=24;
         return resizedBitmap;
     }
 
-
-
-    public static Bitmap loadRazon(int floor) {
-        switch (floor) {
-            case 1:
-                return firstFloor;
-            case 2:
-                return secondFloor;
-            default:
-                return null;
-        }
-    }
-    public static Bitmap loadValero(int floor) {
-        switch(floor){
-            case 1:
-                return firstFloor;
-            case 2:
-                return secondFloor;
-            default:
-                return null;
-        }
-
-    }
 }
