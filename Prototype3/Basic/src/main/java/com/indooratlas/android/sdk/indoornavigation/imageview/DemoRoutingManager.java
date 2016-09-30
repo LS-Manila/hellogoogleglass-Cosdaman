@@ -66,13 +66,14 @@ public class DemoRoutingManager {
               return  getVelascoFirstRoute(areaCode);
             case 2:
                 return getVelascoSecondRoute(areaCode);
+            case 99:
+                Log.d("area code", "area: " +  areaCode);
+                return getTestRoute(areaCode);
             default:
                 return  getVelascoFirstRoute(areaCode);
         }
 
     }
-
-
 
     private static ArrayList<Vertex> getVelascoFirstRoute(int areaCode) {
 
@@ -106,9 +107,9 @@ public class DemoRoutingManager {
         v13.adjacencies = new Edge[]{new Edge(v13, v12)};
         v14.adjacencies = new Edge[]{new Edge(v14, v5)};
 
-
         computePaths(v1);
-Log.d("Areas", "Current is Velasco 1 Area Code = " + Integer.toString(areaCode));
+
+        Log.d("Areas", "Current is Velasco 1 Area Code = " + Integer.toString(areaCode));
         if(targetAreaNumber ==areaCode)
             routeNumber = targetRoomNumber;
         else if(targetAreaNumber <areaCode)
@@ -141,8 +142,6 @@ Log.d("Areas", "Current is Velasco 1 Area Code = " + Integer.toString(areaCode))
 
     }
 
-
-
     private static ArrayList<Vertex> getVelascoSecondRoute(int areaCode) {
         Vertex v15 = new Vertex("V2-1", new Point(575,40));
         Vertex v16 = new Vertex("V2-2", new Point(534,40));
@@ -160,7 +159,6 @@ Log.d("Areas", "Current is Velasco 1 Area Code = " + Integer.toString(areaCode))
         Vertex v28 = new Vertex("V2-6", new Point(737,575));
         Vertex v29 = new Vertex("L208A", new Point(737,575));
         Vertex v30 = new Vertex("L208B", new Point(771,575));
-
 
         v15.adjacencies = new Edge[]{new Edge(v15,v16)};
         v16.adjacencies = new Edge[]{new Edge(v16,v17),new Edge(v16,v15)};
@@ -209,6 +207,63 @@ Log.d("Areas", "Current is Velasco 1 Area Code = " + Integer.toString(areaCode))
             default:
                 return getShortestPathTo(v18);
         }
+    }
+
+    private static ArrayList<Vertex> getTestRoute(int areaCode) {
+
+        Vertex v9 = new Vertex("T-9", new Point(924, 283));
+        Vertex v8 = new Vertex("T-8", new Point(815, 287));
+        Vertex v7 = new Vertex("T-7", new Point(676, 283));
+        Vertex v6 = new Vertex("T-6", new Point(554, 415));
+        Vertex v5 = new Vertex("T-5", new Point(562, 278));
+        Vertex v4 = new Vertex("T-4", new Point(554, 132));
+        Vertex v3 = new Vertex("T-3", new Point(429, 410));
+        Vertex v2 = new Vertex("T-2", new Point(420, 283));
+        Vertex v1 = new Vertex("T-1", new Point(425, 136));
+
+        v1.adjacencies = new Edge[]{new Edge(v1, v2), new Edge(v1, v4)};
+        v2.adjacencies = new Edge[]{new Edge(v2, v1), new Edge(v2, v3)};
+        v3.adjacencies = new Edge[]{new Edge(v3, v2), new Edge(v3, v6)};
+        v4.adjacencies = new Edge[]{new Edge(v4, v5), new Edge(v4, v1)};
+        v5.adjacencies = new Edge[]{new Edge(v5, v4), new Edge(v5, v6), new Edge(v5, v7)};
+        v6.adjacencies = new Edge[]{new Edge(v6, v3), new Edge(v6, v5)};
+        v7.adjacencies = new Edge[]{new Edge(v7, v5), new Edge(v7, v8)};
+        v8.adjacencies = new Edge[]{new Edge(v8, v7), new Edge(v8, v9)};
+
+        computePaths(v9);
+
+        if(targetAreaNumber ==areaCode)
+            routeNumber = targetRoomNumber;
+        else if(targetAreaNumber <areaCode)
+            return null;
+        else
+            routeNumber = -1;
+
+        switch (routeNumber) {
+            case 0:
+                return getShortestPathTo(v1);
+            case 1:
+                return getShortestPathTo(v1);
+            case 2:
+                return getShortestPathTo(v2);
+            case 3:
+                return getShortestPathTo(v3);
+            case 4:
+                return getShortestPathTo(v4);
+            case 5:
+                return getShortestPathTo(v5);
+            case 6:
+                return getShortestPathTo(v6);
+            case 7:
+                return getShortestPathTo(v7);
+            case 8:
+                return getShortestPathTo(v8);
+            case 9:
+                return getShortestPathTo(v9);
+            default:
+                return getShortestPathTo(v9);
+        }
+
     }
 
 

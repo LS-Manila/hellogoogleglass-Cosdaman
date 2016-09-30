@@ -274,7 +274,7 @@ public class ImageViewActivity extends FragmentActivity {
         mImageView.setRadius(mFloorPlan.getMetersToPixels() * dotRadius);
         mImageView.setImage(ImageSource.uri(filePath));
 		//TODO uncomment line below to show routes on map
-		//mImageView.setRoute(DemoRoutingManager.getArea());
+		mImageView.setRoute(DemoRoutingManager.getArea());
     }
 
 

@@ -101,8 +101,8 @@ public class ScanCode extends Activity {
         if (keycode == KeyEvent.KEYCODE_DPAD_CENTER) {
 
             Intent myIntent = new Intent(this, ImageViewActivity.class);
-            DemoRoutingManager.setArea(floor_Number);
-            DemoRoutingManager.setRoom(room_Number);
+            DemoRoutingManager.setArea(99);
+            DemoRoutingManager.setRoom(1);
             this.startActivity(myIntent);
 
             //Toast.makeText(getApplicationContext(), " TAPPY ", Toast.LENGTH_SHORT).show();

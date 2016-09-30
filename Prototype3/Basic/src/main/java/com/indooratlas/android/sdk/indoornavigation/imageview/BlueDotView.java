@@ -107,7 +107,7 @@ public class BlueDotView extends SubsamplingScaleImageView {
     }
 
     //TODO : draws route on map - gets route/routing nodes from DemoRoutingManager
-    /**public void setRoute(int currentArea){
+    public void setRoute(int currentArea){
 
         Log.d("ROUTE", "Drawing route to " + Integer.toString(currentArea));
         routingNodes = DemoRoutingManager.getPath(currentArea);
@@ -125,5 +125,5 @@ public class BlueDotView extends SubsamplingScaleImageView {
 
             invalidate();
         }
-    }**/
+    }
 }
