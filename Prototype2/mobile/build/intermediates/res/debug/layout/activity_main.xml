@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/turnON"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="49dp"
+        android:text="TURN ON BLUETOOTH" />
+
+    <Button
+        android:id="@+id/discoverable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/turnON"
+        android:layout_below="@+id/turnON"
+        android:layout_marginTop="10dp"
+        android:text="MAKE DEVICE DISCOVERABLE" />
+
+    <Button
+        android:id="@+id/turnOFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/discoverable"
+        android:layout_below="@+id/discoverable"
+        android:layout_marginTop="10dp"
+        android:text="TURN OFF BLUETOOTH" />
+
+    <Button
+        android:id="@+id/scanBluetooth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/turnOFF"
+        android:layout_below="@+id/turnOFF"
+        android:layout_marginTop="10dp"
+        android:text="SCAN FOR PAIRED DEVICES"
+        android:onClick="list"/>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/scanBluetooth"
+        android:layout_alignStart="@+id/scanBluetooth"
+        android:layout_below="@+id/textView2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Paired devices:"
+        android:id="@+id/textView2"
+        android:textColor="#ff34ff06"
+        android:textSize="25dp"
+        android:layout_below="@+id/scanBluetooth"
+        android:layout_alignLeft="@+id/listView"
+        android:layout_alignStart="@+id/listView" />
+</RelativeLayout><!-- From: file:/C:/Users/Cosda/Documents/GitHub/hellogoogleglass-Cosdaman/Prototype2/mobile/src/main/res/layout/activity_main.xml -->

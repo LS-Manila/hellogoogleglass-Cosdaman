@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/C:/Users/Cosda/Documents/GitHub/hellogoogleglass-Cosdaman/Prototype1/app/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="glass_card_body_height">240px</dimen>
+    <dimen name="glass_card_footer_margin">33px</dimen>
+    <dimen name="glass_card_left_column_width">240px</dimen>
+    <dimen name="glass_card_margin">40px</dimen>
+    <dimen name="glass_card_two_column_margin">30px</dimen>
+    <!-- From: file:/C:/Users/Cosda/Documents/GitHub/hellogoogleglass-Cosdaman/Prototype1/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="app_name">Glass Maps</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_main">Hello World Immersion</string>
+    <!-- From: file:/C:/Users/Cosda/Documents/GitHub/hellogoogleglass-Cosdaman/Prototype1/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="AppTheme" parent="android:Theme.DeviceDefault"/>
+</resources>

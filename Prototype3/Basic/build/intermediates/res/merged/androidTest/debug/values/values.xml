@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="indooratlas_api_key" translatable="false">89c46399-2266-4f82-8055-fb06455129c8</string>
+    <string name="indooratlas_api_secret" translatable="false">On3pBXLfuya702XsVfUhhJKZAk3pXDXZJm8ykN!bJgRPPMsODj\u0025X8v937R6YVuHNICHnxrl7QX)hrTSgDCggL3qHKBvs6i5KFRSD3C2hvJJT1lhTiN\u0025Zs00BP7dQlRta</string>
+    <string name="pubnub_publish_key" translatable="false">pub-c-871b6353-948d-4768-b94f-e52040ab85fa</string>
+    <string name="pubnub_subscribe_key" translatable="false">sub-c-a7cecd4e-822c-11e5-a49d-02ee2ddab7fe</string>
+</resources>
