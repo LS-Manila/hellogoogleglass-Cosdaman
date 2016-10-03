@@ -1,0 +1,326 @@
+[
+    {
+        "outputFile": "C:\\Users\\janlu\\StudioProjects\\IndoorNavi\\Basic\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 105,
+                    "endOffset": 156
+                },
+                "from": {
+                    "file": "C:\\Users\\janlu\\StudioProjects\\IndoorNavi\\Basic\\build\\generated\\res\\resValues\\androidTest\\debug\\values\\generated.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 160,
+                        "endColumn": 105,
+                        "endOffset": 261
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 161,
+                    "endColumn": 210,
+                    "endOffset": 367
+                },
+                "from": {
+                    "file": "C:\\Users\\janlu\\StudioProjects\\IndoorNavi\\Basic\\build\\generated\\res\\resValues\\androidTest\\debug\\values\\generated.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 267,
+                        "endColumn": 210,
+                        "endOffset": 473
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 372,
+                    "endColumn": 110,
+                    "endOffset": 478
+                },
+                "from": {
+                    "file": "C:\\Users\\janlu\\StudioProjects\\IndoorNavi\\Basic\\build\\generated\\res\\resValues\\androidTest\\debug\\values\\generated.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 479,
+                        "endColumn": 110,
+                        "endOffset": 585
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 483,
+                    "endColumn": 112,
+                    "endOffset": 591
+                },
+                "from": {
+                    "file": "C:\\Users\\janlu\\StudioProjects\\IndoorNavi\\Basic\\build\\generated\\res\\resValues\\androidTest\\debug\\values\\generated.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 591,
+                        "endColumn": 112,
+                        "endOffset": 699
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\Cosda\\Documents\\GitHub\\IndoorNavi\\Basic\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 105,
+                    "endOffset": 156
+                },
+                "from": {
+                    "file": "C:\\Users\\Cosda\\Documents\\GitHub\\IndoorNavi\\Basic\\build\\generated\\res\\resValues\\androidTest\\debug\\values\\generated.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 160,
+                        "endColumn": 105,
+                        "endOffset": 261
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 161,
+                    "endColumn": 210,
+                    "endOffset": 367
+                },
+                "from": {
+                    "file": "C:\\Users\\Cosda\\Documents\\GitHub\\IndoorNavi\\Basic\\build\\generated\\res\\resValues\\androidTest\\debug\\values\\generated.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 267,
+                        "endColumn": 210,
+                        "endOffset": 473
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 372,
+                    "endColumn": 110,
+                    "endOffset": 478
+                },
+                "from": {
+                    "file": "C:\\Users\\Cosda\\Documents\\GitHub\\IndoorNavi\\Basic\\build\\generated\\res\\resValues\\androidTest\\debug\\values\\generated.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 479,
+                        "endColumn": 110,
+                        "endOffset": 585
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 483,
+                    "endColumn": 112,
+                    "endOffset": 591
+                },
+                "from": {
+                    "file": "C:\\Users\\Cosda\\Documents\\GitHub\\IndoorNavi\\Basic\\build\\generated\\res\\resValues\\androidTest\\debug\\values\\generated.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 591,
+                        "endColumn": 112,
+                        "endOffset": 699
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\Jian Lastino\\Desktop\\IndoorNavi\\Basic\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 105,
+                    "endOffset": 156
+                },
+                "from": {
+                    "file": "C:\\Users\\Jian Lastino\\Desktop\\IndoorNavi\\Basic\\build\\generated\\res\\resValues\\androidTest\\debug\\values\\generated.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 160,
+                        "endColumn": 105,
+                        "endOffset": 261
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 161,
+                    "endColumn": 210,
+                    "endOffset": 367
+                },
+                "from": {
+                    "file": "C:\\Users\\Jian Lastino\\Desktop\\IndoorNavi\\Basic\\build\\generated\\res\\resValues\\androidTest\\debug\\values\\generated.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 267,
+                        "endColumn": 210,
+                        "endOffset": 473
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 372,
+                    "endColumn": 110,
+                    "endOffset": 478
+                },
+                "from": {
+                    "file": "C:\\Users\\Jian Lastino\\Desktop\\IndoorNavi\\Basic\\build\\generated\\res\\resValues\\androidTest\\debug\\values\\generated.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 479,
+                        "endColumn": 110,
+                        "endOffset": 585
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 483,
+                    "endColumn": 112,
+                    "endOffset": 591
+                },
+                "from": {
+                    "file": "C:\\Users\\Jian Lastino\\Desktop\\IndoorNavi\\Basic\\build\\generated\\res\\resValues\\androidTest\\debug\\values\\generated.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 591,
+                        "endColumn": 112,
+                        "endOffset": 699
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\janlu\\Documents\\StudioProjects2\\New folder\\IndoorNavi\\IndoorNavi\\Basic\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 105,
+                    "endOffset": 156
+                },
+                "from": {
+                    "file": "C:\\Users\\janlu\\Documents\\StudioProjects2\\New folder\\IndoorNavi\\IndoorNavi\\Basic\\build\\generated\\res\\resValues\\androidTest\\debug\\values\\generated.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 160,
+                        "endColumn": 105,
+                        "endOffset": 261
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 161,
+                    "endColumn": 210,
+                    "endOffset": 367
+                },
+                "from": {
+                    "file": "C:\\Users\\janlu\\Documents\\StudioProjects2\\New folder\\IndoorNavi\\IndoorNavi\\Basic\\build\\generated\\res\\resValues\\androidTest\\debug\\values\\generated.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 267,
+                        "endColumn": 210,
+                        "endOffset": 473
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 372,
+                    "endColumn": 110,
+                    "endOffset": 478
+                },
+                "from": {
+                    "file": "C:\\Users\\janlu\\Documents\\StudioProjects2\\New folder\\IndoorNavi\\IndoorNavi\\Basic\\build\\generated\\res\\resValues\\androidTest\\debug\\values\\generated.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 479,
+                        "endColumn": 110,
+                        "endOffset": 585
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 483,
+                    "endColumn": 112,
+                    "endOffset": 591
+                },
+                "from": {
+                    "file": "C:\\Users\\janlu\\Documents\\StudioProjects2\\New folder\\IndoorNavi\\IndoorNavi\\Basic\\build\\generated\\res\\resValues\\androidTest\\debug\\values\\generated.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 591,
+                        "endColumn": 112,
+                        "endOffset": 699
+                    }
+                }
+            }
+        ]
+    }
+]

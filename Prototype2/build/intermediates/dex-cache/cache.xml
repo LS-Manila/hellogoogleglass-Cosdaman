@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype2\mobile\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype2\mobile\build\intermediates\pre-dexed\debug\classes-6eee080abe694a2ac588283376b7fdcdb08b6bc6.jar" />
+    </item>
+    <item
+        jar="C:\Users\Cosda\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype2\mobile\build\intermediates\pre-dexed\debug\support-annotations-23.1.1-4013cd9de9096badd45095f57f7efa60e24e16ea.jar" />
+    </item>
+    <item
+        jar="C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype2\mobile\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype2\mobile\build\intermediates\pre-dexed\debug\internal_impl-23.1.1-bc5d2debcc9410c516e8d97c6d4d0a555e6bec9a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype2\mobile\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype2\mobile\build\intermediates\pre-dexed\debug\classes-8220ab7b6716cea2c6489e6285e1257387ff36a8.jar" />
+    </item>
+
+</items>
