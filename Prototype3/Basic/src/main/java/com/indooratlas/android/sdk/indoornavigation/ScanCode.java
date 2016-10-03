@@ -105,7 +105,6 @@ public class ScanCode extends Activity {
             DemoRoutingManager.setRoom(1);
             this.startActivity(myIntent);
 
-            //Toast.makeText(getApplicationContext(), " TAPPY ", Toast.LENGTH_SHORT).show();
             Log.d("Tap Listener", "TAPPY");
             return true;
         }
