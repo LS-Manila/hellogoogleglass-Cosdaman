@@ -1,0 +1,462 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/Lambda"
+                android:title="Lamda"
+                android:icon="@drawable/ic_glass_logo">
+                <menu>
+                    <item android:id="@+id/Lambda_Floor_1"
+                        android:title="1st Floor"
+                        android:icon="@drawable/ic_glass_logo">
+                        <menu>
+                            <item android:id="@+id/L101"
+                                android:title="L101"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L101D"
+                                android:title="L101D"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L103"
+                                android:title="L103"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L104"
+                                android:title="L104"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L105"
+                                android:title="L105"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L106"
+                                android:title="L106"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L107"
+                                android:title="L107"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L108"
+                                android:title="L108"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L109"
+                                android:title="L109"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                        </menu>
+                    </item>
+                    <item android:id="@+id/Lambda_Floor_2"
+                        android:title="2nd Floor"
+                        android:icon="@drawable/ic_glass_logo">
+                        <menu>
+                            <item android:id="@+id/L201"
+                                android:title="L201"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L202"
+                                android:title="L202"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L203"
+                                android:title="L203"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L204"
+                                android:title="L204"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L205"
+                                android:title="L205"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L206"
+                                android:title="L206"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L207"
+                                android:title="L207"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L208A"
+                                android:title="L208A"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L208B"
+                                android:title="L208B"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                        </menu>
+                    </item>
+                    <item android:id="@+id/Lambda_Floor_3"
+                        android:title="3rd Floor"
+                        android:icon="@drawable/ic_glass_logo">
+                        <menu>
+                            <item android:id="@+id/L301"
+                                android:title="L301"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L302"
+                                android:title="L302"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L303A"
+                                android:title="L303A"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L303B"
+                                android:title="L303B"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L304"
+                                android:title="L304"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L305"
+                                android:title="L305"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L306"
+                                android:title="L306"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L307"
+                                android:title="L307"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L308"
+                                android:title="L308"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L309"
+                                android:title="L309"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L310"
+                                android:title="L310"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L311"
+                                android:title="L311"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L312"
+                                android:title="L312"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L313"
+                                android:title="L313"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L314"
+                                android:title="L314"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                        </menu>
+                    </item>
+                    <item android:id="@+id/Lambda_Floor_4"
+                        android:title="4th Floor"
+                        android:icon="@drawable/ic_glass_logo">
+                        <menu>
+                            <item android:id="@+id/L401"
+                                android:title="L401"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L402"
+                                android:title="L402"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L403"
+                                android:title="L403"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L404"
+                                android:title="L404"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L405"
+                                android:title="L405"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L406"
+                                android:title="L406"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L407"
+                                android:title="L407"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L408"
+                                android:title="L408"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L409"
+                                android:title="L409"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L410A"
+                                android:title="L410A"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L410B"
+                                android:title="L410B"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L411"
+                                android:title="L411"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L412"
+                                android:title="L412"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L413"
+                                android:title="L413"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L414"
+                                android:title="L414"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L415"
+                                android:title="L415"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                        </menu>
+                    </item>
+                    <item android:id="@+id/Lamda_Floor_5"
+                        android:title="5th Floor"
+                        android:icon="@drawable/ic_glass_logo">
+                        <menu>
+                            <item android:id="@+id/L501"
+                                android:title="L501"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L502"
+                                android:title="L502"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L503"
+                                android:title="L503"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L504"
+                                android:title="L504"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L505"
+                                android:title="L505"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L506"
+                                android:title="L506"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L507"
+                                android:title="L507"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L508"
+                                android:title="L508"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L509"
+                                android:title="L509"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L510"
+                                android:title="L510"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L511"
+                                android:title="L511"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L512"
+                                android:title="L512"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/L513"
+                                android:title="L513"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                        </menu>
+                    </item>
+                </menu>
+            </item>
+    <item android:id="@+id/Xi"
+                android:title="Xi"
+                android:icon="@drawable/ic_glass_logo">
+                <menu>
+                    <item android:id="@+id/Xi_Floor_2"
+                        android:title="2nd Floor"
+                        android:icon="@drawable/ic_glass_logo">
+                        <menu>
+                            <item android:id="@+id/X201"
+                                android:title="X201"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X202"
+                                android:title="X202"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X203"
+                                android:title="X203"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X204"
+                                android:title="X204"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X205"
+                                android:title="X205"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X206"
+                                android:title="X206"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X207"
+                                android:title="X207"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X208"
+                                android:title="X208"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X209"
+                                android:title="X209"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X210"
+                                android:title="X210"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X211"
+                                android:title="X211"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X212"
+                                android:title="X212"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X213"
+                                android:title="X213"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                        </menu>
+                    </item>
+                    <item android:id="@+id/Xi_Floor_3"
+                        android:title="3rd Floor"
+                        android:icon="@drawable/ic_glass_logo">
+                        <menu>
+                            <item android:id="@+id/X301"
+                                android:title="X301"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X302"
+                                android:title="X302A"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X302B"
+                                android:title="X302B"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X303A"
+                                android:title="X303A"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X303B"
+                                android:title="X303B"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X304A"
+                                android:title="X304A"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X304B"
+                                android:title="X304B"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X305"
+                                android:title="X305"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X306A"
+                                android:title="X306A"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X306B"
+                                android:title="X306B"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X307"
+                                android:title="X307"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X308"
+                                android:title="X308"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X309"
+                                android:title="X309"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                        </menu>
+                    </item>
+                    <item android:id="@+id/Xi_Floor_4"
+                        android:title="4th Floor"
+                        android:icon="@drawable/ic_glass_logo">
+                        <menu>
+                            <item android:id="@+id/X401"
+                                android:title="X401"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X402"
+                                android:title="X402"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X403"
+                                android:title="X403"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X404"
+                                android:title="X404"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X405"
+                                android:title="X405"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X406A"
+                                android:title="X406A"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X406B"
+                                android:title="X406B"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X407"
+                                android:title="X407"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X408"
+                                android:title="X408"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X409"
+                                android:title="X409"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X410"
+                                android:title="X410"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X411"
+                                android:title="X411"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                        </menu>
+                    </item>
+                </menu>
+            </item>
+</menu>
