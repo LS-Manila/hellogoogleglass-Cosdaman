@@ -62,19 +62,23 @@ public class DemoRoutingManager {
 
         switch(areaCode)
         {
-            //targetareanumber
+            //targetroomnumber or areacode
             case 1:
-              return  getVelascoFirstRoute(areaCode);
+              return  getVelascoFirstRoute(targetRoomNumber);
             case 2:
-                return getVelascoSecondRoute(areaCode);
+                return getVelascoSecondRoute(targetRoomNumber);
             case 99:
                 Log.d("area code", "area: " +  areaCode);
+                Log.d("room", "room: " +  targetRoomNumber);
                 return getTestRoute(areaCode);
             default:
-                return  getVelascoFirstRoute(areaCode);
+                return  getVelascoFirstRoute(targetRoomNumber);
         }
 
     }
+
+    //switch case default is stairs, the if statements check for validity of floor.
+    //route to default if current floor is not floor
 
     private static ArrayList<Vertex> getVelascoFirstRoute(int areaCode) {
 
@@ -233,9 +237,9 @@ public class DemoRoutingManager {
 
         computePaths(v9);
 
-        if(targetAreaNumber ==areaCode)
+        if(targetAreaNumber == areaCode)
             routeNumber = targetRoomNumber;
-        else if(targetAreaNumber <areaCode)
+        else if(targetAreaNumber < areaCode)
             return null;
         else
             routeNumber = -1;

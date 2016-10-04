@@ -4,12 +4,12 @@
         "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\22.2.0\\res\\drawable-hdpi\\ic_media_route_disabled_mono_dark.png"
     },
     {
-        "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\common_signin_btn_icon_pressed_dark.9.png",
-        "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.1.0\\res\\drawable-hdpi\\common_signin_btn_icon_pressed_dark.9.png"
-    },
-    {
         "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_divider_mtrl_alpha.9.png",
         "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_list_divider_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\common_signin_btn_icon_pressed_dark.9.png",
+        "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\8.1.0\\res\\drawable-hdpi\\common_signin_btn_icon_pressed_dark.9.png"
     },
     {
         "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_setting_dark.png",
@@ -44,20 +44,20 @@
         "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_list_focused_holo.9.png"
     },
     {
-        "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_ab_back_mtrl_am_alpha.png",
-        "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_ic_ab_back_mtrl_am_alpha.png"
-    },
-    {
         "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_cast_light.png",
         "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\22.2.0\\res\\drawable-hdpi\\ic_cast_light.png"
     },
     {
-        "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_000.png",
-        "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_btn_radio_to_on_mtrl_000.png"
+        "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_ab_back_mtrl_am_alpha.png",
+        "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_ic_ab_back_mtrl_am_alpha.png"
     },
     {
         "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png",
         "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_scrubber_control_off_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_000.png",
+        "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_btn_radio_to_on_mtrl_000.png"
     },
     {
         "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_light.9.png",
@@ -92,12 +92,12 @@
         "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\22.2.0\\res\\drawable-hdpi\\ic_cast_on_light.png"
     },
     {
-        "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_person_outline_white_36dp.png",
-        "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\src\\main\\res\\drawable-hdpi\\ic_person_outline_white_36dp.png"
-    },
-    {
         "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_media_route_on_0_mono_dark.png",
         "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\22.2.0\\res\\drawable-hdpi\\ic_media_route_on_0_mono_dark.png"
+    },
+    {
+        "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_person_outline_white_36dp.png",
+        "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\src\\main\\res\\drawable-hdpi\\ic_person_outline_white_36dp.png"
     },
     {
         "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\common_signin_btn_text_pressed_dark.9.png",
@@ -156,12 +156,12 @@
         "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_clear_mtrl_alpha.png",
-        "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_ic_clear_mtrl_alpha.png"
-    },
-    {
         "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\mr_ic_audio_vol.png",
         "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\22.2.0\\res\\drawable-hdpi\\mr_ic_audio_vol.png"
+    },
+    {
+        "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_clear_mtrl_alpha.png",
+        "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-hdpi\\abc_ic_clear_mtrl_alpha.png"
     },
     {
         "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png",

@@ -28,24 +28,24 @@
         "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\drawable-xhdpi\\abc_ic_go_search_api_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_media_play.png",
-        "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\22.2.0\\res\\drawable-xhdpi\\ic_media_play.png"
-    },
-    {
         "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_play_light.png",
         "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\22.2.0\\res\\drawable-xhdpi\\ic_play_light.png"
+    },
+    {
+        "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_media_play.png",
+        "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\22.2.0\\res\\drawable-xhdpi\\ic_media_play.png"
     },
     {
         "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_cast_light.png",
         "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\22.2.0\\res\\drawable-xhdpi\\ic_cast_light.png"
     },
     {
-        "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\map_blue_dot.png",
-        "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\src\\main\\res\\drawable-xhdpi\\map_blue_dot.png"
-    },
-    {
         "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_media_route_off_mono_dark.png",
         "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\mediarouter-v7\\22.2.0\\res\\drawable-xhdpi\\ic_media_route_off_mono_dark.png"
+    },
+    {
+        "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\map_blue_dot.png",
+        "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\src\\main\\res\\drawable-xhdpi\\map_blue_dot.png"
     },
     {
         "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\common_full_open_on_phone.png",

@@ -296,23 +296,19 @@ public class ImageViewActivity extends FragmentActivity {
                         String fileName = mFloorPlan.getId().substring(0, 4) + ".png";
                         String filePath = "storage/emulated/legacy/Download/Maps/" + fileName;
 
-
                         try {
                             showFloorPlanImage(filePath);
-                        } catch(Exception e){
-                            Toast.makeText(ImageViewActivity.this, "No Map Present", Toast.LENGTH_SHORT)
-                                .show();
+                        }
+                        catch(Exception e){
+                            Toast.makeText(ImageViewActivity.this, "No Map Present", Toast.LENGTH_SHORT).show();
+                        }
                     }
-
-
-                    } else {
+                    else {
                         // do something with error
                         if (!asyncResult.isCancelled()) {
-                            Toast.makeText(ImageViewActivity.this,
-                                    (result.getError() != null
+                            Toast.makeText(ImageViewActivity.this,(result.getError() != null
                                             ? "error loading floor plan: " + result.getError()
-                                            : "access to floor plan denied"), Toast.LENGTH_LONG)
-                                    .show();
+                                            : "access to floor plan denied"), Toast.LENGTH_LONG).show();
                         }
                     }
                 }

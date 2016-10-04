@@ -58,7 +58,9 @@ public class BlueDotView extends SubsamplingScaleImageView {
         if (!isReady()) {
             return;
         }
-    Log.d("CANVAS", Integer.toString(canvas.getWidth()) + Integer.toString(canvas.getHeight()));
+
+        Log.d("CANVAS", Integer.toString(canvas.getWidth()) + Integer.toString(canvas.getHeight()));
+
         if (dotCenter != null) {
             PointF vPoint = sourceToViewCoord(dotCenter);
             float scaledRadius = getScale() * radius;

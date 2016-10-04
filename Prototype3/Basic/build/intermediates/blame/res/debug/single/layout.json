@@ -16,28 +16,28 @@
         "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\notification_template_big_media.xml"
     },
     {
-        "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
-        "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_select_dialog_material.xml"
+        "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\layout\\list_group.xml",
+        "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\src\\main\\res\\layout\\list_group.xml"
     },
     {
         "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_text.xml",
         "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.0.1\\res\\layout\\design_layout_tab_text.xml"
     },
     {
-        "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\layout\\list_group.xml",
-        "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\src\\main\\res\\layout\\list_group.xml"
+        "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
+        "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_select_dialog_material.xml"
     },
     {
         "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
         "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_expanded_menu_layout.xml"
     },
     {
-        "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
-        "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_popup_menu_item_layout.xml"
-    },
-    {
         "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
         "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
+        "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.0\\res\\layout\\abc_popup_menu_item_layout.xml"
     },
     {
         "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
