@@ -64,15 +64,15 @@ public class DemoRoutingManager {
         {
             //targetroomnumber or areacode
             case 1:
-              return  getVelascoFirstRoute(targetRoomNumber);
+              return  getVelascoFirstRoute(areaCode);
             case 2:
-                return getVelascoSecondRoute(targetRoomNumber);
+                return getVelascoSecondRoute(areaCode);
             case 99:
                 Log.d("area code", "area: " +  areaCode);
                 Log.d("room", "room: " +  targetRoomNumber);
                 return getTestRoute(areaCode);
             default:
-                return  getVelascoFirstRoute(targetRoomNumber);
+                return  getVelascoFirstRoute(areaCode);
         }
 
     }
