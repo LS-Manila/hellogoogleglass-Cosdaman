@@ -63,16 +63,19 @@ public class DemoRoutingManager {
         switch(areaCode)
         {
             //targetroomnumber or areacode
-            case 1:
+           /* case 1:
               return  getVelascoFirstRoute(areaCode);
             case 2:
-                return getVelascoSecondRoute(areaCode);
-            case 99:
+                return getVelascoSecondRoute(areaCode); */
+            case 1:
                 Log.d("area code", "area: " +  areaCode);
                 Log.d("room", "room: " +  targetRoomNumber);
+                Log.d("case", "got into test case 1");
                 return getTestRoute(areaCode);
+
             default:
-                return  getVelascoFirstRoute(areaCode);
+                Log.d("case", "got into default case");
+                return  getTestRoute(areaCode);
         }
 
     }
@@ -80,7 +83,7 @@ public class DemoRoutingManager {
     //switch case default is stairs, the if statements check for validity of floor.
     //route to default if current floor is not floor
 
-    private static ArrayList<Vertex> getVelascoFirstRoute(int areaCode) {
+    /*private static ArrayList<Vertex> getVelascoFirstRoute(int areaCode) {
 
         Vertex v1 = new Vertex("V1-1", new Point(524,15));
         Vertex v2 = new Vertex("V1-2", new Point(524,290));
@@ -212,7 +215,7 @@ public class DemoRoutingManager {
             default:
                 return getShortestPathTo(v18);
         }
-    }
+    } */
 
     private static ArrayList<Vertex> getTestRoute(int areaCode) {
 
