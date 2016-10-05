@@ -41,44 +41,28 @@
         <entry file="file://$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/imageview/ImageViewActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="321" column="9" selection-start-line="321" selection-start-column="9" selection-end-line="321" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#5556#5557#0" expanded="false" />
-                <element signature="e#5620#5621#0" expanded="false" />
-              </folding>
+              <caret line="52" column="53" selection-start-line="52" selection-start-column="53" selection-end-line="52" selection-end-column="53" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlueDotView.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BlueDotView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/imageview/BlueDotView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="95" column="56" selection-start-line="95" selection-start-column="55" selection-end-line="95" selection-end-column="56" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1137#1138#0" expanded="false" />
-                <element signature="e#1173#1174#0" expanded="false" />
-                <element signature="e#1223#1224#0" expanded="false" />
-                <element signature="e#1265#1266#0" expanded="false" />
-                <element signature="e#1308#1309#0" expanded="false" />
-                <element signature="e#1343#1344#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.60928965">
+              <caret line="55" column="29" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DemoRoutingManager.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DemoRoutingManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/imageview/DemoRoutingManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.577079">
+            <state vertical-scroll-proportion="0.0">
               <caret line="65" column="21" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#791#799#0" expanded="false" />
-                <element signature="e#1548#1556#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -89,13 +73,13 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="116" column="48" selection-start-line="116" selection-start-column="48" selection-end-line="116" selection-end-column="48" />
               <folding>
+                <element signature="imports" expanded="false" />
                 <element signature="e#1315#1316#0" expanded="false" />
                 <element signature="e#1355#1356#0" expanded="false" />
                 <element signature="e#1428#1429#0" expanded="false" />
                 <element signature="e#1472#1473#0" expanded="false" />
                 <element signature="e#1579#1580#0" expanded="false" />
                 <element signature="e#1623#1624#0" expanded="false" />
-                <marker date="1475652921147" expanded="false" signature="62:767" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -2249,9 +2233,9 @@
         <option value="$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/imageview/BlueDotView.java" />
         <option value="$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/imageview/RoomSelection.java" />
         <option value="$PROJECT_DIR$/Basic/src/main/res/menu/mainmenuoptions.xml" />
-        <option value="$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/imageview/ImageViewActivity.java" />
         <option value="$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/GlassMain.java" />
         <option value="$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/imageview/DemoRoutingManager.java" />
+        <option value="$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/imageview/ImageViewActivity.java" />
       </list>
     </option>
   </component>
@@ -2395,6 +2379,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="ProjectPane" />
       <pane id="Scratches" />
       <pane id="PackagesPane">
         <subPane>
@@ -2406,7 +2391,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2634,10 +2618,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="3032" height="1826" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963446" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2545692" sideWeight="0.4986292" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2545692" sideWeight="0.4986292" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -2647,7 +2631,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32898173" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963446" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967785" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32767624" sideWeight="0.4986292" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32767624" sideWeight="0.4986292" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32767624" sideWeight="0.5013708" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19294037" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -2762,11 +2746,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="24" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#791#799#0" expanded="false" />
-            <element signature="e#1548#1556#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2869,15 +2849,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1137#1138#0" expanded="false" />
-            <element signature="e#1173#1174#0" expanded="false" />
-            <element signature="e#1223#1224#0" expanded="false" />
-            <element signature="e#1265#1266#0" expanded="false" />
-            <element signature="e#1308#1309#0" expanded="false" />
-            <element signature="e#1343#1344#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2885,11 +2857,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="5" selection-start-line="14" selection-start-column="4" selection-end-line="19" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#791#799#0" expanded="false" />
-            <element signature="e#1548#1556#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2909,13 +2877,6 @@
             <element signature="e#557#558#0" expanded="false" />
             <element signature="e#626#627#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/glassfunc/GlassMenuSwitch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2704918">
-          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -3108,18 +3069,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/imageview/ImageViewActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="321" column="9" selection-start-line="321" selection-start-column="9" selection-end-line="321" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#5556#5557#0" expanded="false" />
-            <element signature="e#5620#5621#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/NavigateDisplay.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3141,42 +3090,38 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="116" column="48" selection-start-line="116" selection-start-column="48" selection-end-line="116" selection-end-column="48" />
           <folding>
+            <element signature="imports" expanded="false" />
             <element signature="e#1315#1316#0" expanded="false" />
             <element signature="e#1355#1356#0" expanded="false" />
             <element signature="e#1428#1429#0" expanded="false" />
             <element signature="e#1472#1473#0" expanded="false" />
             <element signature="e#1579#1580#0" expanded="false" />
             <element signature="e#1623#1624#0" expanded="false" />
-            <marker date="1475652921147" expanded="false" signature="62:767" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/imageview/BlueDotView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="95" column="56" selection-start-line="95" selection-start-column="55" selection-end-line="95" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1137#1138#0" expanded="false" />
-            <element signature="e#1173#1174#0" expanded="false" />
-            <element signature="e#1223#1224#0" expanded="false" />
-            <element signature="e#1265#1266#0" expanded="false" />
-            <element signature="e#1308#1309#0" expanded="false" />
-            <element signature="e#1343#1344#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/imageview/DemoRoutingManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.577079">
+        <state vertical-scroll-proportion="0.0">
           <caret line="65" column="21" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#791#799#0" expanded="false" />
-            <element signature="e#1548#1556#0" expanded="false" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/imageview/ImageViewActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="52" column="53" selection-start-line="52" selection-start-column="53" selection-end-line="52" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/imageview/BlueDotView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.60928965">
+          <caret line="55" column="29" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>

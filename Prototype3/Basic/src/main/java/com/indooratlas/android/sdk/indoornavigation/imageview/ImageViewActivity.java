@@ -51,13 +51,9 @@ import java.util.TimerTask;
 public class ImageViewActivity extends FragmentActivity {
 
     private static final String TAG = "Main Program";
-
     private static final int REQUEST_CODE_WRITE_EXTERNAL_STORAGE = 1;
     private static final int REQUEST_CODE_ACCESS_COARSE_LOCATION = 1;
-
-    // blue dot radius in meters
-    private static final float dotRadius = 1.0f;
-
+    private static final float dotRadius = 1.0f;     // blue dot radius in meters
     private IALocationManager mIALocationManager;
     private IAResourceManager mFloorPlanManager;
     private IATask<IAFloorPlan> mPendingAsyncResult;
@@ -117,9 +113,7 @@ public class ImageViewActivity extends FragmentActivity {
         setContentView(R.layout.activity_image_view);
         // prevent the screen going to sleep while app is on foreground
         findViewById(android.R.id.content).setKeepScreenOn(true);
-
-         mImageView = (BlueDotView) findViewById(R.id.imageView);
-
+        mImageView = (BlueDotView) findViewById(R.id.imageView);
         mDownloadManager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
         mIALocationManager = IALocationManager.create(this);
         mFloorPlanManager = IAResourceManager.create(this);
