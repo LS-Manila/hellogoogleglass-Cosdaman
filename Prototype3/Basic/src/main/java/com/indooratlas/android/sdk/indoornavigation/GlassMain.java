@@ -16,6 +16,7 @@ import com.google.android.glass.view.WindowUtils;
 import com.google.android.glass.widget.CardBuilder;
 import com.google.android.glass.widget.CardScrollAdapter;
 import com.google.android.glass.widget.CardScrollView;
+import com.indooratlas.android.sdk.indoornavigation.imageview.DemoRoutingManager;
 import com.indooratlas.android.sdk.indoornavigation.imageview.ImageViewActivity;
 
 public class GlassMain extends Activity {
@@ -109,6 +110,13 @@ public class GlassMain extends Activity {
                 case R.id.navigate_menu_item:
                     Intent intent2 = new Intent(GlassMain.this, NavigateDisplay.class);
                     startActivity(intent2);
+                    break;
+
+                case R.id.test_menu_item:
+                    Intent myIntent = new Intent(this, ImageViewActivity.class);
+                    DemoRoutingManager.setArea(99);
+                    DemoRoutingManager.setRoom(1);
+                    this.startActivity(myIntent);
                     break;
 
             }
