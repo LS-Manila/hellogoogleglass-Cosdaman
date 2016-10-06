@@ -229,15 +229,15 @@ public class DemoRoutingManager {
         Vertex v2 = new Vertex("T-2", new Point(420, 283));
         Vertex v1 = new Vertex("T-1", new Point(425, 136));*/
 
-        Vertex v9 = new Vertex("T-9", new Point(424, 183));
-        Vertex v8 = new Vertex("T-8", new Point(315, 187));
-        Vertex v7 = new Vertex("T-7", new Point(276, 183));
-        Vertex v6 = new Vertex("T-6", new Point(154, 115));
-        Vertex v5 = new Vertex("T-5", new Point(162, 178));
-        Vertex v4 = new Vertex("T-4", new Point(154, 132));
-        Vertex v3 = new Vertex("T-3", new Point(29, 10));
-        Vertex v2 = new Vertex("T-2", new Point(20, 283));
         Vertex v1 = new Vertex("T-1", new Point(25, 36));
+        Vertex v2 = new Vertex("T-2", new Point(20, 283));
+        Vertex v3 = new Vertex("T-3", new Point(29, 10));
+        Vertex v4 = new Vertex("T-4", new Point(154, 132));
+        Vertex v5 = new Vertex("T-5", new Point(162, 178));
+        Vertex v6 = new Vertex("T-6", new Point(154, 115));
+        Vertex v7 = new Vertex("T-7", new Point(276, 183));
+        Vertex v8 = new Vertex("T-8", new Point(315, 187));
+        Vertex v9 = new Vertex("T-9", new Point(424, 183));
 
         v1.adjacencies = new Edge[]{new Edge(v1, v2), new Edge(v1, v4)};
         v2.adjacencies = new Edge[]{new Edge(v2, v1), new Edge(v2, v3)};
@@ -247,6 +247,7 @@ public class DemoRoutingManager {
         v6.adjacencies = new Edge[]{new Edge(v6, v3), new Edge(v6, v5)};
         v7.adjacencies = new Edge[]{new Edge(v7, v5), new Edge(v7, v8)};
         v8.adjacencies = new Edge[]{new Edge(v8, v7), new Edge(v8, v9)};
+        v9.adjacencies = new Edge[]{new Edge(v9, v8)};
 
         computePaths(v9);
 

@@ -16,7 +16,6 @@ import com.google.android.glass.view.WindowUtils;
 import com.google.android.glass.widget.CardBuilder;
 import com.google.android.glass.widget.CardScrollAdapter;
 import com.google.android.glass.widget.CardScrollView;
-import com.indooratlas.android.sdk.indoornavigation.glassfunc.GlassMenuSwitch;
 import com.indooratlas.android.sdk.indoornavigation.imageview.DemoRoutingManager;
 
 public class NavigateDisplay extends Activity {
