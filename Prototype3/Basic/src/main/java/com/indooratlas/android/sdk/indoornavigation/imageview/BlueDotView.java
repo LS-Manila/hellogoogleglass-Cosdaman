@@ -92,7 +92,7 @@ public class BlueDotView extends SubsamplingScaleImageView {
         //TODO: draws arrow head and destination images on map
         if(!routingPath.isEmpty()) {
             //areaCode = 1;
-           canvas.drawPath(routingPath, GraphicsManager.linePaint);
+           //canvas.drawPath(routingPath, GraphicsManager.linePaint);
             try {
                 PointF asd =  sourceToViewCoord(routingNodes.get(0).coordinate.x,routingNodes.get(0).coordinate.y);
               //  canvas.drawBitmap(GraphicsManager.arrowhead, asd.x,asd.y, new Paint());
