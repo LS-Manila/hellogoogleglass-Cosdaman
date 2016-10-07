@@ -92,16 +92,15 @@ public class BlueDotView extends SubsamplingScaleImageView {
         //TODO: draws arrow head and destination images on map
         if(!routingPath.isEmpty()) {
             //areaCode = 1;
-           //canvas.drawPath(routingPath, GraphicsManager.linePaint);
+           canvas.drawPath(routingPath, GraphicsManager.linePaint);
             try {
                 PointF asd =  sourceToViewCoord(routingNodes.get(0).coordinate.x,routingNodes.get(0).coordinate.y);
-              //  canvas.drawBitmap(GraphicsManager.arrowhead, asd.x,asd.y, new Paint());
-              //  canvas.drawBitmap(GraphicsManager.arrowhead, (float) Math.floor(routingNodes.get(0).coordinate.x * ratio) - (float) Math.floor(GraphicsManager.XOFFSET * ratio), (float) Math.floor(routingNodes.get(0).coordinate.y * ratio2) - (float) Math.floor(GraphicsManager.YOFFSET * ratio), new Paint());
-                /*if (areaCode != DemoRoutingManager.getArea())
+                canvas.drawBitmap(GraphicsManager.arrowhead, asd.x,asd.y, new Paint());
+                canvas.drawBitmap(GraphicsManager.arrowhead, (float) Math.floor(routingNodes.get(0).coordinate.x * ratio) - (float) Math.floor(GraphicsManager.XOFFSET * ratio), (float) Math.floor(routingNodes.get(0).coordinate.y * ratio2) - (float) Math.floor(GraphicsManager.YOFFSET * ratio), new Paint());
+                if (areaCode != DemoRoutingManager.getArea())
                     canvas.drawBitmap(GraphicsManager.exit, (float) Math.floor(routingNodes.get(routingNodes.size() - 1).coordinate.x * ratio) - (float) Math.floor(16 * ratio), (float) Math.floor(routingNodes.get(routingNodes.size() - 1).coordinate.y * ratio2) - (float) Math.floor(23 * ratio), new Paint());
                 else
                     canvas.drawBitmap(GraphicsManager.parkHere, (float) Math.floor(routingNodes.get(routingNodes.size() - 1).coordinate.x * ratio) - (float) Math.floor(16 * ratio), (float) Math.floor(routingNodes.get(routingNodes.size() - 1).coordinate.y * ratio2) - (float) Math.floor(23 * ratio), new Paint());
-*/
             }
             catch (Exception e) {
                 e.printStackTrace();
