@@ -15,6 +15,7 @@ allprojects {
     repositories {
         jcenter()
         mavenCentral()
+        mavenLocal()
         maven {
             url "http://indooratlas-ltd.bintray.com/mvn-public"
         }

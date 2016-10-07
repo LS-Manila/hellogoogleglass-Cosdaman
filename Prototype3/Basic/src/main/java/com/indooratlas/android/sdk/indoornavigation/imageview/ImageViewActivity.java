@@ -66,7 +66,7 @@ public class ImageViewActivity extends FragmentActivity {
     private Handler mTimerHandler = new Handler();
     private ConnectivityManager cm;
     public ImageView badconnection;
-    private static final float ratio= GraphicsManager.XRATIO, ratio2= GraphicsManager.YRATIO;
+//    private static final float ratio= GraphicsManager.XRATIO, ratio2= GraphicsManager.YRATIO;
     private ArrayList<Vertex> routingNodes = new ArrayList<Vertex>(){{add(new Vertex("def", new Point(0,0)));}};
     private DemoRoutingManager demoRoutingManager;
     public TextView altitudeTextView;

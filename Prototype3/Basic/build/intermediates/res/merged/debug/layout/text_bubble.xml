@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:background="@drawable/bubble_white"
     android:orientation="vertical">
 
     <com.google.maps.android.ui.RotationLayout
@@ -17,8 +18,9 @@
             android:paddingBottom="5dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:paddingTop="5dp"/>
+            android:paddingTop="5dp"
+            android:textAppearance="@style/Bubble.TextAppearance.Dark" />
 
     </com.google.maps.android.ui.RotationLayout>
 
-</LinearLayout><!-- From: file:/usr/local/google/home/macd/code/android-maps-utils/library/res/layout/text_bubble.xml -->
+</LinearLayout><!-- From: file:/Users/cbro/src/android-maps-utils/library/res/layout/text_bubble.xml -->

@@ -29,8 +29,6 @@ public class GraphicsManager {
     public static Bitmap parkHere;
           //  DEVICE_WIDTH,DEVICE_HEIGHT,BITMAP_HEIGHT=513,BITMAP_WIDTH=959;
 
-
-
     public static void initalizeGraphics(Context myContext) {
         DisplayMetrics metrics = myContext.getResources().getDisplayMetrics();
         BitmapFactory.Options dimensions = new BitmapFactory.Options();
@@ -123,26 +121,25 @@ public class GraphicsManager {
 
 
         linePaint = new Paint();
-        CornerPathEffect cornerPathEffect =
-                new CornerPathEffect(borderRadius);
+        //CornerPathEffect cornerPathEffect = new CornerPathEffect(borderRadius);
         //Initialize line Style
         linePaint.setColor(Color.parseColor("#2b81cd"));
         linePaint.setStrokeWidth(15);
-        linePaint.setPathEffect(cornerPathEffect);
+        //linePaint.setPathEffect(cornerPathEffect);
         linePaint.setStyle(Paint.Style.STROKE);
 
 
         endpointPaint = new Paint();
         endpointPaint.setColor(Color.RED);
         endpointPaint.setStrokeWidth(5);
-        endpointPaint.setPathEffect(cornerPathEffect);
+        //endpointPaint.setPathEffect(cornerPathEffect);
         endpointPaint.setStyle(Paint.Style.FILL);
 
 
         startpointPaint = new Paint();
         startpointPaint.setColor(Color.GREEN);
         startpointPaint.setStrokeWidth(5);
-        startpointPaint.setPathEffect(cornerPathEffect);
+        //startpointPaint.setPathEffect(cornerPathEffect);
         startpointPaint.setStyle(Paint.Style.FILL);
 
         vacantPaint = new Paint();
