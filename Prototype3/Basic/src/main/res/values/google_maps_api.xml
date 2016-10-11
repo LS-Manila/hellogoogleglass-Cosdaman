@@ -1,6 +1,13 @@
 <resources>
 
-    <string name="google_maps_key" translatable="false" templateMergeStrategy="preserve">
+    <string name="google_maps_key_osbert" translatable="false" templateMergeStrategy="preserve">
         AIzaSyDxKbdk5uAlIiGQSZC_TciRI8BtpAepKOs
     </string>
+    <string name="google_maps_key_dan" translatable="false" templateMergeStrategy="preserve">
+        AIzaSyDcpx57s5UQOKiWJLVuEo8ThRYJEVx3GsY
+    </string>
+    <string name="google_maps_key" translatable="false" templateMergeStrategy="preserve">
+        AIzaSyAl_FR310wQBgPyyemwbrHbC9taQEvDgM8
+    </string>
+
 </resources>

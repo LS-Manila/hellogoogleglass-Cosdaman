@@ -16,6 +16,7 @@ import com.google.android.glass.view.WindowUtils;
 import com.google.android.glass.widget.CardBuilder;
 import com.google.android.glass.widget.CardScrollAdapter;
 import com.google.android.glass.widget.CardScrollView;
+import com.indooratlas.android.sdk.indoornavigation.outdoor.MapsActivity;
 import com.indooratlas.android.sdk.indoornavigation.imageview.DemoRoutingManager;
 import com.indooratlas.android.sdk.indoornavigation.imageview.GraphicsManager;
 import com.indooratlas.android.sdk.indoornavigation.imageview.ImageViewActivity;
@@ -28,8 +29,10 @@ public class GlassMain extends Activity {
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
+        //initialize graphics
         GraphicsManager.initalizeGraphics(getApplicationContext());
         mView = buildView();
+        //flags
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         getWindow().requestFeature(WindowUtils.FEATURE_VOICE_COMMANDS);
 
@@ -58,6 +61,7 @@ public class GlassMain extends Activity {
                 return AdapterView.INVALID_POSITION;
             }
         });
+        //set menu to open on click
         mCardScroller.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -80,6 +84,7 @@ public class GlassMain extends Activity {
     }
 
     private View buildView() { //contents of main menu
+
         CardBuilder card = new CardBuilder(this, CardBuilder.Layout.COLUMNS);
         card.setText("Welcome to the Main Menu");
         card.setIcon(R.drawable.ic_glass_logo);
@@ -115,9 +120,12 @@ public class GlassMain extends Activity {
                     break;
 
                 case R.id.test_menu_item:
-                    Intent myIntent = new Intent(this, ImageViewActivity.class);
+                /*
+                Intent myIntent = new Intent(this, ImageViewActivity.class);
                     DemoRoutingManager.setArea(4);
                     DemoRoutingManager.setRoom(8);
+                    */
+                    Intent myIntent = new Intent(this, MapsActivity.class);
                     this.startActivity(myIntent);
                     break;
 

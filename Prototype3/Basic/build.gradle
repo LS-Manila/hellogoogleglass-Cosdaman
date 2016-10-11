@@ -23,6 +23,11 @@ android {
         resValue "string", "pubnub_publish_key", pubNubPublishKey
         resValue "string", "pubnub_subscribe_key", pubNubSubscribeKey
     }
+    dexOptions {
+    //    jumboMode = true
+    //    javaMaxHeapSize "4g"
+    }
+
 
     signingConfigs {
         debug {
@@ -61,4 +66,5 @@ dependencies {
     compile 'com.android.support:design:23.0.1'
     compile files('libs/gdk.jar')
     compile 'com.google.zxing:core:3.0.1'
-    }
+    //compile 'com.android.support:multidex:1.0.0'
+}

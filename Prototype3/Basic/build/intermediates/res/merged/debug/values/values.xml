@@ -324,7 +324,7 @@
     <string name="accept">Accept</string>
     <string name="action_clear">Clear</string>
     <string name="action_share">Share...</string>
-    <string name="app_name">Image View</string>
+    <string name="app_name">Glass Thesis</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="auth_google_play_services_client_facebook_display_name">Facebook</string>
     <string name="auth_google_play_services_client_google_display_name">Google</string>
@@ -388,6 +388,12 @@
     <string name="example_simple_description">Demonstrates basic functionality, shows events as text entries.</string>
     <string name="example_simple_title">01. Simple</string>
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
+        AIzaSyAl_FR310wQBgPyyemwbrHbC9taQEvDgM8
+    </string>
+    <string name="google_maps_key_dan" templateMergeStrategy="preserve" translatable="false">
+        AIzaSyDcpx57s5UQOKiWJLVuEo8ThRYJEVx3GsY
+    </string>
+    <string name="google_maps_key_osbert" templateMergeStrategy="preserve" translatable="false">
         AIzaSyDxKbdk5uAlIiGQSZC_TciRI8BtpAepKOs
     </string>
     <string name="hello_world">Hello world!</string>
@@ -426,7 +432,6 @@
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
     <style name="Animation.AppCompat.DropDownUp" parent="Base.Animation.AppCompat.DropDownUp"/>
     <style name="AppTheme" parent="android:Theme.DeviceDefault">
-        <!-- Customize your theme here. -->
     </style>
     <style name="Base.AlertDialog.AppCompat" parent="android:Widget">
         <item name="android:layout">@layout/abc_alert_dialog_material</item>

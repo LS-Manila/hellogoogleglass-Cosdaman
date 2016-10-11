@@ -3,22 +3,24 @@
     package="com.indooratlas.android.sdk.indoornavigation" >
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="com.google.android.glass.permission.DEVELOPMENT" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <!-- Permissions required for GCM -->
-    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <!-- Optional permission for App measurement to run. -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
     <uses-permission android:name="android.permission.CAMERA"/>
+
 
     <uses-feature
         android:name="android.hardware.sensor.accelerometer"
@@ -60,10 +62,8 @@
             android:screenOrientation="landscape" >
         </activity>
 
-        <activity
-            android:name="com.indooratlas.android.sdk.indoornavigation.sharelocation.ShareLocationActivity" >
+        <activity android:name="com.indooratlas.android.sdk.indoornavigation.sharelocation.ShareLocationActivity" >
         </activity>
-
         <activity android:name="com.indooratlas.android.sdk.indoornavigation.imageview.RoomSelection" >
         </activity>
 
@@ -114,6 +114,12 @@
 
         <activity
             android:name="NavigateDisplay"
+            android:icon="@drawable/ic_glass_logo"
+            android:label="Navi" >
+        </activity>
+
+        <activity
+            android:name=".outdoor.MapsActivity"
             android:icon="@drawable/ic_glass_logo"
             android:label="Navi" >
         </activity>
