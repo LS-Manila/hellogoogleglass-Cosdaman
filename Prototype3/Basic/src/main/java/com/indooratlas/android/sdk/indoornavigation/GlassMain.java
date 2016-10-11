@@ -125,8 +125,8 @@ public class GlassMain extends Activity {
                     DemoRoutingManager.setArea(4);
                     DemoRoutingManager.setRoom(8);
                     */
-                    Intent myIntent = new Intent(this, MapsActivity.class);
-                    this.startActivity(myIntent);
+                    //Intent myIntent = new Intent(this, MapsActivity.class);
+                    //this.startActivity(myIntent);
                     break;
 
             }

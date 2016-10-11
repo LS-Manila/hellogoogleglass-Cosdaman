@@ -36,10 +36,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MapsActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MapsActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/outdoor/MapsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5235351">
+            <state vertical-scroll-proportion="-9.561403">
               <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -78,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GlassMain.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GlassMain.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/GlassMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.84153">
+              <caret line="128" column="22" selection-start-line="128" selection-start-column="22" selection-end-line="128" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -2162,12 +2162,12 @@
         <option value="$PROJECT_DIR$/Basic/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/Basic/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/Basic/src/main/res/values/config.xml" />
-        <option value="$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/GlassMain.java" />
         <option value="$PROJECT_DIR$/Basic/src/main/res/values/google_maps_api.xml" />
         <option value="$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/outdoor/MapsActivity.java" />
         <option value="$PROJECT_DIR$/Basic/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/gradle.properties" />
         <option value="$PROJECT_DIR$/Basic/build.gradle" />
+        <option value="$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/GlassMain.java" />
       </list>
     </option>
   </component>
@@ -3071,21 +3071,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/GlassMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/outdoor/MapsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5235351">
+        <state vertical-scroll-proportion="-9.561403">
           <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/GlassMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.84153">
+          <caret line="128" column="22" selection-start-line="128" selection-start-column="22" selection-end-line="128" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
