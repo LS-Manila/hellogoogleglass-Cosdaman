@@ -16,12 +16,12 @@
         "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_48dp.png"
     },
     {
-        "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\quantum_ic_volume_mute_white_36.png",
-        "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.4.0\\res\\drawable-xxxhdpi-v4\\quantum_ic_volume_mute_white_36.png"
-    },
-    {
         "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\quantum_ic_replay_30_white_24.png",
         "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.4.0\\res\\drawable-xxxhdpi-v4\\quantum_ic_replay_30_white_24.png"
+    },
+    {
+        "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\quantum_ic_volume_mute_white_36.png",
+        "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.4.0\\res\\drawable-xxxhdpi-v4\\quantum_ic_volume_mute_white_36.png"
     },
     {
         "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_ic_search_api_mtrl_alpha.png",

@@ -23,8 +23,6 @@ public class DemoRoutingManager {
         return targetAreaNumber;
     }
 
-
-
     private static void computePaths(Vertex source) {
         source.minDistance = 0.;
         PriorityQueue<Vertex> vertexQueue = new PriorityQueue<Vertex>();
@@ -62,28 +60,22 @@ public class DemoRoutingManager {
 
         switch(areaCode)
         {
-            //targetroomnumber or areacode
-           /* case 1:
-              return  getVelascoFirstRoute(areaCode);
-            case 2:
-                return getVelascoSecondRoute(areaCode); */
             case 1:
-                Log.d("area code", "area: " +  areaCode);
-                Log.d("room", "room: " +  targetRoomNumber);
-                Log.d("case", "got into test case 1");
-                return getTestRoute(areaCode);
-
+                return  getVelascoFirstRoute(areaCode);
+            case 2:
+                return getVelascoSecondRoute(areaCode);
+            case 3:
+                return  getVelascoThirdRoute(areaCode);
+            case 4:
+                return getVelascoFourthRoute(areaCode);
+            case 5:
+                return  getVelascoFifthRoute(areaCode);
             default:
-                Log.d("case", "got into default case");
-                return  getTestRoute(areaCode);
+                return  getVelascoFirstRoute(areaCode);
         }
-
     }
 
-    //switch case default is stairs, the if statements check for validity of floor.
-    //route to default if current floor is not floor
-
-    /*private static ArrayList<Vertex> getVelascoFirstRoute(int areaCode) {
+    private static ArrayList<Vertex> getVelascoFirstRoute(int areaCode) {
 
         Vertex v1 = new Vertex("V1-1", new Point(524,15));
         Vertex v2 = new Vertex("V1-2", new Point(524,290));
@@ -113,12 +105,13 @@ public class DemoRoutingManager {
         v11.adjacencies = new Edge[]{new Edge(v11, v5), new Edge(v11, v12)};
         v12.adjacencies = new Edge[]{new Edge(v12, v11), new Edge(v12, v13)};
         v13.adjacencies = new Edge[]{new Edge(v13, v12)};
-        v14.adjacencies = new Edge[]{new Edge(v14, v5)};
+        v14.adjacencies = new Edge[]{new Edge(v14, v5)};	
+
 
         computePaths(v1);
-
-        Log.d("Areas", "Current is Velasco 1 Area Code = " + Integer.toString(areaCode));
-        if(targetAreaNumber ==areaCode)
+    Log.d("Areas", "Current is Velasco 1 Area Code = " + Integer.toString(areaCode));
+        
+		if(targetAreaNumber ==areaCode)
             routeNumber = targetRoomNumber;
         else if(targetAreaNumber <areaCode)
             return null;
@@ -168,6 +161,7 @@ public class DemoRoutingManager {
         Vertex v29 = new Vertex("L208A", new Point(737,575));
         Vertex v30 = new Vertex("L208B", new Point(771,575));
 
+
         v15.adjacencies = new Edge[]{new Edge(v15,v16)};
         v16.adjacencies = new Edge[]{new Edge(v16,v17),new Edge(v16,v15)};
         v17.adjacencies = new Edge[]{new Edge(v17,v16),new Edge(v17,v18),new Edge(v17,v20)};
@@ -215,79 +209,218 @@ public class DemoRoutingManager {
             default:
                 return getShortestPathTo(v18);
         }
-    } */
+    }
+	
+	private static ArrayList<Vertex> getVelascoThirdRoute(int areaCode) {
+	
+	Vertex v31 = new Vertex("V3-1", new Point(1,1));
+        Vertex v32 = new Vertex("V3-2", new Point(2,2));
+        Vertex v33 = new Vertex("V3-3", new Point(3,3));
+        Vertex v34 = new Vertex("V3-4", new Point(4,4));
+        Vertex v35 = new Vertex("V3-8", new Point(5,5));
+        Vertex v36 = new Vertex("L306", new Point(6,6));
+        Vertex v37 = new Vertex("L301", new Point(7,7));
+        Vertex v38 = new Vertex("L305-L302", new Point(8,8));
+        Vertex v39 = new Vertex("L303A", new Point(9,9));
+        Vertex v40 = new Vertex("L304", new Point(11,11));
+        Vertex v41 = new Vertex("L303B", new Point(12,12));
+        Vertex v42 = new Vertex("V3-5", new Point(13,13));
+        Vertex v43 = new Vertex("V3-6", new Point(14,14));
+        Vertex v44 = new Vertex("L307", new Point(15,15));
+        Vertex v45 = new Vertex("L308", new Point(16,16));
+        Vertex v46 = new Vertex("L309", new Point(17,17));
+        Vertex v47 = new Vertex("L314", new Point(21,21));
+        Vertex v48 = new Vertex("V3-7", new Point(22,22));
+        Vertex v49 = new Vertex("L313", new Point(23,23));
+        Vertex v50 = new Vertex("L312", new Point(24,24));
+        Vertex v51 = new Vertex("L311", new Point(25,25));
+        Vertex v52 = new Vertex("L310", new Point(26,26));
 
-    private static ArrayList<Vertex> getTestRoute(int areaCode) {
+        v31.adjacencies = new Edge[]{new Edge(v31,v32)};
+        v32.adjacencies = new Edge[]{new Edge(v32,v33),new Edge(v32,v31)};
+        v33.adjacencies = new Edge[]{new Edge(v33,v32),new Edge(v33,v36),new Edge(v33,v34),new Edge(v33,v47)};
+        v34.adjacencies = new Edge[]{new Edge(v34,v33),new Edge(v34,v35),new Edge(v34,v42)};
+        v35.adjacencies = new Edge[]{new Edge(v35,v34)};
+        v36.adjacencies = new Edge[]{new Edge(v36,v37),new Edge(v36,v33)};
+        v37.adjacencies = new Edge[]{new Edge(v37,v36),new Edge(v37,v38)};
+        v38.adjacencies = new Edge[]{new Edge(v38,v37),new Edge(v38,v39)};
+        v39.adjacencies = new Edge[]{new Edge(v39,v38),new Edge(v39,v40)};
+        v40.adjacencies = new Edge[]{new Edge(v40,v39),new Edge(v40,v41)};
+        v41.adjacencies = new Edge[]{new Edge(v41,v40)};
+        v42.adjacencies = new Edge[]{new Edge(v42,v34),new Edge(v42,v43)};
+        v43.adjacencies = new Edge[]{new Edge(v43,v42),new Edge(v43,v44)};
+        v44.adjacencies = new Edge[]{new Edge(v44,v45),new Edge(v44,v43)};
+        v45.adjacencies = new Edge[]{new Edge(v45,v46),new Edge(v45,v44)};
+        v46.adjacencies = new Edge[]{new Edge(v46,v45)};
+        v47.adjacencies = new Edge[]{new Edge(v47,v34),new Edge(v47,v48)};
+        v48.adjacencies = new Edge[]{new Edge(v48,v47),new Edge(v48,v49)};
+        v49.adjacencies = new Edge[]{new Edge(v49,v48),new Edge(v49,v50)};
+        v50.adjacencies = new Edge[]{new Edge(v50,v49),new Edge(v50,v51)};
+        v51.adjacencies = new Edge[]{new Edge(v51,v50),new Edge(v51,v52)};
+        v52.adjacencies = new Edge[]{new Edge(v52,v51)};
 
-       /* Vertex v9 = new Vertex("T-9", new Point(924, 283));
-        Vertex v8 = new Vertex("T-8", new Point(815, 287));
-        Vertex v7 = new Vertex("T-7", new Point(676, 283));
-        Vertex v6 = new Vertex("T-6", new Point(554, 415));
-        Vertex v5 = new Vertex("T-5", new Point(562, 278));
-        Vertex v4 = new Vertex("T-4", new Point(554, 132));
-        Vertex v3 = new Vertex("T-3", new Point(429, 410));
-        Vertex v2 = new Vertex("T-2", new Point(420, 283));
-        Vertex v1 = new Vertex("T-1", new Point(425, 136));*/
+        computePaths(v31);
 
-        Vertex v1 = new Vertex("T-1", new Point(25, 36));
-        Vertex v2 = new Vertex("T-2", new Point(20, 283));
-        Vertex v3 = new Vertex("T-3", new Point(29, 10));
-        Vertex v4 = new Vertex("T-4", new Point(154, 132));
-        Vertex v5 = new Vertex("T-5", new Point(162, 178));
-        Vertex v6 = new Vertex("T-6", new Point(154, 115));
-        //Vertex v7 = new Vertex("T-7", new Point(276, 183));
-        Vertex v7 = new Vertex("T-7", new Point(320, 180));
-        //Vertex v8 = new Vertex("T-8", new Point(315, 187));
-        Vertex v8 = new Vertex("T-8", new Point(640, 0));
-        //Vertex v9 = new Vertex("T-9", new Point(424, 183));
-        Vertex v9 = new Vertex("T-9", new Point(640, 360));
-
-        v1.adjacencies = new Edge[]{new Edge(v1, v2), new Edge(v1, v4)};
-        v2.adjacencies = new Edge[]{new Edge(v2, v1), new Edge(v2, v3)};
-        v3.adjacencies = new Edge[]{new Edge(v3, v2), new Edge(v3, v6)};
-        v4.adjacencies = new Edge[]{new Edge(v4, v5), new Edge(v4, v1)};
-        v5.adjacencies = new Edge[]{new Edge(v5, v4), new Edge(v5, v6), new Edge(v5, v7)};
-        v6.adjacencies = new Edge[]{new Edge(v6, v3), new Edge(v6, v5)};
-        v7.adjacencies = new Edge[]{new Edge(v7, v5), new Edge(v7, v8)};
-        v8.adjacencies = new Edge[]{new Edge(v8, v7), new Edge(v8, v9)};
-        v9.adjacencies = new Edge[]{new Edge(v9, v8)};
-
-        computePaths(v9);
-
-        if(targetAreaNumber == areaCode)
+        if(targetAreaNumber ==areaCode)
             routeNumber = targetRoomNumber;
-        else if(targetAreaNumber < areaCode)
+        else if(targetAreaNumber <areaCode)
             return null;
-        else
-            routeNumber = -1;
 
         switch (routeNumber) {
             case 0:
-                return getShortestPathTo(v1);
+                return getShortestPathTo(v36);
             case 1:
-                return getShortestPathTo(v1);
+                return getShortestPathTo(v37);
             case 2:
-                return getShortestPathTo(v2);
+                return getShortestPathTo(v38);
             case 3:
-                return getShortestPathTo(v3);
+                return getShortestPathTo(v39);
             case 4:
-                return getShortestPathTo(v4);
+                return getShortestPathTo(v40);
             case 5:
-                return getShortestPathTo(v5);
+                return getShortestPathTo(v41);
             case 6:
-                return getShortestPathTo(v6);
+                return getShortestPathTo(v44);
             case 7:
-                return getShortestPathTo(v7);
+                return getShortestPathTo(v45);
             case 8:
-                return getShortestPathTo(v8);
-            case 9:
-                return getShortestPathTo(v9);
+                return getShortestPathTo(v46);
             default:
-                return getShortestPathTo(v9);
+                return getShortestPathTo(v35);
         }
+		
+	}
 
+    private static ArrayList<Vertex> getVelascoFourthRoute(int areaCode) {
+        Vertex v53 = new Vertex("V4-1", new Point(350,270));
+        Vertex v54 = new Vertex("V4-2", new Point(378,270));
+        Vertex v55 = new Vertex("V4-3", new Point(378,218));
+        Vertex v56 = new Vertex("V4-4", new Point(350,218));
+        Vertex v57 = new Vertex("L4-5", new Point(350,242));
+        Vertex v58 = new Vertex("L415", new Point(277,212));
+        Vertex v59 = new Vertex("L414", new Point(249,212));
+        Vertex v60 = new Vertex("L409-L410A-L413", new Point(173,212));
+        Vertex v61 = new Vertex("L410B-L411-L412", new Point(93,212));
+        Vertex v62 = new Vertex("L407-L401", new Point(398,212));
+        Vertex v63 = new Vertex("L402", new Point(429,212));
+        Vertex v64 = new Vertex("L406", new Point(460,212));
+        Vertex v65 = new Vertex("L403", new Point(494,212));
+        Vertex v66 = new Vertex("L405", new Point(533,212));
+        Vertex v67 = new Vertex("L404", new Point(547,212));
+
+        v53.adjacencies = new Edge[]{new Edge(v53, v54)};
+        v54.adjacencies = new Edge[]{new Edge(v54, v53), new Edge(v54, v55)};
+        v55.adjacencies = new Edge[]{new Edge(v55, v54), new Edge(v55, v56), new Edge(v55, v62)};
+        v56.adjacencies = new Edge[]{new Edge(v56, v55), new Edge(v57, v57), new Edge(v57, v58)};
+        v57.adjacencies = new Edge[]{new Edge(v57, v56)};
+        v60.adjacencies = new Edge[]{new Edge(v60, v59), new Edge(v60, v61)};
+        v58.adjacencies = new Edge[]{new Edge(v58, v59), new Edge(v58, v56)};
+        v59.adjacencies = new Edge[]{new Edge(v59, v58), new Edge(v59, v60)};
+        v61.adjacencies = new Edge[]{new Edge(v61, v60)};
+        v62.adjacencies = new Edge[]{new Edge(v62, v55), new Edge(v62, v63)};
+        v63.adjacencies = new Edge[]{new Edge(v63, v64), new Edge(v63, v62)};
+        v64.adjacencies = new Edge[]{new Edge(v64, v65), new Edge(v64, v63)};
+        v65.adjacencies = new Edge[]{new Edge(v65, v66), new Edge(v65, v64)};
+        v66.adjacencies = new Edge[]{new Edge(v66, v67), new Edge(v66, v65)};
+        v67.adjacencies = new Edge[]{new Edge(v67, v66)};
+
+        computePaths(v53);
+
+        if(targetAreaNumber ==areaCode)
+            routeNumber = targetRoomNumber;
+        else if(targetAreaNumber <areaCode)
+            return null;
+
+        switch (routeNumber) {
+            case 0:
+                return getShortestPathTo(v58);
+            case 1:
+                return getShortestPathTo(v59);
+            case 2:
+                return getShortestPathTo(v60);
+            case 3:
+                return getShortestPathTo(v61);
+            case 4:
+                return getShortestPathTo(v62);
+            case 5:
+                return getShortestPathTo(v63);
+            case 6:
+                return getShortestPathTo(v64);
+            case 7:
+                return getShortestPathTo(v65);
+            case 8:
+                return getShortestPathTo(v66);
+            default:
+                return getShortestPathTo(v57);
+        }
     }
 
+    private static ArrayList<Vertex> getVelascoFifthRoute(int areaCode) {
+        Vertex v68 = new Vertex("V5-1", new Point(1,1));
+        Vertex v69 = new Vertex("V5-2", new Point(1,1));
+        Vertex v70 = new Vertex("V5-3", new Point(1,1));
+        Vertex v71 = new Vertex("L501-L506", new Point(1,1));
+        Vertex v72 = new Vertex("V502-L505", new Point(1,1));
+        Vertex v73 = new Vertex("V503-L504", new Point(1,1));
+        Vertex v74 = new Vertex("V5-4", new Point(1,1));
+        Vertex v75 = new Vertex("V5-5", new Point(1,1));
+        Vertex v76 = new Vertex("L507", new Point(1,1));
+        Vertex v77 = new Vertex("V508", new Point(1,1));
+        Vertex v78 = new Vertex("V509", new Point(1,1));
+        Vertex v79 = new Vertex("V513", new Point(1,1));
+        Vertex v80 = new Vertex("V5-6", new Point(1,1));
+        Vertex v81 = new Vertex("V512", new Point(1,1));
+        Vertex v82 = new Vertex("V511", new Point(1,1));
+        Vertex v83 = new Vertex("V510", new Point(1,1));
 
+
+        v68.adjacencies = new Edge[]{new Edge(v68,v69)};
+        v69.adjacencies = new Edge[]{new Edge(v69,v68),new Edge(v69,v70)};
+        v70.adjacencies = new Edge[]{new Edge(v70,v69),new Edge(v70,v71),new Edge(v70,v74),new Edge(v70,v79)};
+        v71.adjacencies = new Edge[]{new Edge(v71,v69),new Edge(v71,v72)};
+        v72.adjacencies = new Edge[]{new Edge(v72,v71),new Edge(v72,v73)};
+        v73.adjacencies = new Edge[]{new Edge(v73,v72)};
+        v74.adjacencies = new Edge[]{new Edge(v74,v70),new Edge(v74,v75)};
+        v75.adjacencies = new Edge[]{new Edge(v75,v74),new Edge(v76,v76)};
+        v76.adjacencies = new Edge[]{new Edge(v76,v75),new Edge(v76,v77)};
+        v77.adjacencies = new Edge[]{new Edge(v77,v76),new Edge(v77,v78)};
+        v78.adjacencies = new Edge[]{new Edge(v78,v77)};
+        v79.adjacencies = new Edge[]{new Edge(v79,v70),new Edge(v79,v80)};
+        v80.adjacencies = new Edge[]{new Edge(v80,v81),new Edge(v80,v79)};
+        v81.adjacencies = new Edge[]{new Edge(v81,v80),new Edge(v81,v82)};
+        v82.adjacencies = new Edge[]{new Edge(v82,v81),new Edge(v82,v83)};
+        v83.adjacencies = new Edge[]{new Edge(v83,v82)};
+
+        computePaths(v68);
+
+        if(targetAreaNumber ==areaCode)
+            routeNumber = targetRoomNumber;
+        else if(targetAreaNumber <areaCode)
+            return null;
+
+        switch (routeNumber) {
+            case 0:
+                return getShortestPathTo(v71);
+            case 1:
+                return getShortestPathTo(v72);
+            case 2:
+                return getShortestPathTo(v73);
+            case 3:
+                return getShortestPathTo(v71);
+            case 4:
+                return getShortestPathTo(v73);
+            case 5:
+                return getShortestPathTo(v72);
+            case 6:
+                return getShortestPathTo(v76);
+            case 7:
+                return getShortestPathTo(v77);
+            case 8:
+                return getShortestPathTo(v78);
+            default:
+                return getShortestPathTo(v68);
+        }
+    }
+		
 
 }

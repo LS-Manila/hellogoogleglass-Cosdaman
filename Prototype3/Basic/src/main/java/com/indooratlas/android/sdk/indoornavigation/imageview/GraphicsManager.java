@@ -55,58 +55,6 @@ public class GraphicsManager {
             YRATIO = 2.8f;//metrics.heightPixels / height;
             parkHere=    getResizedBitmap(parkHere,125,73);
             arrowhead=    getResizedBitmap(arrowhead,108,84);
-
-
-        }
-        else if(DEVICE_WIDTH==720)
-        {
-            //Galaxy Note 2
-            XRATIO = 1.335f;//metrics.widthPixels / height;
-            YRATIO = 1.41f;//metrics.heightPixels / width;
-
-        }
-        else if(DEVICE_WIDTH == 720 && DEVICE_HEIGHT==1184)
-        {
-            XRATIO= 1.330f;
-            YRATIO=1.41f;
-        }
-        else if(DEVICE_WIDTH==768)
-        {
-            //Alcatel
-            XRATIO = 1.25f;//metrics.widthPixels / height;
-            YRATIO = 1.51f;//metrics.heightPixels / width;
-        }
-        else if(DEVICE_WIDTH==1080)
-        {
-            Log.d("Size","Zenphone");
-            //ASUS ZENPHONE
-            XRATIO = 1.5f;//metrics.widthPixels / height;
-            YRATIO = 1.5f;//metrics.heightPixels / width;
-            exit = getResizedBitmap(exit,75,75);
-            parkHere=    getResizedBitmap(parkHere,102,84);
-            arrowhead=    getResizedBitmap(arrowhead,108,84);
-
-        }
-        else if(DEVICE_WIDTH==1280)
-        {
-            Log.d("Size","Blue Stacks");
-            //BLUESTACKS
-            XRATIO = 1.335f;//metrics.widthPixels / height;
-            YRATIO = 1.41f;//metrics.heightPixels / width;
-        }
-        else if(DEVICE_WIDTH==480)
-        {
-            //Samsung Galaxy Mini
-            XRATIO = 0.835f;//metrics.widthPixels / height;
-            YRATIO = 0.941f;//metrics.heightPixels / width;
-          //  parkHere=    getResizedBitmap(parkHere,51,33);
-        }
-        else if(DEVICE_WIDTH==540 && DEVICE_HEIGHT==960)
-        {
-            //Galaxy Alpha Mini
-            XRATIO = 1.000f;
-            YRATIO= 1.065f;
-            parkHere = getResizedBitmap(parkHere,51,33);
         }
         else
         {
@@ -121,11 +69,11 @@ public class GraphicsManager {
 
 
         linePaint = new Paint();
-        //CornerPathEffect cornerPathEffect = new CornerPathEffect(borderRadius);
+        CornerPathEffect cornerPathEffect = new CornerPathEffect(borderRadius);
         //Initialize line Style
         linePaint.setColor(Color.parseColor("#2b81cd"));
-        linePaint.setStrokeWidth(15);
-        //linePaint.setPathEffect(cornerPathEffect);
+        linePaint.setStrokeWidth(3);
+        linePaint.setPathEffect(cornerPathEffect);
         linePaint.setStyle(Paint.Style.STROKE);
 
 
