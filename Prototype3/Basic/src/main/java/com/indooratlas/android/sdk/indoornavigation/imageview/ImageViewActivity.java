@@ -13,6 +13,7 @@ import android.database.Cursor;
 import android.graphics.Point;
 import android.graphics.PointF;
 import android.net.ConnectivityManager;
+import android.os.BatteryManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -43,7 +44,13 @@ import com.indooratlas.android.sdk.resources.IAResult;
 import com.indooratlas.android.sdk.resources.IAResultCallback;
 import com.indooratlas.android.sdk.resources.IATask;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -71,20 +78,46 @@ public class ImageViewActivity extends FragmentActivity {
     private DemoRoutingManager demoRoutingManager;
     public TextView altitudeTextView;
     private ParkingLotView parkinglotview;
-	
+    String batTemp = "sys/devices/platform/omap_i2c.1/i2c-1/1-0055/power_supply/bq27520-0/temp";
+    String cpuTemp = "sys/devices/platform/notle_pcb_sensor.0/temperature";
+    FileInputStream fileInputStream;
+    InputStreamReader inputStreamReader;
+    BufferedReader bufferedReader;
+    String line = null;
+
     private IALocationListener mLocationListener = new IALocationListenerSupport() {
         @Override
         public void onLocationChanged(IALocation location) {
-            Log.d(TAG,"location is: " + location.getLatitude() + "," + location.getLongitude());
+            Log.d(TAG, "location is: " + location.getLatitude() + "," + location.getLongitude());
+            readFromFile(cpuTemp, "CPU ");
+            readFromFile(batTemp, "BAT ");
             if (mImageView != null && mImageView.isReady()) {
                 IALatLng latLng = new IALatLng(location.getLatitude(), location.getLongitude());
                 PointF point = mFloorPlan.coordinateToPoint(latLng);
                 mImageView.setDotCenter(point);
                 mImageView.postInvalidate(); //redraw map
-
             }
         }
     };
+
+    private void readFromFile(String filepath, String name) {
+
+        try {
+            fileInputStream = new FileInputStream (new File(filepath));
+            inputStreamReader = new InputStreamReader(fileInputStream);
+            bufferedReader = new BufferedReader(inputStreamReader);
+
+            while ( (line = bufferedReader.readLine()) != null){
+                Log.d(name + "TEMP", line);
+            }
+        }
+        catch(FileNotFoundException ex) {
+            Log.d(TAG, ex.getMessage());
+        }
+        catch(IOException ex) {
+            Log.d(TAG, ex.getMessage());
+        }
+    }
 
     private IARegion.Listener mRegionListener = new IARegion.Listener() {
 
