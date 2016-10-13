@@ -119,12 +119,6 @@
         </activity>
 
         <activity
-            android:name=".outdoor.MapsActivity"
-            android:icon="@drawable/ic_glass_logo"
-            android:label="Navi" >
-        </activity>
-
-        <activity
             android:name=".ScanCode"
             android:icon="@drawable/ic_glass_logo"
             android:label="Scan" >

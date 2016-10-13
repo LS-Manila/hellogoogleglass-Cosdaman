@@ -3,7 +3,6 @@ package com.indooratlas.android.sdk.indoornavigation;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,7 +15,6 @@ import com.google.android.glass.view.WindowUtils;
 import com.google.android.glass.widget.CardBuilder;
 import com.google.android.glass.widget.CardScrollAdapter;
 import com.google.android.glass.widget.CardScrollView;
-import com.indooratlas.android.sdk.indoornavigation.outdoor.MapsActivity;
 import com.indooratlas.android.sdk.indoornavigation.imageview.DemoRoutingManager;
 import com.indooratlas.android.sdk.indoornavigation.imageview.GraphicsManager;
 import com.indooratlas.android.sdk.indoornavigation.imageview.ImageViewActivity;
@@ -25,6 +23,7 @@ public class GlassMain extends Activity {
 
     private CardScrollView mCardScroller;
     private View mView;
+    Intent intent = new Intent();
 
     @Override
     protected void onCreate(Bundle bundle) {
@@ -102,15 +101,18 @@ public class GlassMain extends Activity {
 
     @Override
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
+
+
         if (featureId == WindowUtils.FEATURE_VOICE_COMMANDS || featureId ==  Window.FEATURE_OPTIONS_PANEL) {
             switch (item.getItemId()) {
 
-                case R.id.home_page_menu_item:
-
+                case R.id.display_indoor_map_menu_item:
+                    intent = new Intent(GlassMain.this, ImageViewActivity.class);
+                    startActivity(intent);
                     break;
 
-                case R.id.display_map_menu_item:
-                    //Intent intent = new Intent(GlassMain.this, ImageViewActivity.class);
+                case R.id.display_outdoor_map_menu_item:
+                    //intent = new Intent(GlassMain.this, NavigateDisplay.class);
                     //startActivity(intent);
                     break;
 
@@ -119,19 +121,39 @@ public class GlassMain extends Activity {
                     startActivity(intent2);
                     break;
 
-                case R.id.test_menu_item:
+                case R.id.qr_menu_item:
+                    intent = new Intent("com.google.zxing.client.android.SCAN");
+                    intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
+                    startActivityForResult(intent, 0);
 
-                Intent myIntent = new Intent(this, ImageViewActivity.class);
-                /*    DemoRoutingManager.setArea(4);
+                    break;
+
+                case R.id.test_menu_item:
+                    DemoRoutingManager.setArea(4);
                     DemoRoutingManager.setRoom(8);
-                    */
-                    //Intent myIntent = new Intent(this, MapsActivity.class);
-                    this.startActivity(myIntent);
+                    intent = new Intent(this, ImageViewActivity.class);
+                    this.startActivity(intent);
                     break;
 
             }
             return true;
         }
         return super.onMenuItemSelected(featureId, item);
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        if (requestCode == 0) {
+            if (resultCode == RESULT_OK) {
+                Intent scanResult = new Intent(getBaseContext(), ScanCode.class);
+                String contents = intent.getStringExtra("SCAN_RESULT");
+                //scanResult.putExtra("FLOOR_NUMBER", floorNumber);
+                //scanResult.putExtra("ROOM_NUMBER", roomNumber);
+                scanResult.putExtra("QR_SCAN", contents);
+                startActivity(scanResult);
+
+            } else if (resultCode == RESULT_CANCELED) {
+                // Handle cancel
+            }
+        }
     }
 }
