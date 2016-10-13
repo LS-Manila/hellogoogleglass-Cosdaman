@@ -118,12 +118,11 @@
                 android:resource="@xml/voice_trigger" />
         </activity>
         <activity
-            android:name="com.indooratlas.android.sdk.indoornavigation.NavigateDisplay"
-            android:icon="@drawable/ic_glass_logo"
-            android:label="Navi" >
+            android:name="com.indooratlas.android.sdk.indoornavigation.outdoor.OutdoorMap"
+            android:label="Outdoor Map" >
         </activity>
         <activity
-            android:name="com.indooratlas.android.sdk.indoornavigation.outdoor.MapsActivity"
+            android:name="com.indooratlas.android.sdk.indoornavigation.NavigateDisplay"
             android:icon="@drawable/ic_glass_logo"
             android:label="Navi" >
         </activity>

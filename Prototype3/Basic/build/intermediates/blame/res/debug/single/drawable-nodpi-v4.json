@@ -16,6 +16,10 @@
         "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\src\\main\\res\\drawable-nodpi\\v101.png"
     },
     {
+        "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4\\wholedlsu.png",
+        "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\src\\main\\res\\drawable-nodpi\\wholedlsu.png"
+    },
+    {
         "merged": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4\\cast_mini_controller_img_placeholder.png",
         "source": "C:\\Users\\Cosda\\Documents\\GitHub\\hellogoogleglass-Cosdaman\\Prototype3\\Basic\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-cast-framework\\9.6.1\\res\\drawable-nodpi-v4\\cast_mini_controller_img_placeholder.png"
     },

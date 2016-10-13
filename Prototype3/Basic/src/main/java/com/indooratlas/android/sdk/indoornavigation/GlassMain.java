@@ -18,6 +18,8 @@ import com.google.android.glass.widget.CardScrollView;
 import com.indooratlas.android.sdk.indoornavigation.imageview.DemoRoutingManager;
 import com.indooratlas.android.sdk.indoornavigation.imageview.GraphicsManager;
 import com.indooratlas.android.sdk.indoornavigation.imageview.ImageViewActivity;
+import com.indooratlas.android.sdk.indoornavigation.outdoor.OutdoorMap;
+import com.indooratlas.android.sdk.indoornavigation.outdoor.OutdoorMapDisplay;
 
 public class GlassMain extends Activity {
 
@@ -112,20 +114,19 @@ public class GlassMain extends Activity {
                     break;
 
                 case R.id.display_outdoor_map_menu_item:
-                    //intent = new Intent(GlassMain.this, NavigateDisplay.class);
-                    //startActivity(intent);
+                    intent = new Intent(GlassMain.this, OutdoorMap.class);
+                    startActivity(intent);
                     break;
 
                 case R.id.navigate_menu_item:
-                    Intent intent2 = new Intent(GlassMain.this, NavigateDisplay.class);
-                    startActivity(intent2);
+                    Intent intent = new Intent(GlassMain.this, NavigateDisplay.class);
+                    startActivity(intent);
                     break;
 
                 case R.id.qr_menu_item:
                     intent = new Intent("com.google.zxing.client.android.SCAN");
                     intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
                     startActivityForResult(intent, 0);
-
                     break;
 
                 case R.id.test_menu_item:

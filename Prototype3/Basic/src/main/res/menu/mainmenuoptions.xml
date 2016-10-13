@@ -5,11 +5,11 @@
         android:icon="@drawable/ic_glass_logo" />
     <item
         android:id="@+id/display_indoor_map_menu_item"
-        android:title="Display Indoor Map"
+        android:title="Indoor Map"
         android:icon="@drawable/ic_glass_logo" />
     <item
         android:id="@+id/display_outdoor_map_menu_item"
-        android:title="Display Outdoor Map"
+        android:title="Outdoor Map"
         android:icon="@drawable/ic_glass_logo" />
     <item
         android:id="@+id/qr_menu_item"

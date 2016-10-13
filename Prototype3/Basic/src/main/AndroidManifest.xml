@@ -62,9 +62,12 @@
             android:screenOrientation="landscape" >
         </activity>
 
-        <activity android:name="com.indooratlas.android.sdk.indoornavigation.sharelocation.ShareLocationActivity" >
+
+        <activity
+            android:name="com.indooratlas.android.sdk.indoornavigation.sharelocation.ShareLocationActivity" >
         </activity>
-        <activity android:name="com.indooratlas.android.sdk.indoornavigation.imageview.RoomSelection" >
+        <activity
+            android:name="com.indooratlas.android.sdk.indoornavigation.imageview.RoomSelection" >
         </activity>
 
         <service
@@ -113,13 +116,18 @@
         </activity>
 
         <activity
+            android:name="com.indooratlas.android.sdk.indoornavigation.outdoor.OutdoorMap"
+            android:label="Outdoor Map">
+        </activity>
+
+        <activity
             android:name="NavigateDisplay"
             android:icon="@drawable/ic_glass_logo"
             android:label="Navi" >
         </activity>
 
         <activity
-            android:name=".ScanCode"
+            android:name="ScanCode"
             android:icon="@drawable/ic_glass_logo"
             android:label="Scan" >
         </activity>
