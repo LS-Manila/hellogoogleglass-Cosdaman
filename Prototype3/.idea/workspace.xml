@@ -73,12 +73,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OutdoorMap.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OutdoorMap.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/outdoor/OutdoorMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.63590264">
+            <state vertical-scroll-proportion="0.0">
               <caret line="36" column="49" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DemoRoutingManager.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/imageview/DemoRoutingManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8326572">
+              <caret line="264" column="5" selection-start-line="264" selection-start-column="5" selection-end-line="264" selection-end-column="5" />
+              <folding>
+                <element signature="e#790#798#0" expanded="true" />
+                <element signature="e#1547#1555#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -2987,6 +3000,7 @@
         <option value="$PROJECT_DIR$/Basic/build.gradle" />
         <option value="$PROJECT_DIR$/Basic/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/outdoor/OutdoorMap.java" />
+        <option value="$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/imageview/DemoRoutingManager.java" />
       </list>
     </option>
   </component>
@@ -3088,6 +3102,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="outdoor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Prototype3" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Basic" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="indoornavigation" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="imageview" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -3466,16 +3502,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/device-2016-10-14-152025.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/outdoor/OutdoorMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63590264">
+        <state vertical-scroll-proportion="0.0">
           <caret line="36" column="49" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Basic/src/main/java/com/indooratlas/android/sdk/indoornavigation/imageview/DemoRoutingManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8326572">
+          <caret line="264" column="5" selection-start-line="264" selection-start-column="5" selection-end-line="264" selection-end-column="5" />
+          <folding>
+            <element signature="e#790#798#0" expanded="true" />
+            <element signature="e#1547#1555#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
