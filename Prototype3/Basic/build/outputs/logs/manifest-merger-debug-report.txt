@@ -623,28 +623,30 @@ ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\
 		ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:115:17-54
 	android:name
 		ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:114:17-69
-activity#com.indooratlas.android.sdk.indoornavigation.outdoor.OutdoorMap
-ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:118:9-121:20
-	android:label
-		ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:120:13-40
-	android:name
-		ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:119:13-91
 activity#com.indooratlas.android.sdk.indoornavigation.NavigateDisplay
-ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:123:9-127:20
+ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:118:9-122:20
 	android:label
-		ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:126:13-33
+		ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:121:13-33
 	android:icon
-		ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:125:13-51
+		ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:120:13-51
 	android:name
-		ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:124:13-43
+		ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:119:13-43
 activity#com.indooratlas.android.sdk.indoornavigation.ScanCode
+ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:124:9-128:20
+	android:label
+		ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:127:13-33
+	android:icon
+		ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:126:13-51
+	android:name
+		ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:125:13-36
+activity#com.indooratlas.android.sdk.indoornavigation.outdoor.OutdoorMap
 ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:129:9-133:20
 	android:label
 		ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:132:13-33
 	android:icon
 		ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:131:13-51
 	android:name
-		ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:130:13-36
+		ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:130:13-47
 uses-sdk
 INJECTED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.indooratlas.android:indooratlas-android-sdk:2.1.2] C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\build\intermediates\exploded-aar\com.indooratlas.android\indooratlas-android-sdk\2.1.2\AndroidManifest.xml:7:5-9:41
@@ -920,6 +922,7 @@ MERGED from [com.android.support:design:23.0.1] C:\Users\Cosda\Documents\GitHub\
 MERGED from [com.android.support:support-v4:23.1.0] C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:appcompat-v7:23.1.0] C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.0\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:23.1.0] C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\AndroidManifest.xml:20:5-43
+MERGED from [Prototype3:opencv:unspecified] C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\build\intermediates\exploded-aar\Prototype3\opencv\unspecified\AndroidManifest.xml:7:5-9:41
 	android:targetSdkVersion
 		INJECTED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml
