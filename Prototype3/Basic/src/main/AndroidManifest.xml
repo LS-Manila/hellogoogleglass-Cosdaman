@@ -116,11 +116,6 @@
         </activity>
 
         <activity
-            android:name="com.indooratlas.android.sdk.indoornavigation.outdoor.OutdoorMap"
-            android:label="Outdoor Map">
-        </activity>
-
-        <activity
             android:name="NavigateDisplay"
             android:icon="@drawable/ic_glass_logo"
             android:label="Navi" >

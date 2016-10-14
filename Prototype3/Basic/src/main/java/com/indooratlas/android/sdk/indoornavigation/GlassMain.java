@@ -18,8 +18,6 @@ import com.google.android.glass.widget.CardScrollView;
 import com.indooratlas.android.sdk.indoornavigation.imageview.DemoRoutingManager;
 import com.indooratlas.android.sdk.indoornavigation.imageview.GraphicsManager;
 import com.indooratlas.android.sdk.indoornavigation.imageview.ImageViewActivity;
-import com.indooratlas.android.sdk.indoornavigation.outdoor.OutdoorMap;
-import com.indooratlas.android.sdk.indoornavigation.outdoor.OutdoorMapDisplay;
 
 public class GlassMain extends Activity {
 
@@ -114,7 +112,6 @@ public class GlassMain extends Activity {
                     break;
 
                 case R.id.display_outdoor_map_menu_item:
-                    //intent = new Intent(GlassMain.this, OutdoorMap.class);
                     //startActivity(intent);
                     break;
 
