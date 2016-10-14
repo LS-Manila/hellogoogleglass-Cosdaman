@@ -1,13 +1,13 @@
 package com.indooratlas.android.sdk.indoornavigation.outdoor;
 
 import com.google.android.glass.media.Sounds;
-import com.google.android.glass.widget.CardBuilder;
 import com.google.android.glass.widget.CardScrollAdapter;
 import com.google.android.glass.widget.CardScrollView;
 import com.indooratlas.android.sdk.indoornavigation.R;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -18,11 +18,12 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.TextView;
 
+
 public class OutdoorMap extends Activity {
     private CardScrollView mCardScroller;
     private View mView;
-    private OutdoorMapDisplay customCanvas;
     Handler hand = new Handler();
+    private OutdoorMapDisplay customCanvas;
 
     @Override
     protected void onCreate(Bundle bundle) {
@@ -80,6 +81,7 @@ public class OutdoorMap extends Activity {
 
     private View buildView() {
         View view = View.inflate(this, R.layout.activity_outdoormap, null);
+        customCanvas = (OutdoorMapDisplay) findViewById(R.id.signature_canvas);
         hand.postDelayed(run, 1000);
         Log.d("build", "buildview");
         return view;

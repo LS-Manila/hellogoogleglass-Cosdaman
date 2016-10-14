@@ -9,6 +9,8 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.util.AttributeSet;
@@ -23,9 +25,6 @@ public class OutdoorMapDisplay extends View {
 
     public int w=560;
     public int h=240;
-    private Bitmap mBitmap;
-    private Canvas mCanvas;
-    private Path mPath;
     Context context;
     private Paint mPaint;
     private static final float TOLERANCE = 5;
@@ -41,13 +40,6 @@ public class OutdoorMapDisplay extends View {
     public OutdoorMapDisplay(Context c, AttributeSet attrs) {
         super(c, attrs);
         context = c;
-        mPath = new Path();
-        mPaint = new Paint();
-        mPaint.setAntiAlias(true);
-        mPaint.setColor(Color.BLACK);
-        mPaint.setStyle(Paint.Style.STROKE);
-        mPaint.setStrokeJoin(Paint.Join.ROUND);
-        mPaint.setStrokeWidth(4f);
     }
 
   /*  protected void createBitmap() {
@@ -60,19 +52,14 @@ public class OutdoorMapDisplay extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        //b = BitmapFactory.decodeResource(context.getResources(), R.drawable.wholedlsu, options);
         Log.d("height", "" + imageHeight);
         Log.d("width", "" + imageWidth);
-
-        //TODO continue here
-        //dest = new Rect(0, 0, getWidth(), getHeight());
-        canvas.drawBitmap(b, null, dest, p);
+        b = BitmapFactory.decodeResource(context.getResources(), R.drawable.wholedlsu, options);
+        dest = new Rect(0, 0, getWidth(), getHeight());
+        canvas.drawBitmap(b, 0, 0, p);
         canvas.drawColor(Color.DKGRAY);
-        //p.setColor(Color.RED);
-        //p.setStyle(Paint.Style.FILL);
-        //canvas.drawCircle(w / 2, h / 2, 3, p);
+        p.setColor(Color.RED);
+        p.setStyle(Paint.Style.FILL);
+        canvas.drawCircle(w / 2, h / 2, 3, p);
     }
-
-
-
 }
