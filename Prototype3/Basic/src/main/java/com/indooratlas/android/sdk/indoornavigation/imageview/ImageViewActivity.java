@@ -77,7 +77,6 @@ public class ImageViewActivity extends FragmentActivity {
     private ArrayList<Vertex> routingNodes = new ArrayList<Vertex>(){{add(new Vertex("def", new Point(0,0)));}};
     private DemoRoutingManager demoRoutingManager;
     public TextView altitudeTextView;
-    private ParkingLotView parkinglotview;
     String batTemp = "sys/devices/platform/omap_i2c.1/i2c-1/1-0055/power_supply/bq27520-0/temp";
     String cpuTemp = "sys/devices/platform/notle_pcb_sensor.0/temperature";
     FileInputStream fileInputStream;
@@ -151,7 +150,6 @@ public class ImageViewActivity extends FragmentActivity {
         mIALocationManager = IALocationManager.create(this);
         mFloorPlanManager = IAResourceManager.create(this);
         badconnection = (ImageView)findViewById(R.id.badconnection);
-        //parkinglotview = (ParkingLotView) findViewById(R.id.pview);
         cm = (ConnectivityManager)getBaseContext().getSystemService(Context.CONNECTIVITY_SERVICE);
 
 

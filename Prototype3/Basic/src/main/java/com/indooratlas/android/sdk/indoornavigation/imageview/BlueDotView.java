@@ -3,23 +3,18 @@ package com.indooratlas.android.sdk.indoornavigation.imageview;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Point;
 import android.graphics.PointF;
 import android.util.AttributeSet;
 import android.util.Log;
-
 import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
 import com.indooratlas.android.sdk.indoornavigation.R;
-
 import java.util.ArrayList;
 
-/**
- * Extends great ImageView library by Dave Morrissey. See more:
- * https://github.com/davemorrissey/subsampling-scale-image-view.
- */
+
+
 public class BlueDotView extends SubsamplingScaleImageView {
     private static final double EARTH_RADIUS = 6378100.0;
     private int offset;
@@ -94,7 +89,7 @@ public class BlueDotView extends SubsamplingScaleImageView {
             //areaCode = 1;
             //TODO THIS IS WHERE IT CRASHES, FIX GRAPHICS MANAGER OR LOOK FOR ALTERNATIVES
             canvas.drawPath(routingPath, GraphicsManager.linePaint);
-            try {
+          /*  try {
                 PointF asd =  sourceToViewCoord(routingNodes.get(0).coordinate.x,routingNodes.get(0).coordinate.y);
 //                canvas.drawBitmap(GraphicsManager.arrowhead, asd.x,asd.y, new Paint());
            //     canvas.drawBitmap(GraphicsManager.arrowhead, (float) Math.floor(routingNodes.get(0).coordinate.x * ratio) - (float) Math.floor(GraphicsManager.XOFFSET * ratio), (float) Math.floor(routingNodes.get(0).coordinate.y * ratio2) - (float) Math.floor(GraphicsManager.YOFFSET * ratio), new Paint());
@@ -106,7 +101,7 @@ public class BlueDotView extends SubsamplingScaleImageView {
            }
             catch (Exception e) {
                 e.printStackTrace();
-            }
+            }*/
         }
     }
 

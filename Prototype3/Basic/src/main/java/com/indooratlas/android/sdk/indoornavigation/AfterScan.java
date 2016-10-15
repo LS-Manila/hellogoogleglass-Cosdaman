@@ -7,17 +7,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-
 import com.google.android.glass.media.Sounds;
 import com.google.android.glass.widget.CardBuilder;
 import com.google.android.glass.widget.CardScrollAdapter;
 import com.google.android.glass.widget.CardScrollView;
 
+//TODO THIS IS FOR TESTING PURPOSES
+
 public class AfterScan extends Activity{
 
     private CardScrollView mCardScroller;
-
-
     private View mView;
 
     @Override

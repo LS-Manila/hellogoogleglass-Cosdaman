@@ -130,9 +130,9 @@ public class GlassMain extends Activity {
 
                 case R.id.test_menu_item:
                     DemoRoutingManager.setArea(4);
-                    DemoRoutingManager.setRoom(8);
-                    intent = new Intent(this, ImageViewActivity.class);
-                    this.startActivity(intent);
+                    DemoRoutingManager.setRoom(0);
+                    Intent myIntent = new Intent(this, ImageViewActivity.class);
+                    this.startActivity(myIntent);
                     break;
 
             }

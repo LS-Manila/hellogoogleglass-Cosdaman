@@ -235,7 +235,7 @@ public class DemoRoutingManager {
 		Vertex v46 = new Vertex("L504", new Point(567,205));
 		Vertex v47 = new Vertex("JL47", new Point(272,205));
 		Vertex v48 = new Vertex("JL48", new Point(272,262));
-		Vertex v49 = new Vertex("L507", new Point(252,262	));
+		Vertex v49 = new Vertex("L507", new Point(252,262));
 		
 		v41.adjacencies = new Edge[]{new Edge(v41, v42)};
 		v42.adjacencies = new Edge[]{new Edge(v42, v41), new Edge(v42, v43)};

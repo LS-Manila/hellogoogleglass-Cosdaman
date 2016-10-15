@@ -90,7 +90,6 @@ public class ScanCode extends Activity {
         CardBuilder card = new CardBuilder(this, CardBuilder.Layout.COLUMNS);
         card.setText("QR Data: " + QR_Data + ". \nFloor Number: " + floor_Number +". \nRoom Number: "+ room_Number +"\n");
         card.setIcon(R.drawable.ic_glass_logo);
-
         return card.getView();
     }
 
@@ -100,10 +99,10 @@ public class ScanCode extends Activity {
     public boolean onKeyDown(int keycode, KeyEvent event) {
         if (keycode == KeyEvent.KEYCODE_DPAD_CENTER) {
 
-           // Intent myIntent = new Intent(this, ImageViewActivity.class);
-           // DemoRoutingManager.setArea(99);
-           // DemoRoutingManager.setRoom(1);
-           // this.startActivity(myIntent);
+           DemoRoutingManager.setArea(4);
+            DemoRoutingManager.setRoom(0);
+            Intent myIntent = new Intent(this, ImageViewActivity.class);
+            this.startActivity(myIntent);
 
             Log.d("Tap Listener", "TAPPY");
             return true;

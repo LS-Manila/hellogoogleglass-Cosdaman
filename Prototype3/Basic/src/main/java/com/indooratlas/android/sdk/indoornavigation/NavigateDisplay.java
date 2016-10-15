@@ -236,6 +236,49 @@ public class NavigateDisplay extends Activity {
                 startActivityForResult(intentQR, 0);
                 break;
 
+
+            case R.id.L312:
+                floorNumber = 3;
+                roomNumber = 0;
+                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
+                startActivityForResult(intentQR, 0);
+                break;
+
+            case R.id.L306:
+                floorNumber = 3;
+                roomNumber = 1;
+                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
+                startActivityForResult(intentQR, 0);
+                break;
+
+            case R.id.L415:
+                floorNumber = 4;
+                roomNumber = 0;
+                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
+                startActivityForResult(intentQR, 0);
+                break;
+
+            case R.id.L406:
+                floorNumber = 4;
+                roomNumber = 1;
+                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
+                startActivityForResult(intentQR, 0);
+                break;
+
+            case R.id.L504:
+                floorNumber = 5;
+                roomNumber = 0;
+                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
+                startActivityForResult(intentQR, 0);
+                break;
+
+            case R.id.L507:
+                floorNumber = 5;
+                roomNumber = 0;
+                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
+                startActivityForResult(intentQR, 0);
+                break;
+
         }
 
 
