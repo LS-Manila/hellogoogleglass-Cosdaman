@@ -60,6 +60,7 @@ public class ImageViewActivity extends FragmentActivity {
     private static final String TAG = "Main Program";
     private static final int REQUEST_CODE_WRITE_EXTERNAL_STORAGE = 1;
     private static final int REQUEST_CODE_ACCESS_COARSE_LOCATION = 1;
+private int areaCode;
     private static final float dotRadius = 1.0f;     // blue dot radius in meters
     private IALocationManager mIALocationManager;
     private IAResourceManager mFloorPlanManager;
@@ -319,6 +320,7 @@ public class ImageViewActivity extends FragmentActivity {
                     if (result.isSuccess() && result.getResult() != null) {
                         mFloorPlan = result.getResult();
                         String fileName = mFloorPlan.getId().substring(0, 4) + ".png";
+demoRoutingManager.init( fileName);
                         String filePath = "storage/emulated/legacy/Download/Maps/" + fileName;
 
                         try {

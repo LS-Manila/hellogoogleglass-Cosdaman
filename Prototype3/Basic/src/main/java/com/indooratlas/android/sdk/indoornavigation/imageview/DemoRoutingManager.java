@@ -12,6 +12,7 @@ public class DemoRoutingManager {
     private static int targetAreaNumber;
     private static int targetRoomNumber;
     private static int routeNumber;
+    private static int currentArea;
     public static void setArea(int newAreaNumber) {
         targetAreaNumber = newAreaNumber;
     }
@@ -20,7 +21,7 @@ public class DemoRoutingManager {
     }
 
     public static int  getArea() {
-        return targetAreaNumber;
+		return currentArea;
     }
 	
     private static void computePaths(Vertex source) {
@@ -54,6 +55,29 @@ public class DemoRoutingManager {
 
         Collections.reverse(path);
         return path;
+    }
+
+	public void init(String string) {
+        if (string.equals("vlsc1.png")) {
+            currentArea = 1;
+            //  setBackgroundResource(R.drawable.velasco_1); // For Demo Purposes
+            //  isTest = true;
+        } else if (string.equals("44d0.png")) {
+            currentArea = 2;
+            // setBackgroundResource(R.drawable.velasco_2); //// TODO: 5/28/2016 Change to Valero LG
+            // isTest = true;
+        }else if(string.equals("e287.png")){
+            currentArea = 3;
+        }
+        /// setBackgroundResource(R.drawable.velasco_3);  // Razon 3rd Floor
+        else if(string.equals("70dc.png")){
+            currentArea = 4;
+        }
+        // setBackgroundResource(R.drawable.velasco_4); //Razon 4th Floor
+        else if(string.equals("9ce6.png")){
+            currentArea = 5;
+        }
+        //setBackgroundResource(R.drawable.velasco_5); //Razon 4th Floor
     }
 
     public static ArrayList<Vertex> getPath(int areaCode) {
@@ -95,9 +119,9 @@ public class DemoRoutingManager {
 
         Log.d("Areas", "Current is Velasco 1 Area Code = " + Integer.toString(areaCode));
         
-		if(targetAreaNumber ==areaCode)
+        if(targetAreaNumber == currentArea)
             routeNumber = targetRoomNumber;
-        else if(targetAreaNumber <areaCode)
+        else if(targetAreaNumber < currentArea)
             return null;
         else
             routeNumber = -1;
@@ -152,34 +176,33 @@ public class DemoRoutingManager {
         }
     }
 	
-	private static ArrayList<Vertex> getVelascoThirdRoute(int areaCode) {
-	
-	  	Vertex v21 = new Vertex("JL21", new Point(353,264));
-		Vertex v22 = new Vertex("JL22", new Point(378,264));
-		Vertex v23 = new Vertex("JL23", new Point(378,205));
-		Vertex v24 = new Vertex("JL24", new Point(353,205));
-		Vertex v25 = new Vertex("JL25", new Point(353,242));
-		Vertex v26 = new Vertex("JL26", new Point(378,126));
-		Vertex v27 = new Vertex("L312", new Point(252,123));
-		Vertex v28 = new Vertex("L306", new Point(396,205));
-		
-		v21.adjacencies = new Edge[]{new Edge(v21, v22)};
-		v22.adjacencies = new Edge[]{new Edge(v22, v21), new Edge(v22, v23)};
-		v23.adjacencies = new Edge[]{new Edge(v23, v22), new Edge(v23, v24), new Edge(v23, v26), new Edge(v23, v28)};
-		v24.adjacencies = new Edge[]{new Edge(v24, v23), new Edge(v24, v25)};
-		v25.adjacencies = new Edge[]{new Edge(v25, v24)};
-		v26.adjacencies = new Edge[]{new Edge(v26, v23), new Edge(v26, v27)};
-		v27.adjacencies = new Edge[]{new Edge(v27, v26)};
-		v28.adjacencies = new Edge[]{new Edge(v28, v23)};
+    private static ArrayList<Vertex> getVelascoThirdRoute(int areaCode) {
+        Vertex v21 = new Vertex("JL21", new Point(353,264));
+        Vertex v22 = new Vertex("JL22", new Point(378,264));
+        Vertex v23 = new Vertex("JL23", new Point(378,205));
+        Vertex v24 = new Vertex("JL24", new Point(353,205));
+        Vertex v25 = new Vertex("JL25", new Point(353,242));
+        Vertex v26 = new Vertex("JL26", new Point(378,126));
+        Vertex v27 = new Vertex("L312", new Point(252,123));
+        Vertex v28 = new Vertex("L306", new Point(396,205));
+
+        v21.adjacencies = new Edge[]{new Edge(v21, v22)};
+        v22.adjacencies = new Edge[]{new Edge(v22, v21), new Edge(v22, v23)};
+        v23.adjacencies = new Edge[]{new Edge(v23, v22), new Edge(v23, v24), new Edge(v23, v26), new Edge(v23, v28)};
+        v24.adjacencies = new Edge[]{new Edge(v24, v23), new Edge(v24, v25)};
+        v25.adjacencies = new Edge[]{new Edge(v25, v24)};
+        v26.adjacencies = new Edge[]{new Edge(v26, v23), new Edge(v26, v27)};
+        v27.adjacencies = new Edge[]{new Edge(v27, v26)};
+        v28.adjacencies = new Edge[]{new Edge(v28, v23)};
 
         computePaths(v21);
 
-        if(targetAreaNumber ==areaCode)
+       if(targetAreaNumber ==currentArea)
             routeNumber = targetRoomNumber;
-        else if(targetAreaNumber <areaCode)
+        else if(targetAreaNumber <currentArea)
             return null;
-		else
-			routeNumber = -1;
+        else
+            routeNumber = -1;
 
         switch (routeNumber) {
             case 0:
@@ -200,19 +223,20 @@ public class DemoRoutingManager {
 		Vertex v36 = new Vertex("L415", new Point(266,205));
 		Vertex v37 = new Vertex("L406", new Point(469,205));
 		
-		v31.adjacencies = new Edge[]{new Edge(v31, v32)};
-		v32.adjacencies = new Edge[]{new Edge(v32, v31), new Edge(v32, v33)};
-		v33.adjacencies = new Edge[]{new Edge(v33, v32), new Edge(v33, v34), new Edge(v33, v37)};
-		v34.adjacencies = new Edge[]{new Edge(v34, v33), new Edge(v34, v35), new Edge(v34, v36)};
-		v35.adjacencies = new Edge[]{new Edge(v35, v34)};
-		v36.adjacencies = new Edge[]{new Edge(v36, v34)};
-		v37.adjacencies = new Edge[]{new Edge(v37, v33)};
+    v31.adjacencies = new Edge[]{new Edge(v31, v32)};
+        v32.adjacencies = new Edge[]{new Edge(v32, v31), new Edge(v32, v33)};
+        v33.adjacencies = new Edge[]{new Edge(v33, v32), new Edge(v33, v34), new Edge(v33, v37)};
+        v34.adjacencies = new Edge[]{new Edge(v34, v33), new Edge(v34, v35), new Edge(v34, v36)};
+        v35.adjacencies = new Edge[]{new Edge(v35, v34)};
+        v36.adjacencies = new Edge[]{new Edge(v36, v34)};
+        v37.adjacencies = new Edge[]{new Edge(v37, v33)};
+
 
         computePaths(v31);
 
-		if(targetAreaNumber ==areaCode)
+        if(targetAreaNumber ==currentArea)
             routeNumber = targetRoomNumber;
-        else if(targetAreaNumber <areaCode)
+        else if(targetAreaNumber <currentArea)
             return null;
         else
             routeNumber = -1;
@@ -247,9 +271,9 @@ public class DemoRoutingManager {
 		v49.adjacencies = new Edge[]{new Edge(v49, v48)};
         computePaths(v41);
 
-        if(targetAreaNumber ==areaCode)
+        if(targetAreaNumber ==currentArea)
             routeNumber = targetRoomNumber;
-        else if(targetAreaNumber <areaCode)
+        else if(targetAreaNumber <currentArea)
             return null;
         else
             routeNumber = -1;
