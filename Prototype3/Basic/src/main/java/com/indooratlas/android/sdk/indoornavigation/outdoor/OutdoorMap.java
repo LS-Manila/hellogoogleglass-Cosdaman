@@ -1,12 +1,16 @@
 package com.indooratlas.android.sdk.indoornavigation.outdoor;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.widget.ImageView;
-
 import com.indooratlas.android.sdk.indoornavigation.R;
+import com.indooratlas.android.sdk.indoornavigation.ScanCode;
+import com.indooratlas.android.sdk.indoornavigation.imageview.DemoRoutingManager;
+import com.indooratlas.android.sdk.indoornavigation.imageview.ImageViewActivity;
 
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.LoaderCallbackInterface;
@@ -19,12 +23,13 @@ import org.opencv.core.Point;
 import org.opencv.core.Scalar;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
-
 import java.io.IOException;
 
 public class OutdoorMap extends Activity {
 
     Mat m;
+    Intent intent = new Intent();
+    ScanCode scanCodeChecker = new ScanCode();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,8 +73,39 @@ public class OutdoorMap extends Activity {
         // convert to bitmap:
         Bitmap bm = Bitmap.createBitmap(m.cols(), m.rows(),Bitmap.Config.ARGB_8888);
         Utils.matToBitmap(m, bm);
-
         ImageView iv = (ImageView) findViewById(R.id.imageView);
         iv.setImageBitmap(bm);
     }
+
+    @Override
+    public boolean onKeyDown(int keycode, KeyEvent event) {
+        if (keycode == KeyEvent.KEYCODE_DPAD_CENTER) {
+
+            intent = new Intent("com.google.zxing.client.android.SCAN");
+            intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
+            startActivityForResult(intent, 0);
+
+            return true;
+        }
+
+        return super.onKeyDown(keycode, event);
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        if (requestCode == 0) {
+            if (resultCode == RESULT_OK) {
+                Intent scanResult = new Intent(getBaseContext(), ScanCode.class);
+                String contents = intent.getStringExtra("SCAN_RESULT");
+                scanResult.putExtra("QR_SCAN", contents);
+                scanCodeChecker.Checker(0);
+                startActivity(scanResult);
+                finish();
+
+            } else if (resultCode == RESULT_CANCELED) {
+                // Handle cancel
+            }
+        }
+    }
+
+
 }

@@ -68,8 +68,6 @@
         </activity>
         <activity android:name="com.indooratlas.android.sdk.indoornavigation.sharelocation.ShareLocationActivity" >
         </activity>
-        <activity android:name="com.indooratlas.android.sdk.indoornavigation.imageview.RoomSelection" >
-        </activity>
 
         <service
             android:name="com.indooratlas.android.sdk.IALocationService"

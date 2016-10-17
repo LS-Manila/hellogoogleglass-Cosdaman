@@ -60,7 +60,6 @@ public class ImageViewActivity extends FragmentActivity {
     private static final String TAG = "Main Program";
     private static final int REQUEST_CODE_WRITE_EXTERNAL_STORAGE = 1;
     private static final int REQUEST_CODE_ACCESS_COARSE_LOCATION = 1;
-private int areaCode;
     private static final float dotRadius = 1.0f;     // blue dot radius in meters
     private IALocationManager mIALocationManager;
     private IAResourceManager mFloorPlanManager;
@@ -74,31 +73,16 @@ private int areaCode;
     private Handler mTimerHandler = new Handler();
     private ConnectivityManager cm;
     public ImageView badconnection;
-//    private static final float ratio= GraphicsManager.XRATIO, ratio2= GraphicsManager.YRATIO;
     private ArrayList<Vertex> routingNodes = new ArrayList<Vertex>(){{add(new Vertex("def", new Point(0,0)));}};
     private DemoRoutingManager demoRoutingManager;
-    public TextView altitudeTextView;
-    String batTemp = "sys/devices/platform/omap_i2c.1/i2c-1/1-0055/power_supply/bq27520-0/temp";
+    //uncomment for temperature data reading
+
+    /*String batTemp = "sys/devices/platform/omap_i2c.1/i2c-1/1-0055/power_supply/bq27520-0/temp";
     String cpuTemp = "sys/devices/platform/notle_pcb_sensor.0/temperature";
     FileInputStream fileInputStream;
     InputStreamReader inputStreamReader;
     BufferedReader bufferedReader;
     String line = null;
-
-    private IALocationListener mLocationListener = new IALocationListenerSupport() {
-        @Override
-        public void onLocationChanged(IALocation location) {
-            Log.d(TAG, "location is: " + location.getLatitude() + "," + location.getLongitude());
-            readFromFile(cpuTemp, "CPU ");
-            readFromFile(batTemp, "BAT ");
-            if (mImageView != null && mImageView.isReady()) {
-                IALatLng latLng = new IALatLng(location.getLatitude(), location.getLongitude());
-                PointF point = mFloorPlan.coordinateToPoint(latLng);
-                mImageView.setDotCenter(point);
-                mImageView.postInvalidate(); //redraw map
-            }
-        }
-    };
 
     private void readFromFile(String filepath, String name) {
 
@@ -117,7 +101,22 @@ private int areaCode;
         catch(IOException ex) {
             Log.d(TAG, ex.getMessage());
         }
-    }
+    } */
+
+    private IALocationListener mLocationListener = new IALocationListenerSupport() {
+        @Override
+        public void onLocationChanged(IALocation location) {
+            Log.d(TAG, "location is: " + location.getLatitude() + "," + location.getLongitude());
+            //readFromFile(cpuTemp, "CPU ");
+            //readFromFile(batTemp, "BAT ");
+            if (mImageView != null && mImageView.isReady()) {
+                IALatLng latLng = new IALatLng(location.getLatitude(), location.getLongitude());
+                PointF point = mFloorPlan.coordinateToPoint(latLng);
+                mImageView.setDotCenter(point);
+                mImageView.postInvalidate(); //redraw map
+            }
+        }
+    };
 
     private IARegion.Listener mRegionListener = new IARegion.Listener() {
 

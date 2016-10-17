@@ -25,6 +25,7 @@ public class NavigateDisplay extends Activity {
     Intent intentQR = new Intent("com.google.zxing.client.android.SCAN");
     public static int floorNumber;
     public static int roomNumber;
+    ScanCode scanCodeChecker = new ScanCode();
 
 
     @Override
@@ -296,12 +297,12 @@ public class NavigateDisplay extends Activity {
             if (resultCode == RESULT_OK) {
                 Intent scanResult = new Intent(getBaseContext(), ScanCode.class);
                 String contents = intent.getStringExtra("SCAN_RESULT");
-                //maybe unnecessary
-                //String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
                 scanResult.putExtra("FLOOR_NUMBER", floorNumber);
                 scanResult.putExtra("ROOM_NUMBER", roomNumber);
                 scanResult.putExtra("QR_SCAN", contents);
+                scanCodeChecker.Checker(1);
                 startActivity(scanResult);
+                finish();
 
             } else if (resultCode == RESULT_CANCELED) {
                 // Handle cancel

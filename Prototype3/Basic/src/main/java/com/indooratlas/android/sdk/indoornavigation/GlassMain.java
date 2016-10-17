@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
-
 import com.google.android.glass.view.WindowUtils;
 import com.google.android.glass.widget.CardBuilder;
 import com.google.android.glass.widget.CardScrollAdapter;
@@ -32,7 +31,6 @@ public class GlassMain extends Activity {
         //initialize graphics
         GraphicsManager.initalizeGraphics(getApplicationContext());
         mView = buildView();
-        //flags
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         getWindow().requestFeature(WindowUtils.FEATURE_VOICE_COMMANDS);
 

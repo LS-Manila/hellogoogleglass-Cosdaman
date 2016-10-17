@@ -20,17 +20,19 @@ import com.google.android.glass.widget.CardScrollAdapter;
 import com.google.android.glass.widget.CardScrollView;
 import com.indooratlas.android.sdk.indoornavigation.imageview.DemoRoutingManager;
 import com.indooratlas.android.sdk.indoornavigation.imageview.ImageViewActivity;
+import com.indooratlas.android.sdk.indoornavigation.outdoor.OutdoorMap;
 
-/**
- * Created by Cosda on 8/28/2016.
- */
 public class ScanCode extends Activity {
 
     private CardScrollView mCardScroller;
     private View mView;
-    private int floor_Number;
-    private int room_Number;
-
+    private static int floor_Number;
+    private static int room_Number;
+    private static int intentChecker;
+    public static void Checker(int checker) {
+        //1 if from menu, 0 if from outdoor
+        intentChecker = checker;
+    }
 
     @Override
     protected void onCreate(Bundle bundle) {
@@ -85,10 +87,23 @@ public class ScanCode extends Activity {
 
         Bundle extras = getIntent().getExtras();
         String QR_Data = extras.getString("QR_SCAN");
-        floor_Number = extras.getInt("FLOOR_NUMBER");
-        room_Number = extras.getInt("ROOM_NUMBER");
+
+        if( extras.getInt("FLOOR_NUMBER")!=0){
+            floor_Number = extras.getInt("FLOOR_NUMBER");
+            room_Number = extras.getInt("ROOM_NUMBER");
+        }
+        else{
+            //idk lol
+        }
+
         CardBuilder card = new CardBuilder(this, CardBuilder.Layout.COLUMNS);
-        card.setText("QR Data: " + QR_Data + ". \nFloor Number: " + floor_Number +". \nRoom Number: "+ room_Number +"\n");
+        if (intentChecker == 0){
+            card.setText("Current Location: " + QR_Data);
+        }
+        else if (intentChecker == 1)
+        {
+            card.setText("QR Data: " + QR_Data + ". \nDestination Floor Number: " + floor_Number +". \nDestination Room Number: "+ room_Number +"\n");
+        }
         card.setIcon(R.drawable.ic_glass_logo);
         return card.getView();
     }
@@ -99,16 +114,28 @@ public class ScanCode extends Activity {
     public boolean onKeyDown(int keycode, KeyEvent event) {
         if (keycode == KeyEvent.KEYCODE_DPAD_CENTER) {
 
-           DemoRoutingManager.setArea(4);
-            DemoRoutingManager.setRoom(0);
-            Intent myIntent = new Intent(this, ImageViewActivity.class);
-            this.startActivity(myIntent);
+            if (intentChecker == 0) {
 
-            Log.d("Tap Listener", "TAPPY");
-            return true;
+                Intent myIntent = new Intent(this, ImageViewActivity.class);
+                intentChecker = 0;
+                this.startActivity(myIntent);
+                finish();
+
+            }
+            else if (intentChecker == 1)
+            {
+                DemoRoutingManager.setArea(floor_Number);
+                DemoRoutingManager.setRoom(room_Number);
+                Intent myIntent = new Intent(this, OutdoorMap.class);
+                intentChecker = 1;
+                this.startActivity(myIntent);
+
+                return true;
+            }
         }
-
         return super.onKeyDown(keycode, event);
     }
+
+
 
 }
