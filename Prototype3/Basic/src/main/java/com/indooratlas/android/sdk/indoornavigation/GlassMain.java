@@ -29,13 +29,14 @@ public class GlassMain extends Activity {
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         //initialize graphics
+
         GraphicsManager.initalizeGraphics(getApplicationContext());
         mView = buildView();
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         getWindow().requestFeature(WindowUtils.FEATURE_VOICE_COMMANDS);
-
         mCardScroller = new CardScrollView(this);
         mCardScroller.setAdapter(new CardScrollAdapter() {
+
             @Override
             public int getCount() {
                 return 1;
@@ -59,6 +60,7 @@ public class GlassMain extends Activity {
                 return AdapterView.INVALID_POSITION;
             }
         });
+
         //set menu to open on click
         mCardScroller.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -139,6 +141,8 @@ public class GlassMain extends Activity {
         return super.onMenuItemSelected(featureId, item);
     }
 
+
+    //on result for qr code scan
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         if (requestCode == 0) {
             if (resultCode == RESULT_OK) {

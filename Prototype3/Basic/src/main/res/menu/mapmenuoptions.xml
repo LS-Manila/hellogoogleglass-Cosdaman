@@ -11,6 +11,10 @@
                                 android:title="L101"
                                 android:icon="@drawable/ic_glass_logo">
                             </item>
+                            <item android:id="@+id/L102"
+                                android:title="L102"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
                             <item android:id="@+id/L101D"
                                 android:title="L101D"
                                 android:icon="@drawable/ic_glass_logo">
@@ -287,6 +291,20 @@
                 android:title="Xi"
                 android:icon="@drawable/ic_glass_logo">
                 <menu>
+                    <item android:id="@+id/Xi_Floor_1"
+                        android:title="1st Floor"
+                        android:icon="@drawable/ic_glass_logo">
+                        <menu>
+                            <item android:id="@+id/X101"
+                                android:title="X101"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                            <item android:id="@+id/X103"
+                                android:title="X103"
+                                android:icon="@drawable/ic_glass_logo">
+                            </item>
+                        </menu>
+                    </item>
                     <item android:id="@+id/Xi_Floor_2"
                         android:title="2nd Floor"
                         android:icon="@drawable/ic_glass_logo">
@@ -458,5 +476,129 @@
                         </menu>
                     </item>
                 </menu>
+    </item>
+    <item android:id="@+id/Zeta"
+        android:title="Zeta"
+        android:icon="@drawable/ic_glass_logo">
+        <menu>
+            <item android:id="@+id/Zeta_Floor_1"
+                android:title="1st Floor"
+                android:icon="@drawable/ic_glass_logo">
+                <menu>
+                    <item android:id="@+id/ACCOUNTING"
+                        android:title="Accounting"
+                        android:icon="@drawable/ic_glass_logo">
+                    </item>
+                    <item android:id="@+id/COBADMIN"
+                        android:title="COBADMIN"
+                        android:icon="@drawable/ic_glass_logo">
+                    </item>
+                </menu>
             </item>
+            <item android:id="@+id/Zeta_Floor_2"
+                android:title="2nd Floor"
+                android:icon="@drawable/ic_glass_logo">
+                <menu>
+                    <item android:id="@+id/FINANCIAL_MANAGEMENT"
+                        android:title="FINANCIAL MANAGEMENT"
+                        android:icon="@drawable/ic_glass_logo">
+                    </item>
+                    <item android:id="@+id/MARK_ADV"
+                        android:title="MARKETING AND ADVERTISING"
+                        android:icon="@drawable/ic_glass_logo">
+                    </item>
+                </menu>
+            </item>
+            <item android:id="@+id/Zeta_Floor_3"
+                android:title="3rd Floor"
+                android:icon="@drawable/ic_glass_logo">
+                <menu>
+                    <item android:id="@+id/HISTORY"
+                        android:title="HISTORY"
+                        android:icon="@drawable/ic_glass_logo">
+                    </item>
+                    <item android:id="@+id/THEOLOGY"
+                        android:title="THEOLOGY"
+                        android:icon="@drawable/ic_glass_logo">
+                    </item>
+                </menu>
+            </item>
+            <item android:id="@+id/Zeta_Floor_4"
+                android:title="4th Floor"
+                android:icon="@drawable/ic_glass_logo">
+                <menu>
+                    <item android:id="@+id/INTL_STD"
+                        android:title="INTERNATIONAL STUDIES"
+                        android:icon="@drawable/ic_glass_logo">
+                    </item>
+                    <item android:id="@+id/PHILO"
+                        android:title="PHILOSOPHY"
+                        android:icon="@drawable/ic_glass_logo">
+                    </item>
+                </menu>
+            </item>
+        </menu>
+    </item>
+    <item android:id="@+id/Mu"
+        android:title="Mu"
+        android:icon="@drawable/ic_glass_logo">
+        <menu>
+            <item android:id="@+id/Mu_Floor_1"
+                android:title="1st Floor"
+                android:icon="@drawable/ic_glass_logo">
+                <menu>
+                    <item android:id="@+id/M104"
+                        android:title="M104"
+                        android:icon="@drawable/ic_glass_logo">
+                    </item>
+                    <item android:id="@+id/M116"
+                        android:title="M116"
+                        android:icon="@drawable/ic_glass_logo">
+                    </item>
+                </menu>
+            </item>
+            <item android:id="@+id/Mu_Floor_2"
+                android:title="2nd Floor"
+                android:icon="@drawable/ic_glass_logo">
+                <menu>
+                    <item android:id="@+id/M209"
+                        android:title="M209"
+                        android:icon="@drawable/ic_glass_logo">
+                    </item>
+                    <item android:id="@+id/M213"
+                        android:title="M213"
+                        android:icon="@drawable/ic_glass_logo">
+                    </item>
+                </menu>
+            </item>
+            <item android:id="@+id/Mu_Floor_3"
+                android:title="3rd Floor"
+                android:icon="@drawable/ic_glass_logo">
+                <menu>
+                    <item android:id="@+id/M314"
+                        android:title="M314"
+                        android:icon="@drawable/ic_glass_logo">
+                    </item>
+                    <item android:id="@+id/M310"
+                        android:title="M310"
+                        android:icon="@drawable/ic_glass_logo">
+                    </item>
+                </menu>
+            </item>
+            <item android:id="@+id/Mu_Floor_4"
+                android:title="4th Floor"
+                android:icon="@drawable/ic_glass_logo">
+                <menu>
+                    <item android:id="@+id/M404"
+                        android:title="M404"
+                        android:icon="@drawable/ic_glass_logo">
+                    </item>
+                    <item android:id="@+id/M408"
+                        android:title="M408"
+                        android:icon="@drawable/ic_glass_logo">
+                    </item>
+                </menu>
+            </item>
+        </menu>
+    </item>
 </menu>

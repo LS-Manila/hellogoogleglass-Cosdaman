@@ -99,10 +99,12 @@ public class ScanCode extends Activity {
         CardBuilder card = new CardBuilder(this, CardBuilder.Layout.COLUMNS);
         if (intentChecker == 0){
             card.setText("Current Location: " + QR_Data);
+            //TODO FILE LOGGING HERE FUNCTION CALL
         }
         else if (intentChecker == 1)
         {
             card.setText("QR Data: " + QR_Data + ". \nDestination Floor Number: " + floor_Number +". \nDestination Room Number: "+ room_Number +"\n");
+            //TODO AND HERE FUNCTION CALL
         }
         card.setIcon(R.drawable.ic_glass_logo);
         return card.getView();
@@ -135,6 +137,8 @@ public class ScanCode extends Activity {
         }
         return super.onKeyDown(keycode, event);
     }
+
+    //TODO FILE LOGGING FUNCTION
 
 
 
