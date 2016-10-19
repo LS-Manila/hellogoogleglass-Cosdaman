@@ -116,15 +116,15 @@ public class ScanCode extends Activity {
 
         CardBuilder card = new CardBuilder(this, CardBuilder.Layout.COLUMNS);
         if (intentChecker == 0){
-            card.setText("Current Location: " + QR_Data);
-            logData = formattedTime + "--- QR:" + QR_Data + "Destination --- Floor ID:" + floor_Number + " Room:" + room_Number;
+            logData = formattedTime + "--- QR:" + QR_Data + " Destination --- Floor ID:" + floor_Number + " Room:" + room_Number + " Scan from Outdoor";
             generateLogFile(logData);
+            card.setText("Current Location: " + QR_Data);
         }
         else if (intentChecker == 1)
         {
-            card.setText("QR Data: " + QR_Data + ". \nDestination Floor ID: " + floor_Number +". \nDestination Room Number: "+ room_Number +"\n");
-            logData = formattedTime + "--- QR:" + QR_Data + "Destination --- Floor ID:" + floor_Number + " Room:" + room_Number;
+            logData = formattedTime + "--- QR:" + QR_Data + " Destination --- Floor ID:" + floor_Number + " Room:" + room_Number+ " Scan from Indoor";
             generateLogFile(logData);
+            card.setText("QR Data: " + QR_Data + ". \nDestination Floor ID: " + floor_Number + ". \nDestination Room Number: " + room_Number + "\n");
         }
         card.setIcon(R.drawable.ic_glass_logo);
         return card.getView();
@@ -160,20 +160,15 @@ public class ScanCode extends Activity {
     public void generateLogFile(String sBody) {
         try {
             FileName =filePath + formattedDate+".txt";
-            File log = new File(filePath);
-            FileWriter writer = new FileWriter(log, true);
-            if (!log.exists()){
-                log.createNewFile();
-                writer.append("Data Log for the Date:");
-                writer.append(FileName);
-                writer.append("\n");
-            }
-            writer.append("\n");
+            File log = new File(FileName);
+            FileWriter writer;
+            sBody = "\n" + sBody;
+            writer = new FileWriter(log,true);
             writer.append(sBody);
             writer.flush();
             writer.close();
 
-           Log.d("Log","QR Data Logged");
+           Log.d("Log", "QR Data Logged");
         } catch (IOException e) {
             e.printStackTrace();
         }
