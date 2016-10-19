@@ -126,7 +126,12 @@
         <activity
             android:name=".outdoor.OutdoorMap"
             android:icon="@drawable/ic_glass_logo"
-            android:label="Scan" >
+            android:label="Outdoor" >
+        </activity>
+        <activity
+            android:name=".TestSite"
+            android:icon="@drawable/ic_glass_logo"
+            android:label="AfterScan">
         </activity>
 
     </application>

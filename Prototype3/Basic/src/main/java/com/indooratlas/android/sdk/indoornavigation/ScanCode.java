@@ -1,8 +1,10 @@
 package com.indooratlas.android.sdk.indoornavigation;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -22,6 +24,13 @@ import com.indooratlas.android.sdk.indoornavigation.imageview.DemoRoutingManager
 import com.indooratlas.android.sdk.indoornavigation.imageview.ImageViewActivity;
 import com.indooratlas.android.sdk.indoornavigation.outdoor.OutdoorMap;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.FilenameFilter;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class ScanCode extends Activity {
 
     private CardScrollView mCardScroller;
@@ -33,6 +42,15 @@ public class ScanCode extends Activity {
         //1 if from menu, 0 if from outdoor
         intentChecker = checker;
     }
+    String filePath = "storage/emulated/legacy/DCIM/Logs/";
+    Calendar c = Calendar.getInstance();
+    SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+    SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+    String formattedDate = df.format(c.getTime());
+    String formattedTime = sdf.format(c.getTime());
+    String FileName;
+    String logData;
+
 
     @Override
     protected void onCreate(Bundle bundle) {
@@ -99,12 +117,14 @@ public class ScanCode extends Activity {
         CardBuilder card = new CardBuilder(this, CardBuilder.Layout.COLUMNS);
         if (intentChecker == 0){
             card.setText("Current Location: " + QR_Data);
-            //TODO FILE LOGGING HERE FUNCTION CALL
+            logData = formattedTime + "--- QR:" + QR_Data + "Destination --- Floor ID:" + floor_Number + " Room:" + room_Number;
+            generateLogFile(logData);
         }
         else if (intentChecker == 1)
         {
-            card.setText("QR Data: " + QR_Data + ". \nDestination Floor Number: " + floor_Number +". \nDestination Room Number: "+ room_Number +"\n");
-            //TODO AND HERE FUNCTION CALL
+            card.setText("QR Data: " + QR_Data + ". \nDestination Floor ID: " + floor_Number +". \nDestination Room Number: "+ room_Number +"\n");
+            logData = formattedTime + "--- QR:" + QR_Data + "Destination --- Floor ID:" + floor_Number + " Room:" + room_Number;
+            generateLogFile(logData);
         }
         card.setIcon(R.drawable.ic_glass_logo);
         return card.getView();
@@ -131,15 +151,33 @@ public class ScanCode extends Activity {
                 Intent myIntent = new Intent(this, OutdoorMap.class);
                 intentChecker = 1;
                 this.startActivity(myIntent);
-
                 return true;
             }
         }
         return super.onKeyDown(keycode, event);
     }
 
-    //TODO FILE LOGGING FUNCTION
+    public void generateLogFile(String sBody) {
+        try {
+            FileName =filePath + formattedDate+".txt";
+            File log = new File(filePath);
+            FileWriter writer = new FileWriter(log, true);
+            if (!log.exists()){
+                log.createNewFile();
+                writer.append("Data Log for the Date:");
+                writer.append(FileName);
+                writer.append("\n");
+            }
+            writer.append("\n");
+            writer.append(sBody);
+            writer.flush();
+            writer.close();
 
+           Log.d("Log","QR Data Logged");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 }

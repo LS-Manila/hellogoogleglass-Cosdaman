@@ -18,6 +18,8 @@ import android.widget.AdapterView;
 import android.widget.Toast;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 /**
  * An {@link Activity} showing a tuggable "Hello World!" card.
@@ -93,10 +95,13 @@ public class MainActivity extends Activity {
      */
     private View buildView() {
         CardBuilder card = new CardBuilder(this, CardBuilder.Layout.TEXT);
-        String filepath = Environment.getExternalStorageDirectory() + "/"
-                + Environment.DIRECTORY_DOWNLOADS + "/Maps/";
-        card.setText(filepath);
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+        String formattedDate = df.format(c.getTime());
+        String formattedTime = sdf.format(c.getTime());
 
+        card.setText(formattedDate +"\n" + formattedTime);
         return card.getView();
     }
 

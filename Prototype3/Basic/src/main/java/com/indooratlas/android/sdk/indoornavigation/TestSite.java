@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.media.AudioManager;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -12,9 +13,12 @@ import com.google.android.glass.widget.CardBuilder;
 import com.google.android.glass.widget.CardScrollAdapter;
 import com.google.android.glass.widget.CardScrollView;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 //TODO THIS IS FOR TESTING PURPOSES
 
-public class AfterScan extends Activity{
+public class TestSite extends Activity{
 
     private CardScrollView mCardScroller;
     private View mView;
@@ -79,8 +83,16 @@ public class AfterScan extends Activity{
      */
     private View buildView() {
         CardBuilder card = new CardBuilder(this, CardBuilder.Layout.TEXT);
+        String string = Environment.getExternalStorageDirectory()+"";
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+        String formattedDate = df.format(c.getTime());
+        String formattedTime = sdf.format(c.getTime());
 
-        card.setText(R.string.hello_world);
+        card.setText(formattedDate +"\n" + formattedTime);
+
+
         return card.getView();
     }
 

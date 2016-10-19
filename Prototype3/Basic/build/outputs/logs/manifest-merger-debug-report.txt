@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:2:1-133:12
+ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:2:1-138:12
 	package
 		ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:3:5-59
 		INJECTED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml
@@ -189,7 +189,7 @@ MERGED from [com.google.android.gms:play-services-maps:8.1.0] C:\Users\Cosda\Doc
 	android:required
 		ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:39:9-32
 application
-ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:41:5-132:19
+ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:41:5-137:19
 MERGED from [com.indooratlas.android:indooratlas-android-sdk:2.1.2] C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\build\intermediates\exploded-aar\com.indooratlas.android\indooratlas-android-sdk\2.1.2\AndroidManifest.xml:30:5-34:19
 MERGED from [com.android.support:appcompat-v7:23.1.0] C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.0\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.1.0] C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\AndroidManifest.xml:22:5-20
@@ -638,11 +638,19 @@ ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\
 activity#com.indooratlas.android.sdk.indoornavigation.outdoor.OutdoorMap
 ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:126:9-130:20
 	android:label
-		ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:129:13-33
+		ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:129:13-36
 	android:icon
 		ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:128:13-51
 	android:name
 		ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:127:13-47
+activity#com.indooratlas.android.sdk.indoornavigation.TestSite
+ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:131:9-135:20
+	android:label
+		ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:134:13-38
+	android:icon
+		ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:133:13-51
+	android:name
+		ADDED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml:132:13-37
 uses-sdk
 INJECTED from C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.indooratlas.android:indooratlas-android-sdk:2.1.2] C:\Users\Cosda\Documents\GitHub\hellogoogleglass-Cosdaman\Prototype3\Basic\build\intermediates\exploded-aar\com.indooratlas.android\indooratlas-android-sdk\2.1.2\AndroidManifest.xml:7:5-9:41
