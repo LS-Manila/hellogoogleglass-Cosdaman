@@ -39,30 +39,27 @@ import butterknife.ButterKnife;
 public class OutdoorMap extends Activity {
 
     private ScanCode scanCodeChecker = new ScanCode();
-    private Intent intent = new Intent();
     private static final int RIGHT = 0;
     private static final int LEFT = 1;
     private static final int TOP = 2;
     private static final int BOTTOM = 3;
     private Mat m;
     private List<Point> centers;
-
-    @BindView(R.id.imageView)
-    ImageView iv;
+    DemoRoutingManager demo = new DemoRoutingManager();
+    //@BindView(R.id.imageView) ImageView iv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_outdoormap);
-        ButterKnife.bind(this);
-        loadMap();
-        onClickRoute();
+        //ButterKnife.bind(this);
     }
 
     private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
         @Override
         public void onManagerConnected(int status) {
             if (status == LoaderCallbackInterface.SUCCESS ) {
+                onClickRoute();
 
             } else {
                 super.onManagerConnected(status);
@@ -70,12 +67,12 @@ public class OutdoorMap extends Activity {
         }
     };
 
-    public void loadMap() {
+    /*public void loadMap() {
         Picasso.with(this).load(R.drawable.worldmapv1).into(iv);
-    }
+    }*/
 
     @Override
-    public void onResume() {;
+    public void onResume() {
         super.onResume();
         OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_1_0, this, mLoaderCallback);
     }
@@ -125,6 +122,7 @@ public class OutdoorMap extends Activity {
         // Convert back to bitmap:
         Bitmap bm = Bitmap.createBitmap(m.cols(), m.rows(),Bitmap.Config.ARGB_8888);
         Utils.matToBitmap(m, bm);
+        ImageView iv = (ImageView) findViewById(R.id.imageViewOutdoor);
         iv.setImageBitmap(bm);
         iv.postInvalidate();
     }
@@ -133,7 +131,7 @@ public class OutdoorMap extends Activity {
         // Starting point is the lowest point; highest y
         Point start = centers.get(0);
         double max_y = centers.get(0).y;
-
+        int buildingCode = demo.getTargetAreaNumber();
         for (int i = 1; i < centers.size(); i++) {
             if (centers.get(i).y > max_y) {
                 max_y = centers.get(i).y;
@@ -141,176 +139,293 @@ public class OutdoorMap extends Activity {
             }
         }
 
-        //Velasco
-    /*
-    //TODO IF STATEMENT FOR BUILDING IDENTITY, GET VARIABLE FROM  OTHER CLASS
-        start = move(start,TOP);
-        start = move(start, RIGHT); // start.x = 1227.5, start.y = 591.5
-        start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
-        start = move(start, TOP);
-        start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
-        start = move(start, TOP);
-        start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
-        start = move(start, TOP);
-        start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);*/
+        if(buildingCode == 1) {
+            //Velasco
+            start = move(start, TOP);
+            start = move(start, RIGHT); // start.x = 1227.5, start.y = 591.5
+            start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, TOP);
+            start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, TOP);
+            start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, TOP);
+            start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
 
-        //Miguel
-        /*
-        start = move(start,TOP);
-        start = move(start, RIGHT); // start.x = 1227.5, start.y = 591.5
-        start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
-        start = move(start, TOP);
-        start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
-        start = move(start, TOP);
-        start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
-        start = move(start, TOP);
-        start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, TOP);
-        start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);*/
+        }else if(buildingCode == 2){
 
-        //William
+            //FC
+            start = move(start, TOP);
+            start = move(start, LEFT);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, LEFT);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, RIGHT);
+
+        }else if (buildingCode == 3){
+
+            //Gokongwei
+            start = move(start,TOP);
+            start = move(start, RIGHT); // start.x = 1227.5, start.y = 591.5
+            start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, TOP);
+            start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, TOP);
+            start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, TOP);
+            start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, BOTTOM);
+
+        }else if(buildingCode == 4){
+
+            //Miguel
+            start = move(start,TOP);
+            start = move(start, RIGHT); // start.x = 1227.5, start.y = 591.5
+            start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, TOP);
+            start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, TOP);
+            start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, TOP);
+            start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, TOP);
+            start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+
+        }else if(buildingCode == 10){
+
+            //William
+            start = move(start,TOP);
+            start = move(start, RIGHT); // start.x = 1227.5, start.y = 591.5
+            start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, TOP);
+            start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, TOP);
+            start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, TOP);
+            start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, TOP);
+            start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, RIGHT);
+            start = move(start,TOP);
+            start = move(start,TOP);
+            start = move(start,TOP);
+            start = move(start,TOP);
+            start = move(start,TOP);
+            start = move(start,TOP);
+            start = move(start,TOP);
+            start = move(start, LEFT);
+            start = move(start, LEFT);
+
+        }else if(buildingCode == 7){
+
+            //STRC
+            start = move(start,TOP);
+            start = move(start, RIGHT); // start.x = 1227.5, start.y = 591.5
+            start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, TOP);
+            start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, TOP);
+            start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, TOP);
+            start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, TOP);
+
+        }else if(buildingCode == 9){
+
+            //Andrew
+            start = move(start,TOP);
+            start = move(start, RIGHT); // start.x = 1227.5, start.y = 591.5
+            start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, TOP);
+            start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, TOP);
+            start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, TOP);
+            start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, RIGHT);
+            start = move(start, BOTTOM);
+
+        }else if (buildingCode == 5){
+
+            //Henry
+            start = move(start, TOP);
+            start = move(start, LEFT);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, TOP);
+            start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, RIGHT);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+
+        }else if (buildingCode == 6){
+
+            //SJ
+            start = move(start, TOP);
+            start = move(start, LEFT);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, TOP);
+            start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
+            start = move(start, RIGHT);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+
+        }else if (buildingCode == 8){
+
+            //Yuch
+            start = move(start, TOP);
+            start = move(start, LEFT);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, TOP);
+            start = move(start, LEFT);
+            start = move(start, LEFT);
+            start = move(start, LEFT);
+            start = move(start, LEFT);
+
+        }
+
+        //LS
         /*
-        start = move(start,TOP);
-        start = move(start, RIGHT); // start.x = 1227.5, start.y = 591.5
-        start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
         start = move(start, TOP);
-        start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
-        start = move(start, TOP);
-        start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
-        start = move(start, TOP);
-        start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, TOP);
-        start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
+        start = move(start, LEFT);
         start = move(start, TOP);
         start = move(start, TOP);
-        start = move(start, RIGHT);
-        start = move(start,TOP);
-        start = move(start,TOP);
-        start = move(start,TOP);
-        start = move(start,TOP);
-        start = move(start,TOP);
-        start = move(start,TOP);
-        start = move(start,TOP);
+        start = move(start, TOP);
+        start = move(start, LEFT);
+        start = move(start, LEFT);*/
+
+        //,John
+        /*
+        start = move(start, TOP);
+        start = move(start, LEFT);
+        start = move(start, TOP);
+        start = move(start, TOP);
+        start = move(start, TOP);
         start = move(start, LEFT);
         start = move(start, LEFT);
-        */
-
-        //Gokongwei
-        /*
-        start = move(start,TOP);
-        start = move(start, RIGHT); // start.x = 1227.5, start.y = 591.5
-        start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
-        start = move(start, TOP);
-        start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
-        start = move(start, TOP);
-        start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
-        start = move(start, TOP);
-        start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
+        start = move(start, LEFT);
+        start = move(start, LEFT);
+        start = move(start, LEFT);
+        start = move(start, LEFT);
+        start = move(start, LEFT);
+        start = move(start, LEFT);
+        start = move(start, LEFT);
+        start = move(start, LEFT);
+        start = move(start, LEFT);
+        start = move(start, LEFT);
+        start = move(start, LEFT);
+        start = move(start, LEFT);
+        start = move(start, LEFT);
         start = move(start, TOP);
         start = move(start, TOP);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, BOTTOM);*/
-
-
-        //STRC
-        /*
-        start = move(start,TOP);
-        start = move(start, RIGHT); // start.x = 1227.5, start.y = 591.5
-        start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
-        start = move(start, TOP);
-        start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
-        start = move(start, TOP);
-        start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
-        start = move(start, TOP);
-        start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, TOP);
-        */
-
-        //Andrew
-        /*
-        start = move(start,TOP);
-        start = move(start, RIGHT); // start.x = 1227.5, start.y = 591.5
-        start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
-        start = move(start, TOP);
-        start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
-        start = move(start, TOP);
-        start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
-        start = move(start, TOP);
-        start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, RIGHT);
-        start = move(start, BOTTOM);
+        start = move(start, LEFT);
         */
 
         //Razon
@@ -352,120 +467,6 @@ public class OutdoorMap extends Activity {
         start = move(start, RIGHT);
          start = move(start, TOP);
          */
-
-        //Henry
-        /*
-        start = move(start, TOP);
-        start = move(start, LEFT);   // start.x = 1314.0, start.y = 588.0
-        start = move(start, TOP);
-        start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
-        start = move(start, RIGHT);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);*/
-
-        //SJ
-        /*
-        start = move(start, TOP);
-        start = move(start, LEFT);   // start.x = 1314.0, start.y = 588.0
-        start = move(start, TOP);
-        start = move(start, TOP);   // start.x = 1314.0, start.y = 588.0
-        start = move(start, RIGHT);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        */
-
-        //LS
-        /*
-        start = move(start, TOP);
-        start = move(start, LEFT);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, LEFT);
-        start = move(start, LEFT);*/
-
-        //,John
-        /*
-        start = move(start, TOP);
-        start = move(start, LEFT);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, LEFT);
-        start = move(start, LEFT);
-        start = move(start, LEFT);
-        start = move(start, LEFT);
-        start = move(start, LEFT);
-        start = move(start, LEFT);
-        start = move(start, LEFT);
-        start = move(start, LEFT);
-        start = move(start, LEFT);
-        start = move(start, LEFT);
-        start = move(start, LEFT);
-        start = move(start, LEFT);
-        start = move(start, LEFT);
-        start = move(start, LEFT);
-        start = move(start, LEFT);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, LEFT);
-        */
-        //Yuch
-        /*
-        start = move(start, TOP);
-        start = move(start, LEFT);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, LEFT);
-        start = move(start, LEFT);
-        start = move(start, LEFT);
-        start = move(start, LEFT);*/
-
-
-
-        //FC
-        /*
-        start = move(start, TOP);
-        start = move(start, LEFT);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, LEFT);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, TOP);
-        start = move(start, RIGHT);
-        */
     }
 
 
@@ -549,7 +550,8 @@ public class OutdoorMap extends Activity {
     @Override
     public boolean onKeyDown(int keycode, KeyEvent event) {
         if (keycode == KeyEvent.KEYCODE_DPAD_CENTER) {
-            intent = new Intent("com.google.zxing.client.android.SCAN");
+
+            Intent intent = new Intent("com.google.zxing.client.android.SCAN");
             intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
             startActivityForResult(intent, 0);
             return true;
@@ -572,6 +574,4 @@ public class OutdoorMap extends Activity {
             }
         }
     }
-
-
 }

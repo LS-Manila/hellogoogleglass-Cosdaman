@@ -19,10 +19,13 @@ public class DemoRoutingManager {
     public static void setRoom(int newRoomNumber){
         targetRoomNumber = newRoomNumber;
     }
+    public static int buildingNumber;
+
 
     public static int  getArea() {
 		return currentArea;
     }
+
 	
     private static void computePaths(Vertex source) {
         source.minDistance = 0.;
@@ -57,8 +60,44 @@ public class DemoRoutingManager {
         return path;
     }
 
+    public static int getTargetAreaNumber() {
+
+        if(targetAreaNumber >= 1 && targetAreaNumber <= 5){
+            buildingNumber = 1; //velasco
+
+        }else if (targetAreaNumber >= 6 && targetAreaNumber <= 9) {
+            buildingNumber = 2; //faculty
+
+        }else if (targetAreaNumber >= 10 && targetAreaNumber <= 13) {
+            buildingNumber = 3; //gox
+
+        }else if (targetAreaNumber >= 14 && targetAreaNumber <= 17) {
+            buildingNumber = 4; //miguel
+
+        }else if (targetAreaNumber >= 18 && targetAreaNumber <= 22) {
+            buildingNumber = 5; //henry
+
+        }else if (targetAreaNumber >= 23 && targetAreaNumber <= 28) {
+            buildingNumber = 6; //sj
+
+        }else if (targetAreaNumber >= 29 && targetAreaNumber <= 32) {
+            buildingNumber = 7; //strc
+
+        }else if (targetAreaNumber >= 33 && targetAreaNumber <= 36) {
+            buildingNumber = 8; //yuch
+
+        }else if (targetAreaNumber >= 37 && targetAreaNumber <= 39) {
+            buildingNumber = 9; //andrew
+
+        }else if (targetAreaNumber >= 40 && targetAreaNumber <= 42) {
+            buildingNumber = 10; //william
+
+        }
+            return buildingNumber;
+        }
+
 	public void init(String string) {
-        if (string.equals("vlsc1.png")) {
+        if (string.equals("2379.png")) {
             //Velasco
             currentArea = 1;
 
