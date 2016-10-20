@@ -33,8 +33,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class OutdoorMap extends Activity {
 
@@ -46,13 +44,11 @@ public class OutdoorMap extends Activity {
     private Mat m;
     private List<Point> centers;
     DemoRoutingManager demo = new DemoRoutingManager();
-    //@BindView(R.id.imageView) ImageView iv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_outdoormap);
-        //ButterKnife.bind(this);
     }
 
     private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
@@ -66,10 +62,6 @@ public class OutdoorMap extends Activity {
             }
         }
     };
-
-    /*public void loadMap() {
-        Picasso.with(this).load(R.drawable.worldmapv1).into(iv);
-    }*/
 
     @Override
     public void onResume() {
@@ -528,7 +520,7 @@ public class OutdoorMap extends Activity {
         }
 
         Log.d("Main", "next.x = " + next.x + ", next.y = " + next.y);
-        Imgproc.line(m,current,next,new Scalar(255,255,255,255),24);
+        Imgproc.line(m,current,next,new Scalar(43, 129, 205, 1), 12);
         return next;
     }
 

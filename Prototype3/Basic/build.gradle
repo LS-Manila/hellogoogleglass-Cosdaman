@@ -61,7 +61,7 @@ dependencies {
     compile 'com.android.support:design:23.0.1'
     compile files('libs/gdk.jar')
     compile 'com.google.zxing:core:3.0.1'
-    compile 'com.jakewharton:butterknife:8.4.0'
+    //compile 'com.jakewharton:butterknife:8.4.0'
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile project(':opencv')
     }
