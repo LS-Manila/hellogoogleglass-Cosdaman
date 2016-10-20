@@ -715,14 +715,12 @@ int drawable mr_ic_play_dark 0x7f020098
 int drawable mr_ic_play_light 0x7f020099
 int drawable mr_ic_settings_dark 0x7f02009a
 int drawable mr_ic_settings_light 0x7f02009b
-int drawable notification_template_icon_bg 0x7f0200a3
+int drawable notification_template_icon_bg 0x7f0200a1
 int drawable parkhere 0x7f02009c
 int drawable powered_by_google_dark 0x7f02009d
 int drawable powered_by_google_light 0x7f02009e
 int drawable stairs 0x7f02009f
-int drawable v101 0x7f0200a0
-int drawable v102 0x7f0200a1
-int drawable wholedlsu 0x7f0200a2
+int drawable worldmapv1 0x7f0200a0
 int id ACCOUNTING 0x7f0e0128
 int id COBADMIN 0x7f0e0129
 int id FINANCIAL_MANAGEMENT 0x7f0e012b

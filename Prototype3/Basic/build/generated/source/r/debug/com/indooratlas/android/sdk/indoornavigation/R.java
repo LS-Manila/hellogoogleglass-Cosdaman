@@ -2712,14 +2712,12 @@ containing a value of this type.
         public static final int mr_ic_play_light=0x7f020099;
         public static final int mr_ic_settings_dark=0x7f02009a;
         public static final int mr_ic_settings_light=0x7f02009b;
-        public static final int notification_template_icon_bg=0x7f0200a3;
+        public static final int notification_template_icon_bg=0x7f0200a1;
         public static final int parkhere=0x7f02009c;
         public static final int powered_by_google_dark=0x7f02009d;
         public static final int powered_by_google_light=0x7f02009e;
         public static final int stairs=0x7f02009f;
-        public static final int v101=0x7f0200a0;
-        public static final int v102=0x7f0200a1;
-        public static final int wholedlsu=0x7f0200a2;
+        public static final int worldmapv1=0x7f0200a0;
     }
     public static final class id {
         public static final int ACCOUNTING=0x7f0e0128;

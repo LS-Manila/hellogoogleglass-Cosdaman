@@ -49,11 +49,11 @@ android {
 }
 
 dependencies {
-    compile 'com.indooratlas.android:indooratlas-android-sdk:2.1.2@aar'
     //DO NOT UPDATE THESE DEPENDENCIES, THEY WILL CAUSE THE APP TO CRASH
     compile 'com.android.support:appcompat-v7:23.1.0'
     compile 'com.google.android.gms:play-services:8.1.0'
     // END OF DO NOT UPDATE
+    compile 'com.indooratlas.android:indooratlas-android-sdk:2.1.2@aar'
     compile 'com.google.maps.android:android-maps-utils:0.3'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.davemorrissey.labs:subsampling-scale-image-view:3.2.0'
@@ -61,6 +61,7 @@ dependencies {
     compile 'com.android.support:design:23.0.1'
     compile files('libs/gdk.jar')
     compile 'com.google.zxing:core:3.0.1'
+    compile 'com.jakewharton:butterknife:8.4.0'
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile project(':opencv')
     }
