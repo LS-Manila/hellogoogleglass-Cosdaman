@@ -4,9 +4,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
 
-/**
- * Created by janlu on 7/30/2016.
- */
 public class NetworkUsage {
 
     public static boolean isConnectedThroughWifi(ConnectivityManager connManager)

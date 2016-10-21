@@ -1,8 +1,5 @@
 package com.indooratlas.android.sdk.indoornavigation.imageview;
 
-/**
- * Created by Jian Lastino on 8/29/2016.
- */
 public class Edge
 {
     public final Vertex target;

@@ -29,13 +29,17 @@ public class GlassMain extends Activity {
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        //initialize graphics
 
+        //initialize graphics
         GraphicsManager.initalizeGraphics(getApplicationContext());
+
         mView = buildView();
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         getWindow().requestFeature(WindowUtils.FEATURE_VOICE_COMMANDS);
         mCardScroller = new CardScrollView(this);
+
+
+
         mCardScroller.setAdapter(new CardScrollAdapter() {
 
             @Override
@@ -90,6 +94,8 @@ public class GlassMain extends Activity {
         card.setText("Welcome to the Main Menu");
         card.setIcon(R.drawable.ic_glass_logo);
         return card.getView();
+
+
     }
 
     @Override
@@ -135,6 +141,14 @@ public class GlassMain extends Activity {
                     Intent myIntent = new Intent(this, OutdoorMap.class);
                     intentChecker = 1;
                     this.startActivity(myIntent);
+                    break;
+
+
+                case R.id.exit_menu_item:
+                    //moveTaskToBack(true);
+                    //android.os.Process.killProcess(android.os.Process.myPid());
+                    //System.exit(0);
+                    finish();
                     break;
 
             }

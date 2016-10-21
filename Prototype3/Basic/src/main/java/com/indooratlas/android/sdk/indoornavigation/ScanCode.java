@@ -1,21 +1,19 @@
 package com.indooratlas.android.sdk.indoornavigation;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Environment;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
-import android.widget.Toast;
-
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import com.google.android.glass.view.WindowUtils;
 import com.google.android.glass.widget.CardBuilder;
 import com.google.android.glass.widget.CardScrollAdapter;
@@ -24,13 +22,6 @@ import com.indooratlas.android.sdk.indoornavigation.imageview.DemoRoutingManager
 import com.indooratlas.android.sdk.indoornavigation.imageview.ImageViewActivity;
 import com.indooratlas.android.sdk.indoornavigation.outdoor.OutdoorMap;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.FilenameFilter;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
 public class ScanCode extends Activity {
 
     private CardScrollView mCardScroller;
@@ -38,9 +29,7 @@ public class ScanCode extends Activity {
     private static int floor_Number;
     private static int room_Number;
     private static int intentChecker;
-    public static void Checker(int checker) {
-        //1 if from menu, 0 if from outdoor
-        intentChecker = checker;
+    public static void Checker(int checker) {intentChecker = checker; //1 if from menu, 0 if from outdoor
     }
     String filePath = "storage/emulated/legacy/DCIM/Logs/";
     Calendar c = Calendar.getInstance();
@@ -50,7 +39,6 @@ public class ScanCode extends Activity {
     String formattedTime = sdf.format(c.getTime());
     String FileName;
     String logData;
-
 
     @Override
     protected void onCreate(Bundle bundle) {

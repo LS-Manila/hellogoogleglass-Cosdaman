@@ -75,40 +75,11 @@ public class ImageViewActivity extends FragmentActivity {
     public ImageView badconnection;
     private ArrayList<Vertex> routingNodes = new ArrayList<Vertex>(){{add(new Vertex("def", new Point(0,0)));}};
     private DemoRoutingManager demoRoutingManager;
-    //uncomment for temperature data reading
-
-    /*String batTemp = "sys/devices/platform/omap_i2c.1/i2c-1/1-0055/power_supply/bq27520-0/temp";
-    String cpuTemp = "sys/devices/platform/notle_pcb_sensor.0/temperature";
-    FileInputStream fileInputStream;
-    InputStreamReader inputStreamReader;
-    BufferedReader bufferedReader;
-    String line = null;
-
-    private void readFromFile(String filepath, String name) {
-
-        try {
-            fileInputStream = new FileInputStream (new File(filepath));
-            inputStreamReader = new InputStreamReader(fileInputStream);
-            bufferedReader = new BufferedReader(inputStreamReader);
-
-            while ( (line = bufferedReader.readLine()) != null){
-                Log.d(name + "TEMP", line);
-            }
-        }
-        catch(FileNotFoundException ex) {
-            Log.d(TAG, ex.getMessage());
-        }
-        catch(IOException ex) {
-            Log.d(TAG, ex.getMessage());
-        }
-    } */
 
     private IALocationListener mLocationListener = new IALocationListenerSupport() {
         @Override
         public void onLocationChanged(IALocation location) {
             Log.d(TAG, "location is: " + location.getLatitude() + "," + location.getLongitude());
-            //readFromFile(cpuTemp, "CPU ");
-            //readFromFile(batTemp, "BAT ");
             if (mImageView != null && mImageView.isReady()) {
                 IALatLng latLng = new IALatLng(location.getLatitude(), location.getLongitude());
                 PointF point = mFloorPlan.coordinateToPoint(latLng);
@@ -236,23 +207,12 @@ public class ImageViewActivity extends FragmentActivity {
     protected void onResume() {
         super.onResume();
         ensurePermissions();
-        // starts receiving location updates
-        //TODO remove/comment this on final integration - this calls a local map from the downloads folder from memory
-        //runOnUiThread(new Runnable() {
-            //public void run() {
-              //  String filePath = Environment.getExternalStorageDirectory() + "/"
-                //        + Environment.DIRECTORY_DOWNLOADS + "/Maps/" + "vlsc1.png";
-                //showFloorPlanImage(filePath);
-           // }
-        //});
 
-    //TODO uncomment this if project is to be used by glass
         mIALocationManager.requestLocationUpdates(IALocationRequest.create(), mLocationListener);
         mIALocationManager.registerRegionListener(mRegionListener);
         registerReceiver(onComplete, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
     }
 
-    //TODO comment this if project is to be used by glass
     @Override
     protected void onPause() {
         super.onPause();
@@ -298,11 +258,8 @@ public class ImageViewActivity extends FragmentActivity {
         Log.w(TAG, "showFloorPlanImage: " + filePath);
         mImageView.setRadius(mFloorPlan.getMetersToPixels() * dotRadius);
         mImageView.setImage(ImageSource.uri(filePath));
-		//TODO uncomment line below to show routes on map
 		mImageView.setRoute(DemoRoutingManager.getArea());
     }
-
-
 
     /**
      * Fetches floor plan data from IndoorAtlas server.
@@ -319,7 +276,7 @@ public class ImageViewActivity extends FragmentActivity {
                     if (result.isSuccess() && result.getResult() != null) {
                         mFloorPlan = result.getResult();
                         String fileName = mFloorPlan.getId().substring(0, 4) + ".png";
-demoRoutingManager.init( fileName);
+                        demoRoutingManager.init( fileName);
                         String filePath = "storage/emulated/legacy/Download/Maps/" + fileName;
 
                         try {

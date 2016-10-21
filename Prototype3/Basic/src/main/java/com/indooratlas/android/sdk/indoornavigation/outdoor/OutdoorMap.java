@@ -5,31 +5,23 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.View;
 import android.widget.ImageView;
 import com.indooratlas.android.sdk.indoornavigation.R;
 import com.indooratlas.android.sdk.indoornavigation.ScanCode;
 import com.indooratlas.android.sdk.indoornavigation.imageview.DemoRoutingManager;
-import com.indooratlas.android.sdk.indoornavigation.imageview.ImageViewActivity;
-import com.squareup.picasso.Picasso;
-
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;
 import org.opencv.android.Utils;
 import org.opencv.core.Core;
-import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfPoint;
 import org.opencv.core.Point;
 import org.opencv.core.Rect;
 import org.opencv.core.Scalar;
-import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,6 +41,7 @@ public class OutdoorMap extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_outdoormap);
+        findViewById(android.R.id.content).setKeepScreenOn(true);
     }
 
     private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {

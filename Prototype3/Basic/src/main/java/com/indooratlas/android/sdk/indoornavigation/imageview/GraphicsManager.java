@@ -27,7 +27,6 @@ public class GraphicsManager {
     public static float XRATIO,YRATIO;
     public static Bitmap arrowhead,arrowhead2,exit;
     public static Bitmap parkHere;
-          //  DEVICE_WIDTH,DEVICE_HEIGHT,BITMAP_HEIGHT=513,BITMAP_WIDTH=959;
 
     public static void initalizeGraphics(Context myContext) {
         DisplayMetrics metrics = myContext.getResources().getDisplayMetrics();
