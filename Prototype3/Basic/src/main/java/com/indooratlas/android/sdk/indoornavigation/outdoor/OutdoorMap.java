@@ -375,6 +375,10 @@ public class OutdoorMap extends Activity {
             start = move(start, LEFT);
 
         }
+        else
+        {
+            
+        }
 
         //LS
         /*
