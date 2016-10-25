@@ -377,7 +377,7 @@ public class OutdoorMap extends Activity {
         }
         else
         {
-            
+
         }
 
         //LS
