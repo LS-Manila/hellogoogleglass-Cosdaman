@@ -129,6 +129,11 @@
             android:label="Outdoor" >
         </activity>
         <activity
+            android:name=".outdoor.OutdoorYouHere"
+            android:icon="@drawable/ic_glass_logo"
+            android:label="YouAreHere">
+        </activity>
+        <activity
             android:name=".TestSite"
             android:icon="@drawable/ic_glass_logo"
             android:label="AfterScan">

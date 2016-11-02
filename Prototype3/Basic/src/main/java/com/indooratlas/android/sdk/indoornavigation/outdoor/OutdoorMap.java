@@ -49,7 +49,6 @@ public class OutdoorMap extends Activity {
         public void onManagerConnected(int status) {
             if (status == LoaderCallbackInterface.SUCCESS ) {
                 onClickRoute();
-
             } else {
                 super.onManagerConnected(status);
             }
