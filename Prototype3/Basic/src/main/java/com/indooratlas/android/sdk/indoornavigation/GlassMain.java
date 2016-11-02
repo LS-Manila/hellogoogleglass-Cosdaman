@@ -37,9 +37,6 @@ public class GlassMain extends Activity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         getWindow().requestFeature(WindowUtils.FEATURE_VOICE_COMMANDS);
         mCardScroller = new CardScrollView(this);
-
-
-
         mCardScroller.setAdapter(new CardScrollAdapter() {
 
             @Override
@@ -88,14 +85,13 @@ public class GlassMain extends Activity {
         super.onPause();
     }
 
-    private View buildView() { //contents of main menu
+    private View buildView() {
 
+        //contents of main menu
         CardBuilder card = new CardBuilder(this, CardBuilder.Layout.COLUMNS);
         card.setText("Welcome to the Main Menu");
         card.setIcon(R.drawable.ic_glass_logo);
         return card.getView();
-
-
     }
 
     @Override
@@ -109,7 +105,6 @@ public class GlassMain extends Activity {
 
     @Override
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
-
 
         if (featureId == WindowUtils.FEATURE_VOICE_COMMANDS || featureId ==  Window.FEATURE_OPTIONS_PANEL) {
             switch (item.getItemId()) {
@@ -145,9 +140,6 @@ public class GlassMain extends Activity {
 
 
                 case R.id.exit_menu_item:
-                    //moveTaskToBack(true);
-                    //android.os.Process.killProcess(android.os.Process.myPid());
-                    //System.exit(0);
                     finish();
                     break;
 
