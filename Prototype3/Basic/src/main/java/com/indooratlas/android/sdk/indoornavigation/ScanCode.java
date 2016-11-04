@@ -102,6 +102,8 @@ public class ScanCode extends Activity {
             //idk lol
         }
 
+        //TODO change display to tell user where intended destination is I.E. second floor of the velasco building
+
         CardBuilder card = new CardBuilder(this, CardBuilder.Layout.COLUMNS);
         if (intentChecker == 0){
             logData = formattedTime + "--- QR:" + QR_Data + " Destination --- Floor ID:" + floor_Number + " Room:" + room_Number + " Scan from Outdoor";

@@ -18,6 +18,7 @@ import com.indooratlas.android.sdk.indoornavigation.imageview.DemoRoutingManager
 import com.indooratlas.android.sdk.indoornavigation.imageview.GraphicsManager;
 import com.indooratlas.android.sdk.indoornavigation.imageview.ImageViewActivity;
 import com.indooratlas.android.sdk.indoornavigation.outdoor.OutdoorMap;
+import com.indooratlas.android.sdk.indoornavigation.outdoor.OutdoorYouHere;
 
 public class GlassMain extends Activity {
 
@@ -130,6 +131,7 @@ public class GlassMain extends Activity {
                     startActivityForResult(intent, 0);
                     break;
 
+                /*
                 case R.id.test_menu_item:
                     DemoRoutingManager.setArea(1);
                     DemoRoutingManager.setRoom(1);
@@ -137,7 +139,7 @@ public class GlassMain extends Activity {
                     intentChecker = 1;
                     this.startActivity(myIntent);
                     break;
-
+                */
 
                 case R.id.exit_menu_item:
                     finish();
@@ -150,11 +152,12 @@ public class GlassMain extends Activity {
     }
 
 
-    //on result for qr code scan
+    //on result for qr code scan "where am i"
+    //this is where the qr code results are
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         if (requestCode == 0) {
             if (resultCode == RESULT_OK) {
-                Intent scanResult = new Intent(getBaseContext(), ScanCode.class);
+                Intent scanResult = new Intent(getBaseContext(), OutdoorYouHere.class);
                 String contents = intent.getStringExtra("SCAN_RESULT");
                 //scanResult.putExtra("FLOOR_NUMBER", floorNumber);
                 //scanResult.putExtra("ROOM_NUMBER", roomNumber);

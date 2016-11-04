@@ -27,6 +27,9 @@ import java.io.IOException;
 public class OutdoorYouHere extends Activity {
 
     Mat m;
+    Bundle extras = getIntent().getExtras();
+    //qr data scanned turned into string and transferred to this class
+    String QR_Data = extras.getString("QR_SCAN");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,9 +76,17 @@ public class OutdoorYouHere extends Activity {
         paint.setAntiAlias(true);
         paint.setColor(Color.BLUE);
 
-        //todo function to change drawn dot for scanned point to be you are here
+        //todo fix switch statements, test for switch statement functionality
+        switch (QR_Data) {
 
-        //test
+            case "VelascoEntrance":
+                //todo draw dot on specified place
+
+
+
+        }
+
+            //test for drawing check coordinates
         Canvas canvas = new Canvas(dotbm);
         canvas.drawCircle(60, 50, 25, paint);
 
