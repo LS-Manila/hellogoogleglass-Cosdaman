@@ -13,12 +13,14 @@
         android:icon="@drawable/ic_glass_logo" />
     <item
         android:id="@+id/qr_menu_item"
-        android:title="Scan QR Code"
+        android:title="Where Am I"
         android:icon="@drawable/ic_glass_logo" />
+    <!--
     <item
         android:id="@+id/test_menu_item"
         android:title="Test Option"
         android:icon="@drawable/ic_glass_logo" />
+        -->
     <item
         android:id="@+id/exit_menu_item"
         android:title="Exit Application"

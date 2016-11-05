@@ -131,6 +131,11 @@
             android:label="Outdoor" >
         </activity>
         <activity
+            android:name="com.indooratlas.android.sdk.indoornavigation.outdoor.OutdoorYouHere"
+            android:icon="@drawable/ic_glass_logo"
+            android:label="YouAreHere" >
+        </activity>
+        <activity
             android:name="com.indooratlas.android.sdk.indoornavigation.TestSite"
             android:icon="@drawable/ic_glass_logo"
             android:label="AfterScan" >

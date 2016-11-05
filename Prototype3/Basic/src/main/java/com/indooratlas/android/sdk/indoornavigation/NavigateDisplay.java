@@ -98,80 +98,10 @@ public class NavigateDisplay extends Activity {
 
         switch (item.getItemId()) {
 
-            case R.id.L101:
-                floorNumber = 1;
-                roomNumber = 0;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.L101D:
-                floorNumber = 1;
-                roomNumber = 1;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.L102:
-                floorNumber = 1;
-                roomNumber = 1;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.L103:
-                floorNumber = 1;
-                roomNumber = 3;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.L104:
-                floorNumber = 1;
-                roomNumber = 4;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
             case R.id.L105:
                 floorNumber = 1;
                 roomNumber = 5;
                 roomNumber = 0;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.L106:
-                floorNumber = 1;
-                roomNumber = 6;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.L107:
-                floorNumber = 1;
-                roomNumber = 7;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.L108:
-                floorNumber = 1;
-                roomNumber = 8;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.L109:
-                floorNumber = 1;
-                roomNumber = 9;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.L201:
-                floorNumber = 2;
-                roomNumber = 1;
                 intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
                 startActivityForResult(intentQR, 0);
                 break;
@@ -182,95 +112,10 @@ public class NavigateDisplay extends Activity {
                 intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
                 startActivityForResult(intentQR, 0);
                 break;
-
-            case R.id.L203:
-                floorNumber = 2;
-                roomNumber = 3;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.L204:
-                floorNumber = 2;
-                roomNumber = 4;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.L205:
-                floorNumber = 2;
-                roomNumber = 5;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.L206:
-                floorNumber = 2;
-                roomNumber = 6;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
             case R.id.L207:
                 floorNumber = 2;
                 roomNumber = 7;
                 roomNumber = 0;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.L208A:
-                floorNumber = 2;
-                roomNumber = 8;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.L208B:
-                floorNumber = 2;
-                roomNumber = 9;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.L312:
-                floorNumber = 3;
-                roomNumber = 0;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.L306:
-                floorNumber = 3;
-                roomNumber = 1;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.L415:
-                floorNumber = 4;
-                roomNumber = 0;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.L406:
-                floorNumber = 4;
-                roomNumber = 1;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.L504:
-                floorNumber = 5;
-                roomNumber = 0;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.L507:
-                floorNumber = 5;
-                roomNumber = 1;
                 intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
                 startActivityForResult(intentQR, 0);
                 break;
@@ -298,34 +143,6 @@ public class NavigateDisplay extends Activity {
 
             case R.id.MARK_ADV:
                 floorNumber = 7;
-                roomNumber = 1;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.HISTORY:
-                floorNumber = 8;
-                roomNumber = 0;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.THEOLOGY:
-                floorNumber = 8;
-                roomNumber = 1;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.INTL_STD:
-                floorNumber = 9;
-                roomNumber = 0;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.PHILO:
-                floorNumber = 9;
                 roomNumber = 1;
                 intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
                 startActivityForResult(intentQR, 0);
@@ -359,34 +176,6 @@ public class NavigateDisplay extends Activity {
                 startActivityForResult(intentQR, 0);
                 break;
 
-            case R.id.X301:
-                floorNumber = 12;
-                roomNumber = 0;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.X305:
-                floorNumber = 12;
-                roomNumber = 1;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.X404:
-                floorNumber = 13;
-                roomNumber = 0;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.X409:
-                floorNumber = 13;
-                roomNumber = 1;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
             case R.id.M104:
                 floorNumber = 14;
                 roomNumber = 0;
@@ -410,34 +199,6 @@ public class NavigateDisplay extends Activity {
 
             case R.id.M213:
                 floorNumber = 15;
-                roomNumber = 1;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.M314:
-                floorNumber = 16;
-                roomNumber = 0;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.M310:
-                floorNumber = 16;
-                roomNumber = 1;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.M404:
-                floorNumber = 17;
-                roomNumber = 0;
-                intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intentQR, 0);
-                break;
-
-            case R.id.M408:
-                floorNumber = 17;
                 roomNumber = 1;
                 intentQR.putExtra("SCAN_MODE", "QR_CODE_MODE");
                 startActivityForResult(intentQR, 0);

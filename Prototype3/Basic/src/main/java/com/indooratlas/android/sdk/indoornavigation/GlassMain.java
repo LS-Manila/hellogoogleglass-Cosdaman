@@ -131,6 +131,8 @@ public class GlassMain extends Activity {
                     startActivityForResult(intent, 0);
                     break;
 
+
+
                 /*
                 case R.id.test_menu_item:
                     DemoRoutingManager.setArea(1);

@@ -6,8 +6,10 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.ImageView;
 import com.indooratlas.android.sdk.indoornavigation.R;
 import org.opencv.android.BaseLoaderCallback;
@@ -22,20 +24,37 @@ import org.opencv.core.Scalar;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class OutdoorYouHere extends Activity {
 
     Mat m;
-    Bundle extras = getIntent().getExtras();
-    //qr data scanned turned into string and transferred to this class
-    String QR_Data = extras.getString("QR_SCAN");
+    String QR_Data;
+    Bundle extras;
+    String filePath = "storage/emulated/legacy/DCIM/Logs/";
+    Calendar c = Calendar.getInstance();
+    SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+    SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+    String formattedDate = df.format(c.getTime());
+    String formattedTime = sdf.format(c.getTime());
+    String FileName;
+    String logData;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_outdoormap);
         findViewById(android.R.id.content).setKeepScreenOn(true);
+
+         extras = getIntent().getExtras();
+        //qr data scanned turned into string and transferred to this class
+        QR_Data = extras.getString("QR_SCAN");
+
     }
 
     private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
@@ -52,7 +71,7 @@ public class OutdoorYouHere extends Activity {
                     Bitmap bm = Bitmap.createBitmap(m.cols(), m.rows(),Bitmap.Config.ARGB_8888);
                     Utils.matToBitmap(m, bm);
 
-                    ImageView iv = (ImageView) findViewById(R.id.imageView);
+                    ImageView iv = (ImageView) findViewById(R.id.imageViewOutdoor);
                     iv.setImageBitmap(bm);
                 }
             } else {
@@ -69,32 +88,60 @@ public class OutdoorYouHere extends Activity {
 
     public void hello() throws IOException {
 
-        m = Utils.loadResource(OutdoorYouHere.this, R.drawable.worldmapv1, Imgcodecs.CV_LOAD_IMAGE_UNCHANGED);
-        Bitmap bm = Bitmap.createBitmap(m.cols(), m.rows(),Bitmap.Config.ARGB_8888);
-        Bitmap dotbm = bm.copy(Bitmap.Config.ARGB_8888, true);
+        m = Utils.loadResource(OutdoorYouHere.this, R.drawable.worldmapv2, Imgcodecs.CV_LOAD_IMAGE_UNCHANGED);
+        Bitmap bm = Bitmap.createBitmap(m.cols(), m.rows(), Bitmap.Config.ARGB_8888);
+        Utils.matToBitmap(m, bm);
+        Bitmap tempBitmap = Bitmap.createBitmap(bm.getWidth(), bm.getHeight(), Bitmap.Config.RGB_565);
+        Canvas tempCanvas = new Canvas(tempBitmap);
+        tempCanvas.drawBitmap(bm, 0, 0, null);
         Paint paint = new Paint();
-        paint.setAntiAlias(true);
-        paint.setColor(Color.BLUE);
+        paint.setColor(Color.RED);
+        paint.setStyle(Paint.Style.FILL);
 
-        //todo fix switch statements, test for switch statement functionality
+        Log.d("QR", QR_Data);
+        logData = formattedTime + "--- QR:" + QR_Data + " Scan from Where Am I";
+        generateLogFile(logData);
+
         switch (QR_Data) {
 
-            case "VelascoEntrance":
-                //todo draw dot on specified place
+            //drawcircle ( x , y , radius , paint formatting)
+            case "XI":
 
+                tempCanvas.drawCircle(0, 0, 10, paint);
+                break;
 
+            case "LAMBDA":
 
+                tempCanvas.drawCircle(500, 250, 20, paint);
+                break;
+
+            default:
+
+                tempCanvas.drawCircle(750, 500, 40, paint);
+                break;
         }
 
             //test for drawing check coordinates
-        Canvas canvas = new Canvas(dotbm);
-        canvas.drawCircle(60, 50, 25, paint);
+
+        ImageView iv = (ImageView) findViewById(R.id.imageViewOutdoor);
+        iv.setImageBitmap(tempBitmap);
+    }
 
 
-        Utils.matToBitmap(m, bm);
-        ImageView iv = (ImageView) findViewById(R.id.imageView);
-        iv.setImageBitmap(bm);
+    public void generateLogFile(String sBody) {
+        try {
+            FileName =filePath + formattedDate+".txt";
+            File log = new File(FileName);
+            FileWriter writer;
+            sBody = "\n" + sBody;
+            writer = new FileWriter(log,true);
+            writer.append(sBody);
+            writer.flush();
+            writer.close();
 
-
+            Log.d("Log", "QR Data Logged");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
