@@ -37,6 +37,7 @@ public class OutdoorMap extends Activity {
     private List<Point> centers;
     DemoRoutingManager demo = new DemoRoutingManager();
     private int targetBuildingNumber;
+    private int currentBuildingNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -551,20 +552,14 @@ public class OutdoorMap extends Activity {
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         if (requestCode == 0) {
             if (resultCode == RESULT_OK) {
-                Intent scanResult = new Intent(getBaseContext(), ScanCode.class);
+                Intent scanResult;
                 String contents = intent.getStringExtra("SCAN_RESULT");
+                scanCodeChecker.Checker(0);
+                scanResult = new Intent(getBaseContext(), ScanCode.class);
                 scanResult.putExtra("QR_SCAN", contents);
-                targetBuildingNumber = demo.getTargetAreaNumber(); // returns building number
-
-                /*if (currentbuilding == targetBuildingNumber) {
-                    scanCodeChecker.Checker(0);
-
-                }else{
-
-                }*/
 
                 startActivity(scanResult);
-                finish();
+                onPause();
 
             } else if (resultCode == RESULT_CANCELED) {
                 // Handle cancel

@@ -20,14 +20,10 @@ public class DemoRoutingManager {
         targetRoomNumber = newRoomNumber;
     }
     public static int buildingNumber;
-
-
     public static int  getArea() {
 		return currentArea;
     }
 
-
-	
     private static void computePaths(Vertex source) {
         source.minDistance = 0.;
         PriorityQueue<Vertex> vertexQueue = new PriorityQueue<Vertex>();
@@ -92,11 +88,8 @@ public class DemoRoutingManager {
 
         }else if (targetAreaNumber >= 40 && targetAreaNumber <= 42) {
             buildingNumber = 10; //william
-
-        }else{
-            buildingNumber = 0;
         }
-            return buildingNumber;
+        return buildingNumber;
     }
 
 	public void init(String string) {

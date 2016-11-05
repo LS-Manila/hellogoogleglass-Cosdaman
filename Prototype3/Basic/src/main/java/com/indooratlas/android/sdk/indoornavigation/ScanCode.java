@@ -21,6 +21,7 @@ import com.google.android.glass.widget.CardScrollView;
 import com.indooratlas.android.sdk.indoornavigation.imageview.DemoRoutingManager;
 import com.indooratlas.android.sdk.indoornavigation.imageview.ImageViewActivity;
 import com.indooratlas.android.sdk.indoornavigation.outdoor.OutdoorMap;
+import com.indooratlas.android.sdk.indoornavigation.outdoor.OutdoorYouHere;
 
 public class ScanCode extends Activity {
 
@@ -31,6 +32,8 @@ public class ScanCode extends Activity {
     private static int intentChecker;
     public static void Checker(int checker) {intentChecker = checker; //1 if from menu, 0 if from outdoor
     }
+    String QR_Data;
+    DemoRoutingManager demo = new DemoRoutingManager();
     String filePath = "storage/emulated/legacy/DCIM/Logs/";
     Calendar c = Calendar.getInstance();
     SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
@@ -92,7 +95,7 @@ public class ScanCode extends Activity {
     private View buildView() {
 
         Bundle extras = getIntent().getExtras();
-        String QR_Data = extras.getString("QR_SCAN");
+        QR_Data = extras.getString("QR_SCAN");
 
         if( extras.getInt("FLOOR_NUMBER")!=0){
             floor_Number = extras.getInt("FLOOR_NUMBER");
@@ -128,10 +131,22 @@ public class ScanCode extends Activity {
 
             if (intentChecker == 0) {
 
-                Intent myIntent = new Intent(this, ImageViewActivity.class);
-                intentChecker = 0;
-                this.startActivity(myIntent);
-                finish();
+
+                int buildingCode = demo.getTargetAreaNumber();
+
+                if (getCurrentBuilding(QR_Data) == buildingCode) {
+
+                    Intent myIntent = new Intent(this, ImageViewActivity.class);
+                    this.startActivity(myIntent);
+                    finish();
+
+                }else{
+                    Intent myIntent = new Intent(this, OutdoorYouHere.class);
+                    myIntent.putExtra("QR_SCAN", QR_Data);
+                    this.startActivity(myIntent);
+                    finish();
+                }
+
 
             }
             else if (intentChecker == 1)
@@ -141,8 +156,9 @@ public class ScanCode extends Activity {
                 Intent myIntent = new Intent(this, OutdoorMap.class);
                 intentChecker = 1;
                 this.startActivity(myIntent);
-                return true;
+                finish();
             }
+            return true;
         }
         return super.onKeyDown(keycode, event);
     }
@@ -164,5 +180,23 @@ public class ScanCode extends Activity {
         }
     }
 
+    private int getCurrentBuilding(String qrScan){
+
+        int currentBuildingNumber;
+
+        switch(qrScan){
+            case "LAMBDA":
+                currentBuildingNumber = 1;
+                return currentBuildingNumber;
+
+            case "XI":
+                currentBuildingNumber = 2;
+                return currentBuildingNumber;
+
+            default:
+                currentBuildingNumber = 0;
+                return currentBuildingNumber;
+        }
+    }
 
 }

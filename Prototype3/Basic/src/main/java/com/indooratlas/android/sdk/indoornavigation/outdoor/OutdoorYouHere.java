@@ -33,7 +33,7 @@ import java.util.Calendar;
 public class OutdoorYouHere extends Activity {
 
     Mat m;
-    String QR_Data;
+    String QR_Data = null;
     Bundle extras;
     String filePath = "storage/emulated/legacy/DCIM/Logs/";
     Calendar c = Calendar.getInstance();
