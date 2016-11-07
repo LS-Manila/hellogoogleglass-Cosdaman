@@ -1,6 +1,7 @@
 package com.indooratlas.android.sdk.indoornavigation.outdoor;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -10,7 +11,10 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.widget.ImageView;
+import android.widget.Toast;
+
 import com.indooratlas.android.sdk.indoornavigation.R;
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.LoaderCallbackInterface;
@@ -125,6 +129,7 @@ public class OutdoorYouHere extends Activity {
 
         ImageView iv = (ImageView) findViewById(R.id.imageViewOutdoor);
         iv.setImageBitmap(tempBitmap);
+        Toast.makeText(OutdoorYouHere.this, "Please tap the touchpad to return.", Toast.LENGTH_SHORT).show();
     }
 
 
@@ -143,5 +148,14 @@ public class OutdoorYouHere extends Activity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public boolean onKeyDown(int keycode, KeyEvent event) {
+        if (keycode == KeyEvent.KEYCODE_DPAD_CENTER) {
+
+            finish();
+        }
+        return super.onKeyDown(keycode, event);
     }
 }
