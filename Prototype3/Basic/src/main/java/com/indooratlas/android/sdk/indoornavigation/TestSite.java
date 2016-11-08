@@ -92,7 +92,6 @@ public class TestSite extends Activity{
 
         card.setText(formattedDate +"\n" + formattedTime);
 
-
         return card.getView();
     }
 
