@@ -9,11 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.AdapterView;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+
 import com.google.android.glass.view.WindowUtils;
 import com.google.android.glass.widget.CardBuilder;
 import com.google.android.glass.widget.CardScrollAdapter;
@@ -22,6 +18,12 @@ import com.indooratlas.android.sdk.indoornavigation.imageview.DemoRoutingManager
 import com.indooratlas.android.sdk.indoornavigation.imageview.ImageViewActivity;
 import com.indooratlas.android.sdk.indoornavigation.outdoor.OutdoorMap;
 import com.indooratlas.android.sdk.indoornavigation.outdoor.OutdoorYouHere;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class ScanCode extends Activity {
 
@@ -189,8 +191,52 @@ public class ScanCode extends Activity {
                 currentBuildingNumber = 1;
                 return currentBuildingNumber;
 
-            case "XI":
+            case "ZETA":
                 currentBuildingNumber = 2;
+                return currentBuildingNumber;
+
+            case "XI":
+                currentBuildingNumber = 3;
+                return currentBuildingNumber;
+
+            case "MU":
+                currentBuildingNumber = 4;
+                return currentBuildingNumber;
+
+            case "IOTA":
+                currentBuildingNumber = 5;
+                return currentBuildingNumber;
+
+            case "THETA":
+                currentBuildingNumber = 6;
+                return currentBuildingNumber;
+
+            case "OMICRON":
+                currentBuildingNumber = 7;
+                return currentBuildingNumber;
+
+            case "DELTA":
+                currentBuildingNumber = 8;
+                return currentBuildingNumber;
+
+            case "RHO":
+                currentBuildingNumber = 9;
+                return currentBuildingNumber;
+
+            case "HETA":
+                currentBuildingNumber = 10;
+                return currentBuildingNumber;
+
+            case "BETA":
+                currentBuildingNumber = 11;
+                return currentBuildingNumber;
+
+            case "ALPHA":
+                currentBuildingNumber = 12;
+                return currentBuildingNumber;
+
+            case "PI":
+                currentBuildingNumber = 13;
                 return currentBuildingNumber;
 
             default:

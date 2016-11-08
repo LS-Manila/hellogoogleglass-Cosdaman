@@ -20,13 +20,16 @@ public class DemoRoutingManager {
         targetRoomNumber = newRoomNumber;
     }
     public static int buildingNumber;
+
+
     public static int  getArea() {
-		return currentArea;
+        return currentArea;
     }
+
 
     private static void computePaths(Vertex source) {
         source.minDistance = 0.;
-        PriorityQueue<Vertex> vertexQueue = new PriorityQueue<Vertex>();
+        PriorityQueue<Vertex> vertexQueue = new PriorityQueue<>();
         vertexQueue.add(source);
 
         while (!vertexQueue.isEmpty()) {
@@ -49,7 +52,7 @@ public class DemoRoutingManager {
     }
 
     private static ArrayList<Vertex> getShortestPathTo(Vertex target) {
-        ArrayList<Vertex> path = new ArrayList<Vertex>();
+        ArrayList<Vertex> path = new ArrayList<>();
         for (Vertex vertex = target; vertex != null; vertex = vertex.previous)
             path.add(vertex);
 
@@ -59,176 +62,248 @@ public class DemoRoutingManager {
 
     public static int getTargetAreaNumber() {
 
-        if(targetAreaNumber >= 1 && targetAreaNumber <= 5){
+        if(targetAreaNumber > 0 && targetAreaNumber < 6){
             buildingNumber = 1; //velasco
 
-        }else if (targetAreaNumber >= 6 && targetAreaNumber <= 9) {
+        }else if (targetAreaNumber > 5 && targetAreaNumber < 10) {
             buildingNumber = 2; //faculty
 
-        }else if (targetAreaNumber >= 10 && targetAreaNumber <= 13) {
+        }else if (targetAreaNumber > 9 && targetAreaNumber < 14) {
             buildingNumber = 3; //gox
 
-        }else if (targetAreaNumber >= 14 && targetAreaNumber <= 17) {
+        }else if (targetAreaNumber > 13 && targetAreaNumber < 18) {
             buildingNumber = 4; //miguel
 
-        }else if (targetAreaNumber >= 18 && targetAreaNumber <= 22) {
+        }else if (targetAreaNumber > 17 && targetAreaNumber <23) {
             buildingNumber = 5; //henry
 
-        }else if (targetAreaNumber >= 23 && targetAreaNumber <= 28) {
+        }else if (targetAreaNumber > 22 && targetAreaNumber < 29) {
             buildingNumber = 6; //sj
 
-        }else if (targetAreaNumber >= 29 && targetAreaNumber <= 32) {
+        }else if (targetAreaNumber > 28 && targetAreaNumber < 33) {
             buildingNumber = 7; //strc
 
-        }else if (targetAreaNumber >= 33 && targetAreaNumber <= 36) {
+        }else if (targetAreaNumber > 32 && targetAreaNumber < 37) {
             buildingNumber = 8; //yuch
 
-        }else if (targetAreaNumber >= 37 && targetAreaNumber <= 39) {
+        }else if (targetAreaNumber > 36 && targetAreaNumber < 40) {
             buildingNumber = 9; //andrew
 
-        }else if (targetAreaNumber >= 40 && targetAreaNumber <= 42) {
+        }else if (targetAreaNumber > 39 && targetAreaNumber < 43) {
             buildingNumber = 10; //william
+
+        }else if (targetAreaNumber > 42 && targetAreaNumber < 45) {
+            buildingNumber = 11; //Beta
+
+        }else if (targetAreaNumber > 44 && targetAreaNumber < 47) {
+            buildingNumber = 12; //Alpha
+
+        }else if (targetAreaNumber > 46 && targetAreaNumber < 49) {
+            buildingNumber = 13; //Pi
+
         }
+        /*
+        if(targetAreaNumber >0) {
+
+            if (targetAreaNumber < 6) {
+                buildingNumber = 1; //velasco
+
+            } else if (targetAreaNumber <= 9) {
+                buildingNumber = 2; //faculty
+
+            } else if (targetAreaNumber <= 13) {
+                buildingNumber = 3; //gox
+
+            } else if (targetAreaNumber <= 17) {
+                buildingNumber = 4; //miguel
+
+            } else if (targetAreaNumber <= 22) {
+                buildingNumber = 5; //henry
+
+            } else if (targetAreaNumber <= 28) {
+                buildingNumber = 6; //sj
+
+            } else if (targetAreaNumber <= 32) {
+                buildingNumber = 7; //strc
+
+            } else if (targetAreaNumber <= 36) {
+                buildingNumber = 8; //yuch
+
+            } else if (targetAreaNumber <= 39) {
+                buildingNumber = 9; //andrew
+
+            } else if (targetAreaNumber <= 42) {
+                buildingNumber = 10; //william
+
+            }
+        }
+
+        else{
+            buildingNumber = 0;
+        }*/
         return buildingNumber;
     }
 
-	public void init(String string) {
-        if (string.equals("2379.png")) {
+    public void init(String string) {
+
+        switch(string){
+
             //Velasco
-            currentArea = 1;
+            case "map_2379":
+                currentArea = 1;
 
-        }else if (string.equals("44d0.png")) {
-            currentArea = 2;
+            case "map_44d0":
+                currentArea = 2;
 
-        }else if(string.equals("e287.png")){
-            currentArea = 3;
+            case "map_e287":
+                currentArea = 3;
 
-        }else if(string.equals("70dc.png")){
-            currentArea = 4;
-        }
+            case "map_70dc":
+                currentArea = 4;
 
-        else if(string.equals("9ce6.png")){
-            currentArea = 5;
+            case "map_9ce6":
+                currentArea = 5;
 
-        }else if(string.equals("8ca9.png")){
-            //Faculty Center
-            currentArea = 6;
-        }
-        else if(string.equals("8b9f.png")){
-            currentArea = 7;
-        }
-        else if(string.equals("f94a.png")){
-            currentArea = 8;
-        }
-        else if(string.equals("6779.png")){
-            currentArea = 9;
-        }
-        else if(string.equals("d48a.png")){
-            //Gokongwei
-            currentArea = 10;
-        }
-        else if(string.equals("0868.png")){
-            currentArea = 11;
-        }
-        else if(string.equals("0820.png")){
-            currentArea = 12;
-        }
-        else if(string.equals("1401.png")){
-            currentArea = 13;
-        }
-        else if(string.equals("e47f.png")){
-            //Miguel
-            currentArea = 14;
-        }
-        else if(string.equals("564d.png")){
-            currentArea = 15;
-        }
-        else if(string.equals("ef16.png")){
-            currentArea = 16;
-        }
-        else if(string.equals("3fd0.png")){
-            currentArea = 17;
-        }
-        else if(string.equals("6910.png")){
-            //Henry Sy
-            currentArea = 18;
-        }
-        else if(string.equals("d493.png")){
-            currentArea = 19;
-        }
-        else if(string.equals("3a39.png")){
-            currentArea = 20;
-        }
-        else if(string.equals("20d5.png")){
-            currentArea = 21;
-        }
-        else if(string.equals("8924.png")){
+            case "map_a0b4":
+                //Faculty Center
+                currentArea = 6;
+
+            case "map_3b22":
+                currentArea = 7;
+
+            case "map_f94a":
+                currentArea = 8;
+
+            case "map_6779":
+                currentArea = 9;
+
+            case "map_d48a":
+                //Gokongwei
+                currentArea = 10;
+
+            case "map_0868":
+                currentArea = 11;
+
+            case "map_0820":
+                currentArea = 12;
+
+            case "map_1401":
+                currentArea = 13;
+
+            case "map_e47f":
+                //Miguel
+                currentArea = 14;
+
+            case "map_564d":
+                currentArea = 15;
+
+            case "map_ef16":
+                currentArea = 16;
+
+            case "map_3fd0":
+                currentArea = 17;
+
+            case "map_6910":
+                //Henry Sy
+                currentArea = 18;
+
+            case "map_d493":
+                currentArea = 19;
+
+            case "map_3a39":
+                currentArea = 20;
+
+            case "map_20d5":
+                currentArea = 21;
+
+            case "map_8924":
             currentArea = 22;
-        }
-        else if(string.equals("718b.png")){
-            //Sj
-            currentArea = 23;
-        }
-        else if(string.equals("94ee.png")){
-            currentArea = 24;
-        }
-        else if(string.equals("d01a.png")){
-            currentArea = 25;
-        }
-        else if(string.equals("d01a.png")){
-            currentArea = 26;
-        }
-        else if(string.equals("8f49.png")){
-            currentArea = 27;
-        }
-        else if(string.equals("10f7.png")){
-            currentArea = 28;
-        }
-        else if(string.equals("c276.png")){
-            //Strc
-            currentArea = 29;
-        }
-        else if(string.equals("8a39.png")){
-            currentArea = 30;
-        }
-        else if(string.equals("c678.png")){
-            currentArea = 31;
-        }
-        else if(string.equals("c974.png")){
-            currentArea = 32;
-        }
-        else if(string.equals("eb14.png")){
-            //Yuchenco
-            currentArea = 33;
-        }
-        else if(string.equals("e224.png")){
-            currentArea = 34;
-        }
-        else if(string.equals("ff20.png")){
-            currentArea = 35;
-        }
-        else if(string.equals("70c2.png")){
-            currentArea = 36;
-        }
-        else if(string.equals("00f3.png")){
-            //Anderew
-            currentArea = 37;
-        }
-        else if(string.equals("978e.png")){
-            currentArea = 38;
-        }
-        else if(string.equals("bdb7.png")){
-            currentArea = 39;
-        }
-        else if(string.equals("9ee9.png")){
-            //William
-            currentArea = 40;
-        }
-        else if(string.equals("d8df.png")){
-            currentArea = 41;
-        }
-        else if(string.equals("a0b4.png")){
-            currentArea = 42;
+
+            case "map_718b":
+                //Sj
+                currentArea = 23;
+
+            case "map_94ee":
+                currentArea = 24;
+
+            //case "map_d01a":
+            //    currentArea = 25;
+
+            //case "map_d01a":
+            //    currentArea = 26;
+
+            case "map_8f49":
+                currentArea = 27;
+
+            case "map_10f7":
+                currentArea = 28;
+
+            case "map_c276":
+                //Strc
+                currentArea = 29;
+
+            case "map_8a39":
+                currentArea = 30;
+
+            case "map_c678":
+                currentArea = 31;
+
+            case "map_c974":
+                currentArea = 32;
+
+            case "map_eb14":
+                //Yuchenco
+                currentArea = 33;
+
+            case "map_e224":
+                currentArea = 34;
+
+            case "map_ff20":
+                currentArea = 35;
+
+            case "map_70c2":
+                currentArea = 36;
+
+            case "map_00f3":
+                //Anderew
+                currentArea = 37;
+
+            case "map_978e":
+                currentArea = 38;
+
+            case "map_bdb7":
+                currentArea = 39;
+
+            case "map_9ee9":
+                //William
+                currentArea = 40;
+
+            case "map_d8df":
+                currentArea = 41;
+
+            //case "map_a0b4":
+            //currentArea = 42;
+
+            case "map_db78":
+                //Beta
+                currentArea = 43;
+
+            case "map_3366":
+                currentArea = 44;
+
+            case "map_f3c8":
+                //Alpha
+                currentArea = 45;
+
+            //case "map_5bc0":
+            //    currentArea = 46;
+
+            case "map_473d":
+                //Pi
+                currentArea = 47;
+
+            case "map_5bc0":
+                currentArea = 48;
         }
     }
 
@@ -293,9 +368,9 @@ public class DemoRoutingManager {
                 return getSjFifthRoute(currentArea);
             case 28:
                 return getSjSixthRoute(currentArea);
-         /*   case 29:
+           case 29:
                 return getStrcFirstRoute(currentArea);
-            case 30:
+            /* case 30:
                 return getStrcSecondRoute(currentArea);
             case 31:
                 return getStrcThirdRoute(currentArea);
@@ -321,6 +396,18 @@ public class DemoRoutingManager {
                 return getWilliamSecondRoute(currentArea);
             case 42:
                 return getWilliamThirdRoute(currentArea);
+            case 43:
+                return getJohnSecondRoute(currentArea);
+            case 44:
+                return getJohnThirdRoute(currentArea);
+            case 45:
+                return getLSFirstRoute(currentArea);
+            case 46:
+                return getLSSecondRoute(currentArea);
+            case 47:
+                return getRazonFirstRoute(currentArea);
+            case 48:
+                return getRazonSeventhRoute(currentArea);
 
             default:
                 return  getVelascoFirstRoute(currentArea);
@@ -1357,11 +1444,39 @@ public class DemoRoutingManager {
         }
     }
 
-   /* private static ArrayList<Vertex> getStrcFirstRoute (int currentArea){
+    private static ArrayList<Vertex> getStrcFirstRoute (int currentArea){
+
+        Vertex v901 = new Vertex("JO01", new Point(27,301));
+        Vertex v902 = new Vertex("JO02", new Point(27,155));
+        Vertex v903 = new Vertex("O108", new Point(317,155));
+        Vertex v904 = new Vertex("O116", new Point(531,155));
+
+        v901.adjacencies = new Edge[]{new Edge(v901, v902),};
+        v902.adjacencies = new Edge[]{new Edge(v902, v901), new Edge(v902, v903)};
+        v903.adjacencies = new Edge[]{new Edge(v903, v902), new Edge(v903, v904)};
+        v904.adjacencies = new Edge[]{new Edge(v904, v903)};
+
+        computePaths(v901);
+
+        if (targetAreaNumber == currentArea)
+            routeNumber = targetRoomNumber;
+        else if (targetAreaNumber < currentArea)
+            return null;
+        else
+            routeNumber = -1;
+
+        switch (routeNumber) {
+            case 0:
+                return getShortestPathTo(v903);
+            case 1:
+                return getShortestPathTo(v904);
+            default:
+                return getShortestPathTo(v901);
+        }
 
     }
 
-    private static ArrayList<Vertex> getStrcSecondRoute (int currentArea){
+    /*private static ArrayList<Vertex> getStrcSecondRoute (int currentArea){
 
     }
 
@@ -1666,6 +1781,192 @@ public class DemoRoutingManager {
                 return getShortestPathTo(v421);
         }
     }
+
+    private static ArrayList<Vertex> getJohnSecondRoute(int currentArea){
+        Vertex v1211 = new Vertex("JB11", new Point(15,206));
+        Vertex v1212 = new Vertex("JB12", new Point(15,272));
+        Vertex v1213 = new Vertex("JB13", new Point(68,272));
+        Vertex v1214 = new Vertex("JB14", new Point(68,228));
+        Vertex v1215 = new Vertex("B201", new Point(150,272));
+        Vertex v1216 = new Vertex("B202", new Point(240,272));
+
+        v1211.adjacencies = new Edge[]{new Edge(v1211, v1212),};
+        v1212.adjacencies = new Edge[]{new Edge(v1212, v1211), new Edge(v1212, v1213)};
+        v1213.adjacencies = new Edge[]{new Edge(v1213, v1212), new Edge(v1213, v1214), new Edge(v1213, v1215)};
+        v1214.adjacencies = new Edge[]{new Edge(v1214, v1213),};
+        v1215.adjacencies = new Edge[]{new Edge(v1215, v1213), new Edge(v1215, v1216)};
+        v1216.adjacencies = new Edge[]{new Edge(v1216, v1215)};
+
+        computePaths(v1211);
+
+        if (targetAreaNumber == currentArea)
+            routeNumber = targetRoomNumber;
+        else if (targetAreaNumber < currentArea)
+            return null;
+        else
+            routeNumber = -1;
+
+        switch (routeNumber) {
+            case 0:
+                return getShortestPathTo(v1215);
+            case 1:
+                return getShortestPathTo(v1216);
+            default:
+                return getShortestPathTo(v1214);
+        }
+    }
+
+    private static ArrayList<Vertex> getJohnThirdRoute(int currentArea){
+        Vertex v1221 = new Vertex("JB21", new Point(15,272));
+        Vertex v1222 = new Vertex("JB22", new Point(68,272));
+        Vertex v1223 = new Vertex("B301", new Point(150,272));
+        Vertex v1224 = new Vertex("B302", new Point(240,272));
+
+        v1221.adjacencies = new Edge[]{new Edge(v1221, v1222),};
+        v1222.adjacencies = new Edge[]{new Edge(v1222, v1221), new Edge(v1222, v1223)};
+        v1223.adjacencies = new Edge[]{new Edge(v1223, v1222), new Edge(v1223, v1224)};
+        v1224.adjacencies = new Edge[]{new Edge(v1224, v1223),};
+
+        computePaths(v1221);
+
+        if (targetAreaNumber == currentArea)
+            routeNumber = targetRoomNumber;
+        else if (targetAreaNumber < currentArea)
+            return null;
+        else
+            routeNumber = -1;
+
+        switch (routeNumber) {
+            case 0:
+                return getShortestPathTo(v1223);
+            case 1:
+                return getShortestPathTo(v1224);
+            default:
+                return getShortestPathTo(v1221);
+        }
+    }
+
+    private static ArrayList<Vertex> getLSFirstRoute(int currentArea){
+        Vertex v101 = new Vertex("JA01", new Point(614,192));
+        Vertex v102 = new Vertex("JA02", new Point(560,192));
+        Vertex v103 = new Vertex("JA03", new Point(560,221));
+        Vertex v104 = new Vertex("JA04", new Point(589,221));
+        Vertex v105 = new Vertex("A125", new Point(525,192));
+        Vertex v106 = new Vertex("A113", new Point(256,192));
+
+        v101.adjacencies = new Edge[]{new Edge(v101, v102),};
+        v102.adjacencies = new Edge[]{new Edge(v102, v101), new Edge(v102, v103)};
+        v103.adjacencies = new Edge[]{new Edge(v103, v102), new Edge(v103, v104)};
+        v104.adjacencies = new Edge[]{new Edge(v104, v103)};
+        v105.adjacencies = new Edge[]{new Edge(v105, v102), new Edge(v105, v106)};
+        v106.adjacencies = new Edge[]{new Edge(v106, v105)};
+
+        computePaths(v101);
+
+        if (targetAreaNumber == currentArea)
+            routeNumber = targetRoomNumber;
+        else if (targetAreaNumber < currentArea)
+            return null;
+        else
+            routeNumber = -1;
+
+        switch (routeNumber) {
+            case 0:
+                return getShortestPathTo(v105);
+            case 1:
+                return getShortestPathTo(v106);
+            default:
+                return getShortestPathTo(v104);
+        }
+    }
+
+    private static ArrayList<Vertex> getLSSecondRoute(int currentArea){
+        Vertex v121 = new Vertex("JA21", new Point(571,221));
+        Vertex v122 = new Vertex("JA22", new Point(558,221));
+        Vertex v123 = new Vertex("JA23", new Point(558,192));
+        Vertex v124 = new Vertex("A219", new Point(477,192));
+        Vertex v125 = new Vertex("A215", new Point(370,192));
+
+        v121.adjacencies = new Edge[]{new Edge(v121, v122),};
+        v122.adjacencies = new Edge[]{new Edge(v122, v121), new Edge(v122, v123)};
+        v123.adjacencies = new Edge[]{new Edge(v123, v122), new Edge(v123, v124)};
+        v124.adjacencies = new Edge[]{new Edge(v124, v123), new Edge(v124, v125)};
+        v125.adjacencies = new Edge[]{new Edge(v125, v124)};
+
+        computePaths(v121);
+
+        if (targetAreaNumber == currentArea)
+            routeNumber = targetRoomNumber;
+        else if (targetAreaNumber < currentArea)
+            return null;
+        else
+            routeNumber = -1;
+
+        switch (routeNumber) {
+            case 0:
+                return getShortestPathTo(v124);
+            case 1:
+                return getShortestPathTo(v125);
+            default:
+                return getShortestPathTo(v121);
+        }
+    }
+
+    private static ArrayList<Vertex> getRazonFirstRoute(int currentArea){
+        Vertex v421 = new Vertex("JH21", new Point(313,77));
+        Vertex v422 = new Vertex("H301", new Point(289,77));
+        Vertex v423 = new Vertex("H303", new Point(289,252));
+
+        v421.adjacencies = new Edge[]{new Edge(v421, v422),};
+        v422.adjacencies = new Edge[]{new Edge(v422, v421), new Edge(v422, v423)};
+        v423.adjacencies = new Edge[]{new Edge(v423, v422)};
+
+        computePaths(v421);
+
+        if (targetAreaNumber == currentArea)
+            routeNumber = targetRoomNumber;
+        else if (targetAreaNumber < currentArea)
+            return null;
+        else
+            routeNumber = -1;
+
+        switch (routeNumber) {
+            case 0:
+                return getShortestPathTo(v422);
+            case 1:
+                return getShortestPathTo(v423);
+            default:
+                return getShortestPathTo(v421);
+        }
+    }
+
+    private static ArrayList<Vertex> getRazonSeventhRoute(int currentArea){
+        Vertex v421 = new Vertex("JH21", new Point(313,77));
+        Vertex v422 = new Vertex("H301", new Point(289,77));
+        Vertex v423 = new Vertex("H303", new Point(289,252));
+
+        v421.adjacencies = new Edge[]{new Edge(v421, v422),};
+        v422.adjacencies = new Edge[]{new Edge(v422, v421), new Edge(v422, v423)};
+        v423.adjacencies = new Edge[]{new Edge(v423, v422)};
+
+        computePaths(v421);
+
+        if (targetAreaNumber == currentArea)
+            routeNumber = targetRoomNumber;
+        else if (targetAreaNumber < currentArea)
+            return null;
+        else
+            routeNumber = -1;
+
+        switch (routeNumber) {
+            case 0:
+                return getShortestPathTo(v423);
+            default:
+                return getShortestPathTo(v421);
+        }
+    }
+
+
 }
 
 

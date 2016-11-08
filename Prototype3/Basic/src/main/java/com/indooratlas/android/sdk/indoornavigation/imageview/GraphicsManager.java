@@ -20,52 +20,12 @@ public class GraphicsManager {
     public static Paint linePaint, endpointPaint,startpointPaint, vacantPaint,occupiedPaint,unmonitoredPaint;
     private static final float  borderRadius = 25.0f;
     public static Animation fadeIn,fadeOut;
-    public static int DEVICE_WIDTH,DEVICE_HEIGHT;
-    public static final int XOFFSET=27,YOFFSET=24;
-    public static Bitmap firstFloor;
-    public static Bitmap secondFloor;
     public static float XRATIO,YRATIO;
-    public static Bitmap arrowhead,arrowhead2,exit;
-    public static Bitmap parkHere;
 
-    public static void initalizeGraphics(Context myContext) {
+    public static void initializeGraphics(Context myContext) {
         DisplayMetrics metrics = myContext.getResources().getDisplayMetrics();
         BitmapFactory.Options dimensions = new BitmapFactory.Options();
         dimensions.inJustDecodeBounds = true;
-        Log.d("WTF",metrics.widthPixels + " " + metrics.heightPixels );
-        Log.d("Metrics",XRATIO + " " + YRATIO);
-        arrowhead = BitmapFactory.decodeResource(myContext.getResources(), R.drawable.arrowhead);
-        arrowhead2 = BitmapFactory.decodeResource(myContext.getResources(), R.drawable.arrowhead2);
-        parkHere = BitmapFactory.decodeResource(myContext.getResources(),R.drawable.finish);
-        exit = BitmapFactory.decodeResource(myContext.getResources(),R.drawable.stairs);
-        float height = dimensions.outHeight;
-        float width =  dimensions.outWidth;
-        DEVICE_WIDTH = metrics.widthPixels;
-        DEVICE_HEIGHT = metrics.heightPixels;
-        if(DEVICE_WIDTH>DEVICE_HEIGHT)
-        {
-            int temp = DEVICE_WIDTH;
-            DEVICE_WIDTH = DEVICE_HEIGHT;
-            DEVICE_HEIGHT = temp;
-        }
-        if(DEVICE_WIDTH ==1440) {
-            //JULES - Galaxy S6
-            XRATIO = 2.675f;//metrics.widthPixels / width;
-            YRATIO = 2.8f;//metrics.heightPixels / height;
-            parkHere=    getResizedBitmap(parkHere,125,73);
-            arrowhead=    getResizedBitmap(arrowhead,108,84);
-        }
-        else
-        {
-            //Galaxy Alpha Mini
-            XRATIO = 1.000f;
-            YRATIO= 1.000f;
-        }
-
-
-    Log.d("Metrics",XRATIO + " " + YRATIO);
-
-
 
         linePaint = new Paint();
         CornerPathEffect cornerPathEffect = new CornerPathEffect(borderRadius);
@@ -112,21 +72,4 @@ public class GraphicsManager {
         fadeOut.setDuration(1000);
 
     }
-
-
-    private static  Bitmap getResizedBitmap(Bitmap bm, int newHeight, int newWidth)
-    {
-        int width = bm.getWidth();
-        int height = bm.getHeight();
-        float scaleWidth = ((float) newWidth) / width;
-        float scaleHeight = ((float) newHeight) / height;
-        // create a matrix for the manipulation
-        Matrix matrix = new Matrix();
-        // resize the bit map
-        matrix.postScale(scaleWidth, scaleHeight);
-        // recreate the new Bitmap
-        Bitmap resizedBitmap = Bitmap.createBitmap(bm, 0, 0, width, height, matrix, false);
-        return resizedBitmap;
-    }
-
 }

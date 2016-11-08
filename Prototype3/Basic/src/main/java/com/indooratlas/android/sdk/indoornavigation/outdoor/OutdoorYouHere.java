@@ -1,21 +1,17 @@
 package com.indooratlas.android.sdk.indoornavigation.outdoor;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.indooratlas.android.sdk.indoornavigation.R;
+
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;
@@ -85,7 +81,7 @@ public class OutdoorYouHere extends Activity {
     };
 
     @Override
-    public void onResume() {;
+    public void onResume() {
         super.onResume();
         OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_1_0, this, mLoaderCallback);
     }
@@ -109,27 +105,94 @@ public class OutdoorYouHere extends Activity {
         switch (QR_Data) {
 
             //drawcircle ( x , y , radius , paint formatting)
-            case "XI":
 
-                tempCanvas.drawCircle(0, 0, 10, paint);
+            //Buildings
+            case "ALPHA":
+                tempCanvas.drawCircle(341, 380, 5, paint);
+                break;
+
+            case "BETA":
+                tempCanvas.drawCircle(55, 330, 5, paint);
+                break;
+
+            case "DELTA":
+                tempCanvas.drawCircle(314, 256, 5, paint);
+                break;
+
+            case "HETA":
+                tempCanvas.drawCircle(534, 143, 5, paint);
+                break;
+
+            case "IOTA":
+                tempCanvas.drawCircle(374, 326, 5, paint);
                 break;
 
             case "LAMBDA":
+                tempCanvas.drawCircle(487, 370, 5, paint);
+                break;
 
-                tempCanvas.drawCircle(500, 250, 20, paint);
+            case "MU":
+                tempCanvas.drawCircle(570, 305, 5, paint);
+                break;
+
+            case "OMICRON":
+                tempCanvas.drawCircle(796, 308, 5, paint);
+                break;
+
+            case "PI":
+                tempCanvas.drawCircle(930, 310, 5, paint);
+                break;
+
+            case "RHO":
+                tempCanvas.drawCircle(901, 332, 5, paint);
+                break;
+
+            case "THETA":
+                tempCanvas.drawCircle(446, 194, 5, paint);
+                break;
+
+            case "XI":
+                tempCanvas.drawCircle(682, 342, 5, paint);
+                break;
+
+            case "ZETA":
+                tempCanvas.drawCircle(368, 108, 5, paint);
+                break;
+
+            //checkpoints
+            case "AGNO GATE":
+                tempCanvas.drawCircle(672, 333, 5, paint);
+                break;
+
+            case "SJ WALK":
+                tempCanvas.drawCircle(561, 216, 5, paint);
+                break;
+
+            case "LAMBDA WALK":
+                tempCanvas.drawCircle(536, 367, 5, paint);
+                break;
+
+            case "CENTRAL PLAZA":
+                tempCanvas.drawCircle(362, 220, 5, paint);
+                break;
+
+            case "ALPHA CHECKPOINT":
+                tempCanvas.drawCircle(198, 374, 5, paint);
+                break;
+
+            case "LAMBDA GATE":
+                tempCanvas.drawCircle(535, 458, 5, paint);
                 break;
 
             default:
-
-                tempCanvas.drawCircle(750, 500, 40, paint);
+                tempCanvas.drawCircle(370, 454, 5, paint);
                 break;
         }
 
-            //test for drawing check coordinates
+            //test for drawing check coordinates===
 
         ImageView iv = (ImageView) findViewById(R.id.imageViewOutdoor);
         iv.setImageBitmap(tempBitmap);
-        Toast.makeText(OutdoorYouHere.this, "Please tap the touchpad to return.", Toast.LENGTH_SHORT).show();
     }
 
 

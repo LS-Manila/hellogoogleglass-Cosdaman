@@ -6,6 +6,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Point;
 import android.graphics.PointF;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.util.Log;
 import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
@@ -13,15 +14,15 @@ import com.indooratlas.android.sdk.indoornavigation.R;
 import java.util.ArrayList;
 
 public class BlueDotView extends SubsamplingScaleImageView {
-    private static final double EARTH_RADIUS = 6378100.0;
-    private int offset;
+    //private int areaCode;
+    //private static final double EARTH_RADIUS = 6378100.0;
+    //private int offset;
     private float radius = 1.0f;
     private PointF dotCenter = null;
     private Path routingPath = new Path();
-    private ArrayList<Vertex> routingNodes = new ArrayList<Vertex>(){{add(new Vertex("def", new Point(0,0)));}};
-    private int areaCode;
+    ArrayList<Vertex> routingNodes = new ArrayList<Vertex>(){{add(new Vertex("def", new Point(0,0)));}};
     Paint paint = new Paint();
-    Paint paint1, paint2;
+    Paint paint1, paint2 = new Paint(Paint.ANTI_ALIAS_FLAG);
 
     private static final float ratio= GraphicsManager.XRATIO, ratio2= GraphicsManager.YRATIO;
 
@@ -59,15 +60,14 @@ public class BlueDotView extends SubsamplingScaleImageView {
             float scaledRadius = getScale() * radius;
             paint.setAntiAlias(true);
             paint.setStyle(Paint.Style.FILL);
-            paint.setColor(getResources().getColor(R.color.ia_blue));
+            paint.setColor(ContextCompat.getColor(getContext(), R.color.ia_blue));
+            //paint.setColor(getResources().getColor(R.color.ia_blue));
 
             // fill color
-            paint1 = new Paint(Paint.ANTI_ALIAS_FLAG);
             paint1.setColor(0x110000FF);
             paint1.setStyle(Paint.Style.FILL);
 
             // stroke color
-            paint2 = new Paint(Paint.ANTI_ALIAS_FLAG);
             paint2.setColor(0xFF0000FF);
             paint2.setStyle(Paint.Style.STROKE);
 
@@ -85,7 +85,7 @@ public class BlueDotView extends SubsamplingScaleImageView {
         }
     }
 
-    //TODO : draws route on map - gets route/routing nodes from DemoRoutingManager
+    //draw route on map
     public void setRoute(int currentArea){
 
         routingNodes = DemoRoutingManager.getPath(currentArea);

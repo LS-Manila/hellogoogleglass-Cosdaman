@@ -24,7 +24,6 @@ public class GlassMain extends Activity {
 
     private CardScrollView mCardScroller;
     private View mView;
-    private int intentChecker;
     Intent intent = new Intent();
 
     @Override
@@ -32,7 +31,7 @@ public class GlassMain extends Activity {
         super.onCreate(bundle);
 
         //initialize graphics
-        GraphicsManager.initalizeGraphics(getApplicationContext());
+        GraphicsManager.initializeGraphics(getApplicationContext());
 
         mView = buildView();
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -130,8 +129,6 @@ public class GlassMain extends Activity {
                     intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
                     startActivityForResult(intent, 0);
                     break;
-
-
 
                 /*
                 case R.id.test_menu_item:

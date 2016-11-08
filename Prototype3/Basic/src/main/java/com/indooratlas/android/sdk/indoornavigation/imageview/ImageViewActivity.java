@@ -12,10 +12,10 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Point;
 import android.graphics.PointF;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.net.ConnectivityManager;
-import android.os.BatteryManager;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.app.ActivityCompat;
@@ -23,7 +23,6 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -43,14 +42,6 @@ import com.indooratlas.android.sdk.resources.IAResourceManager;
 import com.indooratlas.android.sdk.resources.IAResult;
 import com.indooratlas.android.sdk.resources.IAResultCallback;
 import com.indooratlas.android.sdk.resources.IATask;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -75,6 +66,9 @@ public class ImageViewActivity extends FragmentActivity {
     public ImageView badconnection;
     private ArrayList<Vertex> routingNodes = new ArrayList<Vertex>(){{add(new Vertex("def", new Point(0,0)));}};
     private DemoRoutingManager demoRoutingManager;
+    private SensorManager sensorManager;
+    private SensorListener sensorListener;
+    private Sensor sensor;
 
     private IALocationListener mLocationListener = new IALocationListenerSupport() {
         @Override
@@ -123,6 +117,11 @@ public class ImageViewActivity extends FragmentActivity {
         badconnection = (ImageView)findViewById(R.id.badconnection);
         cm = (ConnectivityManager)getBaseContext().getSystemService(Context.CONNECTIVITY_SERVICE);
 
+        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+
+        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_PRESSURE);
+
+        sensorListener = new SensorListener();
 
         if (!isSdkConfigured()) {
             new AlertDialog.Builder(this)
@@ -247,20 +246,27 @@ public class ImageViewActivity extends FragmentActivity {
                     // process download
                     String filePath = c.getString(c.getColumnIndex(
                             DownloadManager.COLUMN_LOCAL_FILENAME));
-                    showFloorPlanImage(filePath);
+                    //showFloorPlanImage(filePath);
                 }
             }
             c.close();
         }
     };
 
+/*
     private void showFloorPlanImage(String filePath) {
         Log.w(TAG, "showFloorPlanImage: " + filePath);
         mImageView.setRadius(mFloorPlan.getMetersToPixels() * dotRadius);
         mImageView.setImage(ImageSource.uri(filePath));
 		mImageView.setRoute(DemoRoutingManager.getArea());
-    }
+    }*/
 
+    private void showFloorPlanImage(int id) {
+        Log.w(TAG, "showFloorPlanImage: " + id);
+        mImageView.setRadius(mFloorPlan.getMetersToPixels() * dotRadius);
+        mImageView.setImage(ImageSource.resource(id));
+        mImageView.setRoute(DemoRoutingManager.getArea());
+    }
     /**
      * Fetches floor plan data from IndoorAtlas server.
      */
@@ -275,12 +281,15 @@ public class ImageViewActivity extends FragmentActivity {
                     Log.d(TAG, "fetch floor plan result:" + result);
                     if (result.isSuccess() && result.getResult() != null) {
                         mFloorPlan = result.getResult();
-                        String fileName = mFloorPlan.getId().substring(0, 4) + ".png";
+                        //String fileName = mFloorPlan.getId().substring(0, 4) + ".png";
+						String fileName = "map_" + mFloorPlan.getId().substring(0, 4);
                         demoRoutingManager.init( fileName);
-                        String filePath = "storage/emulated/legacy/Download/Maps/" + fileName;
+                        //String filePath = "storage/emulated/legacy/Download/Maps/" + fileName;
+						int id = getResources().getIdentifier(fileName, "drawable", getPackageName());
 
                         try {
-                            showFloorPlanImage(filePath);
+                            //showFloorPlanImage(filePath);
+							showFloorPlanImage(id);
                         }
                         catch(Exception e){
                             Toast.makeText(ImageViewActivity.this, "No Map Present", Toast.LENGTH_SHORT).show();
